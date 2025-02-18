@@ -21,7 +21,7 @@ if ($userhris){
         }
     }
 
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
     $hari_ini = date("Y-m-d");
 

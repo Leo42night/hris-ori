@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $grup2 = isset($_GET['grup']) ? $_GET['grup'] : "";
     if($grup2==""){
         $queryjns = "SELECT * FROM nodes where parentId<>'' and parentId2='' and icon='fa' ORDER BY urut,id ASC";

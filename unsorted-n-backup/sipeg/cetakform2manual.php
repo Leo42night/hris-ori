@@ -2,10 +2,10 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
-    include "../fungsi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
     require('../rotation.php');
-    include "../stringvalidasi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/stringvalidasi.php";
     $kunci = "cipher.hris@s7o";
 
     class PDF extends PDF_Rotate{

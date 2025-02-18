@@ -5,8 +5,8 @@
 // header("Content-Type: application/json; charset=UTF-8");
 // header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-require '../vendor/autoload.php';
-require_once '../vendor/pear/http_request2/HTTP/Request2.php'; // Only when installed with PEAR
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/pear/http_request2/HTTP/Request2.php"; // Only when installed with PEAR
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
@@ -25,7 +25,7 @@ if ($userhris){
         }
     }
 
-    include '../koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
     $rs30 = mysqli_query($koneksi,"select * from baseurl_api order by id desc limit 1");
     $hasil30 = mysqli_fetch_array($rs30);

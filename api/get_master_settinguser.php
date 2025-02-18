@@ -3,7 +3,7 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris && $superadminhris=="1"){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     function TanggalIndo2($date){
         if(strtotime($date)){
             $tahun = substr($date, 0, 4);

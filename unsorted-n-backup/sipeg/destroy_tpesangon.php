@@ -3,7 +3,7 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris){
-    include 'koneksi_sipeg.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $id = intval($_REQUEST['id']);
     $sql = "delete from pesangon where id=$id";
     $result = @mysqli_query($koneksi,$sql);

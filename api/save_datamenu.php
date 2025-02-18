@@ -3,7 +3,7 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris && $superadminhris=="1"){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $grup = $_REQUEST['grupdatamenu'];
     $parentId = $_REQUEST['parentIddatamenu'];
     $parentId2 = $_REQUEST['parentId2datamenu'];

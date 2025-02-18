@@ -6,7 +6,7 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 	$foldernya = "https://36.94.223.222/teams/app/api/";
 	$kode = "HRIS to TEAMS 2023\n";
 	$ciphering = "AES-128-CTR";

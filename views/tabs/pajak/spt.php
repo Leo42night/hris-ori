@@ -4,7 +4,6 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
@@ -132,7 +131,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectprojectspt(){
             var nilai1 = $('#kd_projectspt').combobox('getValue');
-            var url2 = 'get_unit.php?kd_project='+nilai1;
+            var url2 = '<?=$foldernya;?>get_unit.php?kd_project='+nilai1;
             $('#kd_unitspt').combobox('enable');
             $('#kd_unitspt').combobox('clear'); 
             $('#kd_unitspt').combobox('reload',url2);
@@ -661,7 +660,6 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var ids2 = ids.join('|');
     		if (jumlah>0){
                 window.open('<?=$foldernya;?>cetakform2.php?ids2='+ids2,'_blank'); 
-                // window.open('<?=$foldernya;?>cetakform2.php?blth='+blth+'&ids2='+ids2,'_blank'); 
             }
         }
 

@@ -14,7 +14,7 @@ if ($userhris){
         }
     }
 
-    include "koneksi_sipeg.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     // $idsppd = $_REQUEST['idsppd'];
     $idsppd = "2024000984";
 

@@ -1,4 +1,5 @@
 <?php
+// missin view tab files: nonaktif.php, restore.php, 
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/hris-ori/database/koneksi.php'; // Ensure the database connection is included only once globally.
 
@@ -30,7 +31,7 @@ if ($userhris){
         $state = $hasil['state'];
         $proses = $hasil['proses'];
         $lihat = $hasil['lihat'];
-        $filter = $name."|".$url."|".$proses."|".$lihat;
+        $filter = $name."|pegawai/".$url."|".$proses."|".$lihat;
         // echo json_encode($hasil);
 
         $datanya = array();
@@ -54,7 +55,7 @@ if ($userhris){
                 $state2 = $hasil2['state'];
                 $proses2 = $hasil2['proses'];
                 $lihat2 = $hasil2['lihat'];
-                $filter2 = $name2."|".$url2."|".$proses2."|".$lihat2;
+                $filter2 = $name2."|pegawai/".$url2."|".$proses2."|".$lihat2;
 
                 $rs92 = mysqli_query($koneksi,"select * from aksesuser where idmenu='$id2' and username='$userhris' and (proses='1' or lihat='1')");
                 $jumlahdata92 = mysqli_num_rows($rs92);

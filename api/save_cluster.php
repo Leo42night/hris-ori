@@ -3,7 +3,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $nip = $_REQUEST['nipcluster'];
     $start_date = $_REQUEST['start_datecluster'];
     $end_date = $_REQUEST['end_datecluster'];

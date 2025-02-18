@@ -6,7 +6,7 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -326,7 +326,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             <span style="font-size:16px;">DATA MASTER KEPEGAWAIAN</span>
         </div>
 		<div data-options="region:'west',split:false,collapsible:false" title="<span style='font-size:11px;'>SUB MENU</span>" style="width:200px;">
-            <div id="menu42" class="easyui-panel" style="padding:5px; height: 100%; background: transparent; border: none;font-size:">
+            <div id="menu42" class="easyui-panel" style="padding:5px; height: 100%; background: transparent; border: none;">
                 <ul id="tt42" class="easyui-tree" data-options="method:'get',animate:true,lines:true"></ul>
             </div>
         </div>

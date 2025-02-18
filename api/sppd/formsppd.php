@@ -61,9 +61,9 @@ if ($userhris){
     if (!file_exists($tempdir))
         mkdir($tempdir);
 
-    include "../fungsi.php";
-    include "../phpqrcode/qrlib.php";
-    require('../force_justify.php');
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/phpqrcode/qrlib.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
     $idsppd = $_REQUEST['idsppd'];
 
     $hari_ini = date("Y-m-d");

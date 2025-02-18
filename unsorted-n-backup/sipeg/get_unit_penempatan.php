@@ -2,8 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $kd_area = $_REQUEST['kd_area'];
     
     $items = array();

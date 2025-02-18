@@ -3,8 +3,8 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
-    include "../fungsi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
     date_default_timezone_set("Asia/Jakarta");
     $sukses = 0;
     $gagal = 0;

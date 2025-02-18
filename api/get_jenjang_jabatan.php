@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     /*
     $kode_jenis_jabatan2 = isset($_GET['kode_jenis_jabatan']) ? $_GET['kode_jenis_jabatan'] : "";
     if($kode_jenis_jabatan2==""){

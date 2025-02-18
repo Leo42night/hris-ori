@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $queryjns = "SELECT * FROM m_jenis_organisasi ORDER BY kode_organisasi ASC";
     $sqljns = mysqli_query ($koneksi,$queryjns);
     $items = array();

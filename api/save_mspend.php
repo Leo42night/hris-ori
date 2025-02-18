@@ -3,7 +3,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $label = $_REQUEST['labelmspend'];
 
     $sql = "insert into m_satuan_lama_pendidikan(label) values('$label')";

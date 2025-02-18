@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'koneksi.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php"; 
 if(!empty($_POST)){     
     $username = $_POST['username'];
     $password = md5($_POST['password']);

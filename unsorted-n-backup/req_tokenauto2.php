@@ -1,6 +1,6 @@
 <?php 
 date_default_timezone_set("Asia/Jakarta");
-include '../koneksi.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 $hari_ini = date("Y-m-d H:i:s", strtotime("+1 hour"));
 $tgl_expire = date('Y-m-d H:i:s', strtotime($hari_ini. ' + 8 hours'));
 

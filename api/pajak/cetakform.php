@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/rotation.php";
 if ($userhris){
-    // require('../force_justify.php');
+    // require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
     class PDF extends PDF_Rotate{
         function RotatedText($x,$y,$txt,$angle){
             //Text rotated around its origin

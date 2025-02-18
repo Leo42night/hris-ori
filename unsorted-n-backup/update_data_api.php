@@ -1,6 +1,6 @@
 <?php 
-require '../vendor/autoload.php';
-require_once '../vendor/pear/http_request2/HTTP/Request2.php'; // Only when installed with PEAR
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/pear/http_request2/HTTP/Request2.php"; // Only when installed with PEAR
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
@@ -19,7 +19,7 @@ if ($userhris){
         }
     }
 
-    include '../koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $nama_tabel_update = $_POST['nama_tabel_update'];
 
     $hari_ini = date("Y-m-d H:i:s", strtotime("+1 hour"));

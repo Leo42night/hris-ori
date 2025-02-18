@@ -5,7 +5,7 @@ $superadminhris = $_SESSION["superadminhris"];
 if (!$userhris || $superadminhris!="1"){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     ?>
     <script type="text/javascript">   
 		function doSearchdatamenu(){

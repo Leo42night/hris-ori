@@ -33,7 +33,7 @@ if ($userhris){
         $state = $hasil['state'];
         $proses = $hasil['proses'];
         $lihat = $hasil['lihat'];
-        $filter = $name."|".$url."|".$proses."|".$lihat;
+        $filter = $name."|absensi/".$url."|".$proses."|".$lihat;
 
         $datanya = array();
         $datanya["id"] = $id;    
@@ -56,7 +56,7 @@ if ($userhris){
                 $state2 = $hasil2['state'];
                 $proses2 = $hasil2['proses'];
                 $lihat2 = $hasil2['lihat'];
-                $filter2 = $name2."|".$url2."|".$proses2."|".$lihat2;
+                $filter2 = $name2."|absensi/".$url2."|".$proses2."|".$lihat2;
 
                 $rs92 = mysqli_query($koneksi,"select * from aksesuser where idmenu='$id2' and username='$userhris' and (proses='1' or lihat='1')");
                 $jumlahdata92 = mysqli_num_rows($rs92);

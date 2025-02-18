@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 require_once "vendor/autoload.php";
-include "koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 date_default_timezone_set("Asia/Jakarta");
 $jam = date("H:i");
 if($jam>="09:00" && $jam<="09:59"){

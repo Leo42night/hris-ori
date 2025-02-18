@@ -15,8 +15,7 @@ if ($userhris){
         }
     }
 
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $tahuncari = isset($_POST['tahundatamutasi2cari']) ? $_POST['tahundatamutasi2cari'] : "2024";
     $blth_awalcari = $tahuncari."-01";
     $blth_akhircari = $tahuncari."-11";

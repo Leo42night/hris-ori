@@ -2,8 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $sqljns = mysqli_query ($koneksi,"SELECT * FROM master_region ORDER BY id ASC");
     $items = array();
     while ($hasiljns = mysqli_fetch_array ($sqljns)) {

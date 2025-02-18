@@ -3,7 +3,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $kode_ee_group = $_REQUEST['kodemeegroup'];
     $ee_group = $_REQUEST['labelmeegroup'];
     $keterangan = $_REQUEST['keteranganmeegroup'];

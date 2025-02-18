@@ -344,7 +344,7 @@ CREATE TABLE IF NOT EXISTS `akses_token` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.akses_token: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.akses_token: ~0 rows (lebih kurang)
 INSERT INTO `akses_token` (`id`, `jwtToken`, `refreshToken`, `last_generated`, `tgl_expire`) VALUES
 	(1, 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbG50YXJha2FuIiwiaWRfcGxuX2dyb3VwIjoiZjdhY2JiMTUtMzMzYS00ZTU5LWE4YWUtZjUzMmJkZGUxMWZlIiwicm9sZSI6W3siaWQiOiJmZDBkOGZhNC0yMjI3LTQ0ZTItYjdlZi0wYTM1ZDkwMjI0ZjgiLCJuYW1lIjoiQWRtaW4gQVAiLCJrZXRlcmFuZ2FuIjoiQW5hayBQZXJ1c2FoYWFuIiwiaXNBY3RpdmUiOnRydWV9XSwia29kZV9wbG5fZ3JvdXAiOiIxMDA2IiwiaWRfdXNlciI6ImEwMTE0ZjRkLWMxMzAtNGU5Yy05ZGIxLTBiMGQ5MmExOTIwZSIsInR5cGUiOiJhY2Nlc3MiLCJuaXAiOiIiLCJmdWxsbmFtZSI6IiIsImV4cCI6MTcwODQyODcwMiwiaWF0IjoxNzA4Mzk5OTAyLCJlbWFpbCI6InBsbnRhcmFrYW5AZ21haWlsLmNvbSIsInVzZXJuYW1lIjoicGxudGFyYWthbiIsInN0YXR1cyI6IkFETUlOX0FQIn0.dR_unwWHAZ0N2k_drovl0rlyZDnTDa_16M5OxxrWuzg', 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwbG50YXJha2FuIiwidHlwZSI6InJlZnJlc2giLCJleHAiOjE3MDg0OTExNzQsImlhdCI6MTcwODQwNDc3NH0.uzvpwzs_x_NHwIgg0RN9OpYpYAxoLWx4rTxioFxdoWM', '2024-02-20 13:10:44', '2024-02-20 21:10:44');
 
@@ -408,7 +408,7 @@ CREATE TABLE IF NOT EXISTS `baseurl_api` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.baseurl_api: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.baseurl_api: ~0 rows (lebih kurang)
 INSERT INTO `baseurl_api` (`id`, `baseurl`) VALUES
 	(1, 'http://10.1.85.223:7071');
 
@@ -437,6 +437,64 @@ INSERT INTO `beban_pph` (`id`, `blth`, `nip`, `beban_pph21`, `kode`) VALUES
 	(9, '2023-09', '6794003E', 16599359, '2023-096794003E'),
 	(10, '2023-09', '6805003TRK', 3475625, '2023-096805003TRK');
 /*!40000 ALTER TABLE `beban_pph` ENABLE KEYS */;
+
+-- membuang struktur untuk table hrisori.beban_pph21
+CREATE TABLE IF NOT EXISTS `beban_pph21` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kpp` varchar(120) DEFAULT '',
+  `npwp` varchar(15) DEFAULT '',
+  `no_urut` varchar(8) DEFAULT '',
+  `nip` varchar(60) DEFAULT '',
+  `status` varchar(30) DEFAULT '',
+  `tahun` varchar(4) DEFAULT '',
+  `blth` varchar(7) DEFAULT '',
+  `blthnip` varchar(120) DEFAULT '',
+  `blth_awal` varchar(7) DEFAULT '',
+  `blth_akhir` varchar(7) DEFAULT '',
+  `masa_kerja` double NOT NULL DEFAULT '0',
+  `gaji` double NOT NULL DEFAULT '0',
+  `tunjangan_pph` double NOT NULL DEFAULT '0',
+  `tunjangan_variable` double NOT NULL DEFAULT '0',
+  `honorarium` double NOT NULL DEFAULT '0',
+  `benefit` double NOT NULL DEFAULT '0',
+  `natuna` double NOT NULL DEFAULT '0',
+  `beban_pph21` double NOT NULL DEFAULT '0',
+  `bonus_thr` double NOT NULL DEFAULT '0',
+  `brutob` double NOT NULL DEFAULT '0',
+  `biaya_jabatanb` double NOT NULL DEFAULT '0',
+  `iuran_pensiunb` double NOT NULL DEFAULT '0',
+  `brutot` double NOT NULL DEFAULT '0',
+  `biaya_jabatant` double NOT NULL DEFAULT '0',
+  `iuran_pensiunt` double NOT NULL DEFAULT '0',
+  `biaya_pengurangt` double NOT NULL DEFAULT '0',
+  `nettot` double NOT NULL DEFAULT '0',
+  `brutot_total` double NOT NULL DEFAULT '0',
+  `biaya_jabatant_total` double NOT NULL DEFAULT '0',
+  `iuran_pensiunt_total` double NOT NULL DEFAULT '0',
+  `biaya_pengurangt_total` double NOT NULL DEFAULT '0',
+  `nettot_total` double NOT NULL DEFAULT '0',
+  `nettot_sebelumnya` double NOT NULL DEFAULT '0',
+  `nettot_akhir` double NOT NULL DEFAULT '0',
+  `ptkp` double NOT NULL DEFAULT '0',
+  `pkp` double NOT NULL DEFAULT '0',
+  `ppht` double NOT NULL DEFAULT '0',
+  `ppht_sebelumnya` double NOT NULL DEFAULT '0',
+  `ppht_terutang` double NOT NULL DEFAULT '0',
+  `pphb1_terutang` double NOT NULL DEFAULT '0',
+  `pphb2_terutang` double NOT NULL DEFAULT '0',
+  `pph_sistem` double NOT NULL DEFAULT '0',
+  `pph_koreksi` double NOT NULL DEFAULT '0',
+  `pphb_terutang` double NOT NULL DEFAULT '0',
+  `tgl_proses` varchar(10) DEFAULT '',
+  `petugas` varchar(120) DEFAULT '',
+  `blth_gaji` varchar(10) DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `blthnip` (`blthnip`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Membuang data untuk tabel hrisori.beban_pph21: 0 rows
+/*!40000 ALTER TABLE `beban_pph21` DISABLE KEYS */;
+/*!40000 ALTER TABLE `beban_pph21` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.biaya_restitusi
 CREATE TABLE IF NOT EXISTS `biaya_restitusi` (
@@ -517,6 +575,105 @@ INSERT INTO `biaya_sppd` (`id`, `idsppd`, `transport1a`, `transport1b`, `transpo
 	(2, '2020000002', 0, 0, 0, 0, 300000, 360000, 80000, 700000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1440000),
 	(3, '2020000003', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 /*!40000 ALTER TABLE `biaya_sppd` ENABLE KEYS */;
+
+-- membuang struktur untuk table hrisori.biaya_sppd1
+CREATE TABLE IF NOT EXISTS `biaya_sppd1` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idsppd` varchar(120) DEFAULT '',
+  `transportasi` double NOT NULL DEFAULT '0',
+  `transporta` double NOT NULL DEFAULT '0',
+  `transportb` double NOT NULL DEFAULT '0',
+  `transportc` double NOT NULL DEFAULT '0',
+  `transportd` double NOT NULL DEFAULT '0',
+  `total_transport` double NOT NULL DEFAULT '0',
+  `transportasi_lokal` double NOT NULL DEFAULT '0',
+  `airport_tax` double NOT NULL DEFAULT '0',
+  `hari_konsumsi1` double NOT NULL DEFAULT '0',
+  `persen_konsumsi1` double NOT NULL DEFAULT '0',
+  `nilai_konsumsi1` double NOT NULL DEFAULT '0',
+  `total_konsumsi1` double NOT NULL DEFAULT '0',
+  `hari_laundry1` double NOT NULL DEFAULT '0',
+  `persen_laundry1` double NOT NULL DEFAULT '0',
+  `nilai_laundry1` double NOT NULL DEFAULT '0',
+  `total_laundry1` double NOT NULL DEFAULT '0',
+  `hari_penginapan1` double NOT NULL DEFAULT '0',
+  `persen_penginapan1` double NOT NULL DEFAULT '0',
+  `nilai_penginapan1` double NOT NULL DEFAULT '0',
+  `total_penginapan1` double NOT NULL DEFAULT '0',
+  `hari_konsumsi2` double NOT NULL DEFAULT '0',
+  `persen_konsumsi2` double NOT NULL DEFAULT '0',
+  `nilai_konsumsi2` double NOT NULL DEFAULT '0',
+  `total_konsumsi2` double NOT NULL DEFAULT '0',
+  `hari_laundry2` double NOT NULL DEFAULT '0',
+  `persen_laundry2` double NOT NULL DEFAULT '0',
+  `nilai_laundry2` double NOT NULL DEFAULT '0',
+  `total_laundry2` double NOT NULL DEFAULT '0',
+  `hari_penginapan2` double NOT NULL DEFAULT '0',
+  `persen_penginapan2` double NOT NULL DEFAULT '0',
+  `nilai_penginapan2` double NOT NULL DEFAULT '0',
+  `total_penginapan2` double NOT NULL DEFAULT '0',
+  `hari_pegawai` double NOT NULL DEFAULT '0',
+  `persen_pegawai` double NOT NULL DEFAULT '0',
+  `nilai_pegawai` double NOT NULL DEFAULT '0',
+  `total_pegawai` double NOT NULL DEFAULT '0',
+  `keluarga` double NOT NULL DEFAULT '0',
+  `hari_keluarga` double NOT NULL DEFAULT '0',
+  `persen_keluarga` double NOT NULL DEFAULT '0',
+  `nilai_keluarga` double NOT NULL DEFAULT '0',
+  `total_keluarga` double NOT NULL DEFAULT '0',
+  `pengantar` double NOT NULL DEFAULT '0',
+  `hari_pengantar` double NOT NULL DEFAULT '0',
+  `persen_pengantar` double NOT NULL DEFAULT '0',
+  `nilai_pengantar` double NOT NULL DEFAULT '0',
+  `total_pengantar` double NOT NULL DEFAULT '0',
+  `hari_suamiistri` double NOT NULL DEFAULT '0',
+  `persen_suamiistri` double NOT NULL DEFAULT '0',
+  `nilai_suamiistri` double NOT NULL DEFAULT '0',
+  `total_suamiistri` double NOT NULL DEFAULT '0',
+  `anak` double NOT NULL DEFAULT '0',
+  `hari_anak` double NOT NULL DEFAULT '0',
+  `persen_anak` double NOT NULL DEFAULT '0',
+  `nilai_anak` double NOT NULL DEFAULT '0',
+  `total_anak` double NOT NULL DEFAULT '0',
+  `berat_pengepakan` double NOT NULL DEFAULT '0',
+  `nilai_pengepakan` double NOT NULL DEFAULT '0',
+  `total_pengepakan` double NOT NULL DEFAULT '0',
+  `kurs_ln` double NOT NULL DEFAULT '0',
+  `transporta_ln` double NOT NULL DEFAULT '0',
+  `transportb_ln` double NOT NULL DEFAULT '0',
+  `transportc_ln` double NOT NULL DEFAULT '0',
+  `transportd_ln` double NOT NULL DEFAULT '0',
+  `transportasi_lokal_ln` double NOT NULL DEFAULT '0',
+  `airport_tax_ln` double NOT NULL DEFAULT '0',
+  `hari_lumpsum` double NOT NULL DEFAULT '0',
+  `nilai_lumpsum` double NOT NULL DEFAULT '0',
+  `hari_pegawai_ln` double NOT NULL DEFAULT '0',
+  `persen_pegawai_ln` double NOT NULL DEFAULT '0',
+  `nilai_pegawai_ln` double NOT NULL DEFAULT '0',
+  `hari_keluarga_ln` double NOT NULL DEFAULT '0',
+  `persen_keluarga_ln` double NOT NULL DEFAULT '0',
+  `nilai_keluarga_ln` double NOT NULL DEFAULT '0',
+  `hari_pengantar_ln` double NOT NULL DEFAULT '0',
+  `persen_pengantar_ln` double NOT NULL DEFAULT '0',
+  `nilai_pengantar_ln` double NOT NULL DEFAULT '0',
+  `baju_hangat_ln` double NOT NULL DEFAULT '0',
+  `total` double NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idsppd` (`idsppd`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Membuang data untuk tabel hrisori.biaya_sppd1: ~10 rows (lebih kurang)
+INSERT INTO `biaya_sppd1` (`id`, `idsppd`, `transportasi`, `transporta`, `transportb`, `transportc`, `transportd`, `total_transport`, `transportasi_lokal`, `airport_tax`, `hari_konsumsi1`, `persen_konsumsi1`, `nilai_konsumsi1`, `total_konsumsi1`, `hari_laundry1`, `persen_laundry1`, `nilai_laundry1`, `total_laundry1`, `hari_penginapan1`, `persen_penginapan1`, `nilai_penginapan1`, `total_penginapan1`, `hari_konsumsi2`, `persen_konsumsi2`, `nilai_konsumsi2`, `total_konsumsi2`, `hari_laundry2`, `persen_laundry2`, `nilai_laundry2`, `total_laundry2`, `hari_penginapan2`, `persen_penginapan2`, `nilai_penginapan2`, `total_penginapan2`, `hari_pegawai`, `persen_pegawai`, `nilai_pegawai`, `total_pegawai`, `keluarga`, `hari_keluarga`, `persen_keluarga`, `nilai_keluarga`, `total_keluarga`, `pengantar`, `hari_pengantar`, `persen_pengantar`, `nilai_pengantar`, `total_pengantar`, `hari_suamiistri`, `persen_suamiistri`, `nilai_suamiistri`, `total_suamiistri`, `anak`, `hari_anak`, `persen_anak`, `nilai_anak`, `total_anak`, `berat_pengepakan`, `nilai_pengepakan`, `total_pengepakan`, `kurs_ln`, `transporta_ln`, `transportb_ln`, `transportc_ln`, `transportd_ln`, `transportasi_lokal_ln`, `airport_tax_ln`, `hari_lumpsum`, `nilai_lumpsum`, `hari_pegawai_ln`, `persen_pegawai_ln`, `nilai_pegawai_ln`, `hari_keluarga_ln`, `persen_keluarga_ln`, `nilai_keluarga_ln`, `hari_pengantar_ln`, `persen_pengantar_ln`, `nilai_pengantar_ln`, `baju_hangat_ln`, `total`) VALUES
+	(1, '2025000001', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(2, '2025000002', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(3, '2025000003', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(4, '2025000004', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(5, '2025000005', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(6, '2025000006', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(7, '2025000007', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(8, '2025000008', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(9, '2025000009', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(11, '2025000010', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- membuang struktur untuk table hrisori.bonus
 CREATE TABLE IF NOT EXISTS `bonus` (
@@ -700,8 +857,6 @@ INSERT INTO `data_keluarga` (`id`, `nip`, `nama`, `jenis_kelamin`, `tgl_lahir`, 
 	(9, '6793163Z', 'I MADE NGURAH CHANDRA MARUTHA', 'L', '2000-07-16', 'Anak Ke 2');
 /*!40000 ALTER TABLE `data_keluarga` ENABLE KEYS */;
 
--- |||
-DROP TABLE IF EXISTS `data_pegawai`;
 -- membuang struktur untuk table hrisori.data_pegawai
 CREATE TABLE IF NOT EXISTS `data_pegawai` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -754,17 +909,17 @@ CREATE TABLE IF NOT EXISTS `data_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel hrisori.data_pegawai: ~10 rows (lebih kurang)
-INSERT INTO `data_pegawai` (`id`, `nip`, `start_date`, `end_date`, `tgl_masuk`, `tgl_capeg`, `tgl_tetap`, `title`, `nama`, `gelar_depan`, `gelar_belakang`, `know_as`, `tempat_lahir`, `tgl_lahir`, `kode_negara`, `jenis_kelamin`, `id_agama`, `status_nikah`, `tgl_nikah`, `status_warganegara`, `gol_darah`, `suku`, `telepon_utama`, `telepon_cadangan1`, `telepon_cadangan2`, `telepon_cadangan3`, `telepon_darurat`, `jenis_dplk`, `id_dplk`, `bank_dplk`, `no_bpjs_kes`, `no_bpjs_tk`, `bank_payroll`, `an_payroll`, `no_rek_payroll`, `status_integrasi`, `status_edit`, `tgl_edit`, `user_edit`) VALUES
-	(1, '6793163Z', '1967-12-24', '9999-12-31', '1993-02-06', '1993-02-06', '1994-07-03', 'T1', 'I KETUT WIRIANA', 'GD8', '', 'Ir. I KETUT WIRIANA', 'MATARAM', '1967-12-24', 'ID', 'JK1', 'HND', 'SN2', '1998-12-31', 'SK1', '', 'BALI', '62811111724', '', '', '', '', 'JDPLK1', '', '', '0001770994506', '16003726268', 'BNI', 'I KETUT WIRIANA', '0001729328', '1', '0', '', ''),
-	(2, '93151332ZY', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', ''),
-	(3, '9720004ZTY', '1997-09-10', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'ABDUL MALIK', '', 'GB5', 'ABDUL MALIK GB5', 'MAROS', '1997-09-10', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '082395235023', '', '', '', '', 'JDPLK3', '804545490', 'BNI', '0002041428284', '20088670904', 'BNI', 'ABD. MALIK', '1133366615', '1', '0', '', ''),
-	(4, '6691029E', '1966-10-10', '9999-12-31', '1991-04-01', '1994-05-01', '1997-07-01', 'T1', 'ABDUL HARIS DAUD', '', 'GB103', 'ABDUL HARIS DAUD S.T.', 'GORONTALO', '1966-10-10', 'ID', 'JK1', 'ISL', 'SN2', '1991-10-05', 'SK1', '', 'GORONTALO', '085256335785', '', '', '', '', 'JDPLK1', '', '', '0002137969574', '16003782493', 'BRI', 'ABDUL HARIS DAUD', '517901003407508', '1', '0', '', ''),
-	(5, '8017001TRK', '1980-01-28', '9999-12-31', '2017-03-01', '2017-03-01', '2017-03-01', 'T1', 'ADE JANUAR SUCIADI', '', 'GB103', 'ADE JANUAR SUCIADI S.T.', 'SUKABUMI', '1980-01-28', 'ID', 'JK1', 'ISL', 'SN2', '2016-09-02', 'SK1', '', 'SUNDA', '082112019399', '', '', '', '', 'JDPLK3', '802681038', 'BNI', '0001129338652', '02K00161376', 'BNI', 'ADE JANUAR SUCIADI', '0381218457', '1', '0', '', ''),
-	(6, '7410021TRK', '1974-08-23', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'ADRI HARYANTO', '', 'GB5', 'ADRI HARYANTO A.Md.', 'SAMARINDA', '1974-08-23', 'ID', 'JK1', 'ISL', 'SN2', '2001-01-12', 'SK1', '', 'BANJAR', '081350536952', '', '', '', '', 'JDPLK3', '795196801', 'BNI', '0001131983763', '06S20050214', 'BNI', 'ADRI HARYANTO', '0673679438', '1', '0', '', ''),
-	(7, '9420009ZTY', '1994-02-20', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'AFIF ASYKAR AMIR', '', 'GB103', 'AFIF ASYKAR AMIR S.T.', 'UJUNG PANDANG', '1994-02-20', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '085343647509', '', '', '', '', 'JDPLK3', '804595453', 'BNI', '0000127421561', '20088670946', 'BNI', 'AFIF ASYKAR AMIR', '1133679163', '1', '0', '', ''),
-	(8, '92171742ZY', '1992-02-22', '2024-05-31', '2017-09-01', '2017-09-01', '2017-09-01', 'T1', 'AGIL FRASSETYO', '', 'GB65', 'AGIL FRASSETYO SE', 'JAKARTA', '1992-02-22', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'JAKARTA', '082231844631', '', '', '', '', 'JDPLK3', '802394770', 'BNI', '0000039326916', '17044742975', 'BRI', 'AGIL FRASSETYO', '123701006656504', '1', '0', '', ''),
-	(9, '8110015TRK', '1981-04-19', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'AGUNG SEDAYU', '', 'GB5', 'AGUNG SEDAYU A.Md.', 'MALANG', '1981-04-19', 'ID', 'JK1', 'ISL', 'SN3', '2006-05-19', 'SK1', '', 'JAWA', '081346231482', '', '', '', '', 'JDPLK3', '795344797', 'BNI', '0001131988397', '06S20050594', 'BRI', 'AGUNG SEDAYU', '18301019012507', '1', '0', '', ''),
-	(10, '8509719Z', '1985-10-01', '2024-02-28', '2009-12-01', '2009-12-01', '2009-12-01', 'T1', 'AINUL YAQIN', '', 'GB89', 'AINUL YAQIN S.M.', 'BANYUWANGI', '1985-10-01', 'ID', 'JK1', 'ISL', 'SN2', '2011-09-11', 'SK1', '', 'JAWA', '085213530546', '', '', '', '', 'JDPLK1', '', '', '0002614708629', '16003740137', 'BSI', 'AINUL YAQIN', '2101985558', '1', '0', '', '');
+INSERT INTO `data_pegawai` (`id`, `nip`, `jabatan`, `grade`, `start_date`, `end_date`, `tgl_masuk`, `tgl_capeg`, `tgl_tetap`, `title`, `nama`, `gelar_depan`, `gelar_belakang`, `know_as`, `tempat_lahir`, `tgl_lahir`, `kode_negara`, `jenis_kelamin`, `id_agama`, `status_nikah`, `tgl_nikah`, `status_warganegara`, `gol_darah`, `suku`, `telepon_utama`, `telepon_cadangan1`, `telepon_cadangan2`, `telepon_cadangan3`, `telepon_darurat`, `jenis_dplk`, `id_dplk`, `bank_dplk`, `no_bpjs_kes`, `no_bpjs_tk`, `bank_payroll`, `an_payroll`, `no_rek_payroll`, `status_integrasi`, `status_edit`, `tgl_edit`, `user_edit`, `aktif`, `atasan_langsung`, `atasan_atasan_langsung`, `level_sppd`) VALUES
+	(1, '6793163Z', '', '', '1967-12-24', '9999-12-31', '1993-02-06', '1993-02-06', '1994-07-03', 'T1', 'I KETUT WIRIANA', 'GD8', '', 'Ir. I KETUT WIRIANA', 'MATARAM', '1967-12-24', 'ID', 'JK1', 'HND', 'SN2', '1998-12-31', 'SK1', '', 'BALI', '62811111724', '', '', '', '', 'JDPLK1', '', '', '0001770994506', '16003726268', 'BNI', 'I KETUT WIRIANA', '0001729328', '1', '0', '', '', '1', '', '', ''),
+	(2, '93151332ZY', '', '', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', '', '1', '', '', ''),
+	(3, '9720004ZTY', '', '', '1997-09-10', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'ABDUL MALIK', '', 'GB5', 'ABDUL MALIK GB5', 'MAROS', '1997-09-10', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '082395235023', '', '', '', '', 'JDPLK3', '804545490', 'BNI', '0002041428284', '20088670904', 'BNI', 'ABD. MALIK', '1133366615', '1', '0', '', '', '1', '', '', ''),
+	(4, '6691029E', '', '', '1966-10-10', '9999-12-31', '1991-04-01', '1994-05-01', '1997-07-01', 'T1', 'ABDUL HARIS DAUD', '', 'GB103', 'ABDUL HARIS DAUD S.T.', 'GORONTALO', '1966-10-10', 'ID', 'JK1', 'ISL', 'SN2', '1991-10-05', 'SK1', '', 'GORONTALO', '085256335785', '', '', '', '', 'JDPLK1', '', '', '0002137969574', '16003782493', 'BRI', 'ABDUL HARIS DAUD', '517901003407508', '1', '0', '', '', '1', '', '', ''),
+	(5, '8017001TRK', '', '', '1980-01-28', '9999-12-31', '2017-03-01', '2017-03-01', '2017-03-01', 'T1', 'ADE JANUAR SUCIADI', '', 'GB103', 'ADE JANUAR SUCIADI S.T.', 'SUKABUMI', '1980-01-28', 'ID', 'JK1', 'ISL', 'SN2', '2016-09-02', 'SK1', '', 'SUNDA', '082112019399', '', '', '', '', 'JDPLK3', '802681038', 'BNI', '0001129338652', '02K00161376', 'BNI', 'ADE JANUAR SUCIADI', '0381218457', '1', '0', '', '', '1', '', '', ''),
+	(6, '7410021TRK', '', '', '1974-08-23', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'ADRI HARYANTO', '', 'GB5', 'ADRI HARYANTO A.Md.', 'SAMARINDA', '1974-08-23', 'ID', 'JK1', 'ISL', 'SN2', '2001-01-12', 'SK1', '', 'BANJAR', '081350536952', '', '', '', '', 'JDPLK3', '795196801', 'BNI', '0001131983763', '06S20050214', 'BNI', 'ADRI HARYANTO', '0673679438', '1', '0', '', '', '1', '', '', ''),
+	(7, '9420009ZTY', '', '', '1994-02-20', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'AFIF ASYKAR AMIR', '', 'GB103', 'AFIF ASYKAR AMIR S.T.', 'UJUNG PANDANG', '1994-02-20', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '085343647509', '', '', '', '', 'JDPLK3', '804595453', 'BNI', '0000127421561', '20088670946', 'BNI', 'AFIF ASYKAR AMIR', '1133679163', '1', '0', '', '', '1', '', '', ''),
+	(8, '92171742ZY', '', '', '1992-02-22', '2024-05-31', '2017-09-01', '2017-09-01', '2017-09-01', 'T1', 'AGIL FRASSETYO', '', 'GB65', 'AGIL FRASSETYO SE', 'JAKARTA', '1992-02-22', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'JAKARTA', '082231844631', '', '', '', '', 'JDPLK3', '802394770', 'BNI', '0000039326916', '17044742975', 'BRI', 'AGIL FRASSETYO', '123701006656504', '1', '0', '', '', '1', '', '', ''),
+	(9, '8110015TRK', '', '', '1981-04-19', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'AGUNG SEDAYU', '', 'GB5', 'AGUNG SEDAYU A.Md.', 'MALANG', '1981-04-19', 'ID', 'JK1', 'ISL', 'SN3', '2006-05-19', 'SK1', '', 'JAWA', '081346231482', '', '', '', '', 'JDPLK3', '795344797', 'BNI', '0001131988397', '06S20050594', 'BRI', 'AGUNG SEDAYU', '18301019012507', '1', '0', '', '', '1', '', '', ''),
+	(10, '8509719Z', '', '', '1985-10-01', '2024-02-28', '2009-12-01', '2009-12-01', '2009-12-01', 'T1', 'AINUL YAQIN', '', 'GB89', 'AINUL YAQIN S.M.', 'BANYUWANGI', '1985-10-01', 'ID', 'JK1', 'ISL', 'SN2', '2011-09-11', 'SK1', '', 'JAWA', '085213530546', '', '', '', '', 'JDPLK1', '', '', '0002614708629', '16003740137', 'BSI', 'AINUL YAQIN', '2101985558', '1', '0', '', '', '1', '', '', '');
 
 -- membuang struktur untuk table hrisori.data_project
 CREATE TABLE IF NOT EXISTS `data_project` (
@@ -801,7 +956,7 @@ CREATE TABLE IF NOT EXISTS `data_vendor` (
   UNIQUE KEY `kd_vendor` (`kd_vendor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.data_vendor: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.data_vendor: ~0 rows (lebih kurang)
 INSERT INTO `data_vendor` (`id`, `kd_vendor`, `nama_vendor`, `valid`) VALUES
 	(1, 'VE00000001', 'VENDOR LAINNYA BERELASI', 'tYES');
 
@@ -2465,7 +2620,7 @@ CREATE TABLE IF NOT EXISTS `m_business_area` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.m_business_area: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.m_business_area: ~0 rows (lebih kurang)
 INSERT INTO `m_business_area` (`id`, `kode`, `label`) VALUES
 	(1, '1201', 'Non Holding');
 
@@ -2503,7 +2658,7 @@ CREATE TABLE IF NOT EXISTS `m_company_code` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.m_company_code: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.m_company_code: ~0 rows (lebih kurang)
 INSERT INTO `m_company_code` (`id`, `kode`, `label`) VALUES
 	(1, '1200', 'Non Holding');
 
@@ -4066,88 +4221,88 @@ CREATE TABLE IF NOT EXISTS `nodes` (
 INSERT INTO `nodes` (`id`, `grup`, `parentId`, `parentId2`, `parentId3`, `name`, `icon`, `url`, `state`, `urut`) VALUES
 	(227, 'HXMS-API', '0', '', '', 'Export CSV', 'fa fa-database green', 'edata.php', '', 2),
 	(226, 'HXMS-API', '0', '', '', 'Rest API', 'fa fa-database green', 'edata2.php', '', 1),
-	(225, 'PERPAJAKAN', '0', '', '', 'Beban PPh', 'fa fa-star green', 'sipeg/bebanpph.php', '', 1),
-	(224, 'PAYROLL', '', '184', '', 'Natura', 'fa fa-star green', 'sipeg/natura.php', '', 8),
+	(225, 'PERPAJAKAN', '0', '', '', 'Beban PPh', 'fa fa-star green', 'bebanpph.php', '', 1),
+	(224, 'PAYROLL', '', '184', '', 'Natura', 'fa fa-star green', 'natura.php', '', 8),
 	(223, 'KEPEGAWAIAN', '0', '', '', 'Pemberhentian', 'fa fa-user red', 'pemberhentian.php', '', 3),
 	(222, 'KEPEGAWAIAN', '0', '', '', 'Pengangkatan', 'fa fa-user green', 'pengangkatan.php', '', 2),
-	(237, 'PAYROLL', '', '194', '', 'Laporan Payroll', 'fa fa-star green', 'sipeg/lappay.php', '', 3),
-	(238, 'SPPD', '', '139', '', 'SPPD Siap Bayar', 'fa fa-credit-card blue', 'sipeg/siapbayar.php', '', 3),
-	(239, 'MASTER', '0', '', '', 'Data Vendor', 'fa fa-database green', 'sipeg/vendor.php', '', 3),
-	(213, 'SPPD', '', '139', '', 'Validasi SPPD', 'fa fa-credit-card blue', 'sipeg/valsppd.php', '', 2),
-	(212, 'ABSENSI', '', '161', '', 'Pengaturan Absensi', 'fa fa-cog red', 'sipeg/device.php', '', 1),
-	(211, 'SPPD', '', '139', '', 'Restitusi', 'fa fa-credit-card blue', 'sipeg/restitusi.php', '', 4),
-	(210, 'SPPD', '', '139', '', 'Pembayaran SPPD', 'fa fa-credit-card blue', 'sipeg/sppdbayar.php', '', 5),
-	(167, 'PERPAJAKAN', '0', '', '', 'Pengaturan KPP', 'fa fa-cog red', 'sipeg/kpp.php', '', 6),
-	(166, 'PERPAJAKAN', '0', '', '', 'Kartu Penghailan', 'fa fa-star green', 'sipeg/kartupenghasilan.php', '', 5),
-	(165, 'PERPAJAKAN', '0', '', '', 'SPT Tahunan', 'fa fa-star green', 'sipeg/spt.php', '', 3),
-	(144, 'SPPD', '', '142', '', 'Bantuan Mutasi', 'fa fa-plane blue', 'sipeg/mbantuan.php', '', 2),
-	(143, 'SPPD', '', '142', '', 'Biaya SPPD', 'fa fa-plane blue', 'sipeg/mbiaya.php', '', 1),
+	(237, 'PAYROLL', '', '194', '', 'Laporan Payroll', 'fa fa-star green', 'lappay.php', '', 3),
+	(238, 'SPPD', '', '139', '', 'SPPD Siap Bayar', 'fa fa-credit-card blue', 'siapbayar.php', '', 3),
+	(239, 'MASTER', '0', '', '', 'Data Vendor', 'fa fa-database green', 'vendor.php', '', 3),
+	(213, 'SPPD', '', '139', '', 'Validasi SPPD', 'fa fa-credit-card blue', 'valsppd.php', '', 2),
+	(212, 'ABSENSI', '', '161', '', 'Pengaturan Absensi', 'fa fa-cog red', 'device.php', '', 1),
+	(211, 'SPPD', '', '139', '', 'Restitusi', 'fa fa-credit-card blue', 'restitusi.php', '', 4),
+	(210, 'SPPD', '', '139', '', 'Pembayaran SPPD', 'fa fa-credit-card blue', 'sppdbayar.php', '', 5),
+	(167, 'PERPAJAKAN', '0', '', '', 'Pengaturan KPP', 'fa fa-cog red', 'kpp.php', '', 6),
+	(166, 'PERPAJAKAN', '0', '', '', 'Kartu Penghailan', 'fa fa-star green', 'kartupenghasilan.php', '', 5),
+	(165, 'PERPAJAKAN', '0', '', '', 'SPT Tahunan', 'fa fa-star green', 'spt.php', '', 3),
+	(144, 'SPPD', '', '142', '', 'Bantuan Mutasi', 'fa fa-plane blue', 'mbantuan.php', '', 2),
+	(143, 'SPPD', '', '142', '', 'Biaya SPPD', 'fa fa-plane blue', 'mbiaya.php', '', 1),
 	(139, 'SPPD', '0', '', '', 'DATA SPPD', 'fa', '', 'opened', 1),
-	(198, 'PAYROLL', '', '194', '', 'Lock Payroll', 'fa fa-star green', 'sipeg/lockpayroll.php', '', 4),
+	(198, 'PAYROLL', '', '194', '', 'Lock Payroll', 'fa fa-star green', 'lockpayroll.php', '', 4),
 	(148, 'CUTI', '0', '', '', 'DATA CUTI', 'fa', '', 'opened', 1),
-	(196, 'PAYROLL', '', '194', '', 'Proses Payroll', 'fa fa-star green', 'sipeg/payroll.php', '', 2),
-	(149, 'CUTI', '', '148', '', 'Rincian Cuti', 'fa fa-calendar-minus blue', 'sipeg/rcuti.php', '', 2),
-	(150, 'CUTI', '', '148', '', 'Sisa Cuti Tahunan', 'fa fa-calendar-minus blue', 'sipeg/mcuti.php', '', 3),
-	(152, 'CUTI', '', '151', '', 'Rincian Izin', 'fa fa-calendar-minus blue', 'sipeg/rijin.php', '', 5),
-	(240, 'PEGAWAI', '0', '', '', 'Pengaturan Email & Telp', 'fa fa-envelope red', 'sipeg/settingemail.php', '', 4),
-	(140, 'SPPD', '', '139', '', 'Rincian SPPD', 'fa fa-plane blue', 'sipeg/sppd.php', '', 1),
+	(196, 'PAYROLL', '', '194', '', 'Proses Payroll', 'fa fa-star green', 'payroll.php', '', 2),
+	(149, 'CUTI', '', '148', '', 'Rincian Cuti', 'fa fa-calendar-minus blue', 'rcuti.php', '', 2),
+	(150, 'CUTI', '', '148', '', 'Sisa Cuti Tahunan', 'fa fa-calendar-minus blue', 'mcuti.php', '', 3),
+	(152, 'CUTI', '', '151', '', 'Rincian Izin', 'fa fa-calendar-minus blue', 'rijin.php', '', 5),
+	(240, 'PEGAWAI', '0', '', '', 'Pengaturan Email & Telp', 'fa fa-envelope red', 'settingemail.php', '', 4),
+	(140, 'SPPD', '', '139', '', 'Rincian SPPD', 'fa fa-plane blue', 'sppd.php', '', 1),
 	(114, 'DASHBOARD', '0', '', '', 'pendidikan', 'fa fa-tachometer-alt blue', 'd_pendidikan.php', '', 6),
 	(112, 'DASHBOARD', '0', '', '', 'Jenjang Jabatan', 'fa fa-tachometer-alt blue', 'd_jenjang_jabatan.php', '', 5),
 	(111, 'DASHBOARD', '0', '', '', 'Jenis Kelamin', 'fa fa-tachometer-alt blue', 'd_jenis_kelamin.php', '', 4),
 	(203, 'KEPEGAWAIAN', '0', '', '', 'Pos.Management', 'fa fa-user green', 'pmanagement.php', '', 4),
 	(200, 'PAYROLL', '', '199', '', 'Kartu', 'fa fa-star green', 'kpenghasilan.php', '', 1),
-	(195, 'PAYROLL', '', '194', '', 'Master Gaji', 'fa fa-star green', 'sipeg/mgaji.php', '', 1),
-	(163, 'KONSUMSI', '0', '', '', 'Pengajuan Konsumsi', 'fa fa-glass-cheers blue', 'sipeg/konsumsi.php', '', 1),
+	(195, 'PAYROLL', '', '194', '', 'Master Gaji', 'fa fa-star green', 'mgaji.php', '', 1),
+	(163, 'KONSUMSI', '0', '', '', 'Pengajuan Konsumsi', 'fa fa-glass-cheers blue', 'konsumsi.php', '', 1),
 	(161, 'ABSENSI', '0', '', '', 'Setting', 'fa', '', 'opened', 7),
-	(162, 'ABSENSI', '', '161', '', 'Libur Nasional', 'fa fa-calendar-alt red', 'sipeg/libur.php', '', 2),
-	(160, 'ABSENSI', '', '155', '', 'Monitoring Izin', 'fa fa-calendar-minus blue', 'sipeg/monizin.php', '', 6),
-	(159, 'ABSENSI', '', '155', '', 'Monitoring Cuti', 'fa fa-calendar-minus blue', 'sipeg/moncuti.php', '', 5),
-	(158, 'ABSENSI', '', '155', '', 'Monitoring SPPD', 'fa fa-plane blue', 'sipeg/monsppd.php', '', 4),
-	(157, 'ABSENSI', '', '155', '', 'Rekap Absensi', 'fa fa-clock blue', 'sipeg/rekapabsen.php', '', 3),
-	(156, 'ABSENSI', '', '155', '', 'Absensi Harian', 'fa fa-clock blue', 'sipeg/absensih.php', '', 2),
+	(162, 'ABSENSI', '', '161', '', 'Libur Nasional', 'fa fa-calendar-alt red', 'libur.php', '', 2),
+	(160, 'ABSENSI', '', '155', '', 'Monitoring Izin', 'fa fa-calendar-minus blue', 'monizin.php', '', 6),
+	(159, 'ABSENSI', '', '155', '', 'Monitoring Cuti', 'fa fa-calendar-minus blue', 'moncuti.php', '', 5),
+	(158, 'ABSENSI', '', '155', '', 'Monitoring SPPD', 'fa fa-plane blue', 'monsppd.php', '', 4),
+	(157, 'ABSENSI', '', '155', '', 'Rekap Absensi', 'fa fa-clock blue', 'rekapabsen.php', '', 3),
+	(156, 'ABSENSI', '', '155', '', 'Absensi Harian', 'fa fa-clock blue', 'absensih.php', '', 2),
 	(155, 'ABSENSI', '0', '', '', 'Monitoring', 'fa', '', 'opened', 1),
-	(189, 'PAYROLL', '', '184', '', 'IKS', 'fa fa-star green', 'sipeg/tiks.php', '', 5),
-	(191, 'PAYROLL', '', '184', '', 'Tunj. Winduan', 'fa fa-star green', 'sipeg/twinduan.php', '', 7),
-	(190, 'PAYROLL', '', '184', '', 'IKP', 'fa fa-star green', 'sipeg/tikp.php', '', 6),
+	(189, 'PAYROLL', '', '184', '', 'IKS', 'fa fa-star green', 'tiks.php', '', 5),
+	(191, 'PAYROLL', '', '184', '', 'Tunj. Winduan', 'fa fa-star green', 'twinduan.php', '', 7),
+	(190, 'PAYROLL', '', '184', '', 'IKP', 'fa fa-star green', 'tikp.php', '', 6),
 	(151, 'CUTI', '0', '', '', 'DATA IZIN', 'fa', '', 'opened', 4),
-	(185, 'PAYROLL', '', '184', '', 'Pend. Mutasi', 'fa fa-star green', 'sipeg/pmutasi.php', '', 1),
+	(185, 'PAYROLL', '', '184', '', 'Pend. Mutasi', 'fa fa-star green', 'pmutasi.php', '', 1),
 	(184, 'PAYROLL', '0', '', '', 'NON RUTIN', 'fa', '', 'opened', 2),
 	(199, 'PAYROLL', '0', '', '', 'PENGHASILAN', 'fa', '', 'opened', 3),
-	(186, 'PAYROLL', '', '184', '', 'Suplisi', 'fa fa-star green', 'sipeg/suplisi.php', '', 2),
+	(186, 'PAYROLL', '', '184', '', 'Suplisi', 'fa fa-star green', 'suplisi.php', '', 2),
 	(194, 'PAYROLL', '0', '', '', 'PAYROLL', 'fa', '', 'opened', 1),
-	(187, 'PAYROLL', '', '184', '', 'THR', 'fa fa-star green', 'sipeg/thr.php', '', 3),
-	(188, 'PAYROLL', '', '184', '', 'Tunj. Cuti', 'fa fa-star green', 'sipeg/tcuti.php', '', 4),
+	(187, 'PAYROLL', '', '184', '', 'THR', 'fa fa-star green', 'thr.php', '', 3),
+	(188, 'PAYROLL', '', '184', '', 'Tunj. Cuti', 'fa fa-star green', 'tcuti.php', '', 4),
 	(168, 'KEPEGAWAIAN', '0', '', '', 'Data Master', 'fa fa-database green', 'master.php', '', 5),
 	(58, 'ADMIN', '0', '', '', 'User Role', 'fa fa-user blue', 'masteruser.php', '', 1),
 	(201, 'PAYROLL', '', '199', '', 'Rekap', 'fa fa-star green', 'rpenghasilan.php', '', 2),
-	(153, 'CUTI', '', '151', '', 'Rekapitulasi Izin', 'fa fa-calendar-minus blue', 'sipeg/mijin.php', '', 6),
-	(164, 'PERPAJAKAN', '0', '', '', 'SPT Masa', 'fa fa-star green', 'sipeg/sptmasa.php', '', 2),
-	(27, 'KEPEGAWAIAN', '0', '', '', 'Personal Data', 'fa fa-user green', 'pegawai.php', '', 1),
+	(153, 'CUTI', '', '151', '', 'Rekapitulasi Izin', 'fa fa-calendar-minus blue', 'mijin.php', '', 6),
+	(164, 'PERPAJAKAN', '0', '', '', 'SPT Masa', 'fa fa-star green', 'sptmasa.php', '', 2),
+	(27, 'KEPEGAWAIAN', '0', '', '', 'Personal Data', 'fa fa-user green', 'kepegawaian.php', '', 1),
 	(142, 'SPPD', '0', '', '', 'DATA MASTER', 'fa', '', 'opened', 3),
-	(141, 'SPPD', '', '139', '', 'Pembayaran Resitusi', 'fa fa-credit-card blue', 'sipeg/restitusibayar.php', '', 6),
+	(141, 'SPPD', '', '139', '', 'Pembayaran Resitusi', 'fa fa-credit-card blue', 'restitusibayar.php', '', 6),
 	(10, 'DASHBOARD', '0', '', '', 'Status Pegawai', 'fa fa-tachometer-alt blue', 'd_status.php', '', 2),
 	(11, 'DASHBOARD', '0', '', '', 'Jenis Jabatan', 'fa fa-tachometer-alt blue', 'd_level_jabatan.php', '', 3),
 	(5, 'DASHBOARD', '0', '', '', 'Berdasarkan Unit', 'fa fa-tachometer-alt blue', 'd_unit.php', '', 1),
-	(228, 'SAP-API', '0', '', '', 'Lumpsum SPPD', 'fa fa-database green', 'sipeg/apinvoice1.php', '', 1),
-	(229, 'SAP-API', '0', '', '', 'Restitusi SPPD', 'fa fa-database green', 'sipeg/apinvoice2.php', '', 2),
-	(230, 'SAP-API', '0', '', '', 'Payroll', 'fa fa-database green', 'sipeg/apinvoice3.php', '', 3),
-	(231, 'PEGAWAI', '0', '', '', 'Data Pegawai', 'fa fa-user green', 'sipeg/pegawai.php', '', 1),
-	(232, 'PEGAWAI', '0', '', '', 'Pegawai Non Aktif', 'fa fa-user red', 'sipeg/nonaktif.php', '', 2),
-	(233, 'PEGAWAI', '0', '', '', 'Restore Pegawai', 'fa fa-user blue', 'sipeg/restore.php', '', 3),
-	(234, 'PERPAJAKAN', '0', '', '', 'SPT Tahunan Manual', 'fa fa-star green', 'sipeg/sptmanual.php', '', 4),
-	(235, 'MASTER', '0', '', '', 'Data Project', 'fa fa-database green', 'sipeg/project.php', '', 1),
-	(236, 'MASTER', '0', '', '', 'Master Penempatan', 'fa fa-database green', 'sipeg/mpenempatan.php', '', 2),
+	(228, 'SAP-API', '0', '', '', 'Lumpsum SPPD', 'fa fa-database green', 'apinvoice1.php', '', 1),
+	(229, 'SAP-API', '0', '', '', 'Restitusi SPPD', 'fa fa-database green', 'apinvoice2.php', '', 2),
+	(230, 'SAP-API', '0', '', '', 'Payroll', 'fa fa-database green', 'apinvoice3.php', '', 3),
+	(231, 'PEGAWAI', '0', '', '', 'Data Pegawai', 'fa fa-user green', 'pegawai.php', '', 1),
+	(232, 'PEGAWAI', '0', '', '', 'Pegawai Non Aktif', 'fa fa-user red', 'nonaktif.php', '', 2),
+	(233, 'PEGAWAI', '0', '', '', 'Restore Pegawai', 'fa fa-user blue', 'restore.php', '', 3),
+	(234, 'PERPAJAKAN', '0', '', '', 'SPT Tahunan Manual', 'fa fa-star green', 'sptmanual.php', '', 4),
+	(235, 'MASTER', '0', '', '', 'Data Project', 'fa fa-database green', 'project.php', '', 1),
+	(236, 'MASTER', '0', '', '', 'Master Penempatan', 'fa fa-database green', 'mpenempatan.php', '', 2),
 	(241, 'SPPD', '0', '', '', 'APPROVAL', 'fa', '', 'opened', 2),
-	(242, 'SPPD', '', '241', '', 'Monitoring Approval', 'fa fa-check-circle red', 'sipeg/dataapproval.php', '', 1),
-	(243, 'PAYROLL', '', '184', '', 'Pesangon', 'fa fa-star green', 'sipeg/tpesangon.php', '', 9),
-	(244, 'PERPAJAKAN', '0', '', '', 'Master Mapping', 'fa fa-database green', 'sipeg/mapping.php', '', 7),
-	(245, 'PERPAJAKAN', '0', '', '', 'Mapping Pajak', 'fa fa-cog red', 'sipeg/mappingpajak.php', '', 8),
-	(246, 'ABSENSI', '', '155', '', 'Rekap Kehadiran', 'fa fa-clock blue', 'sipeg/rekapkehadiran.php', '', 3),
-	(247, 'SPPD', '', '142', '', 'Master Kota', 'fa fa-plane blue', 'sipeg/mkota.php', '', 3),
-	(248, 'PERPAJAKAN', '0', '', '', 'List Pajak Tanpa PTKP', 'fa fa-database green', 'sipeg/tanpaptkp.php', '', 9),
-	(249, 'PERPAJAKAN', '0', '', '', 'Netto & PPh Mutasi Masuk', 'fa fa-database green', 'sipeg/datamutasi.php', '', 11),
-	(250, 'PERPAJAKAN', '0', '', '', 'Netto & PPh Mutasi Keluar', 'fa fa-database green', 'sipeg/datamutasi2.php', '', 11),
-	(251, 'PAYROLL', '', '184', '', 'Tantiem', 'fa fa-star green', 'sipeg/tantiem.php', '', 10);
+	(242, 'SPPD', '', '241', '', 'Monitoring Approval', 'fa fa-check-circle red', 'dataapproval.php', '', 1),
+	(243, 'PAYROLL', '', '184', '', 'Pesangon', 'fa fa-star green', 'tpesangon.php', '', 9),
+	(244, 'PERPAJAKAN', '0', '', '', 'Master Mapping', 'fa fa-database green', 'mapping.php', '', 7),
+	(245, 'PERPAJAKAN', '0', '', '', 'Mapping Pajak', 'fa fa-cog red', 'mappingpajak.php', '', 8),
+	(246, 'ABSENSI', '', '155', '', 'Rekap Kehadiran', 'fa fa-clock blue', 'rekapkehadiran.php', '', 3),
+	(247, 'SPPD', '', '142', '', 'Master Kota', 'fa fa-plane blue', 'mkota.php', '', 3),
+	(248, 'PERPAJAKAN', '0', '', '', 'List Pajak Tanpa PTKP', 'fa fa-database green', 'tanpaptkp.php', '', 9),
+	(249, 'PERPAJAKAN', '0', '', '', 'Netto & PPh Mutasi Masuk', 'fa fa-database green', 'datamutasi.php', '', 11),
+	(250, 'PERPAJAKAN', '0', '', '', 'Netto & PPh Mutasi Keluar', 'fa fa-database green', 'datamutasi2.php', '', 11),
+	(251, 'PAYROLL', '', '184', '', 'Tantiem', 'fa fa-star green', 'tantiem.php', '', 10);
 /*!40000 ALTER TABLE `nodes` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.nonaktif
@@ -4333,7 +4488,7 @@ CREATE TABLE IF NOT EXISTS `perhitungan_pajak_pesangon` (
   UNIQUE KEY `nip` (`nip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.perhitungan_pajak_pesangon: ~1 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.perhitungan_pajak_pesangon: ~0 rows (lebih kurang)
 INSERT INTO `perhitungan_pajak_pesangon` (`id`, `nip`) VALUES
 	(1, '6811001TRK');
 
@@ -6100,6 +6255,91 @@ INSERT INTO `sppd` (`id`, `idsppd`, `tanggal`, `jenis_sppd`, `level_sppd`, `no_s
 	(3, '2020000002', '2020-02-09', '1', '7', '001.SPPD/MUM.00.07/PLN-TRK/2020', '7719002PCN', 'SANDY', 'Basic 2', 'STAFF', 'coba saja', 'Balikpapan', 'Jakarta', '2020-02-10', '2020-02-12', 3, 'Balikpapan', 'Jakarta', '1', '', '', '', '', '', '', '', '', '', '3', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2020-02-09', '', '1', '8209759Z', '2020-02-09', '0', '', '', '0', ''),
 	(4, '2020000003', '', '1', '4', '001.SPPD/MUM.00.07/PLN-TRK/2020', '6793082D', 'YAINUS SHOLEH', 'Optimization 4', 'VICE PRESIDENT ADMINISTRASI SDM DAN TALENTA', 'Diklat', 'Balikpapan', 'Surabaya', '2020-02-13', '2020-02-15', 3, 'Balikpapan', 'Surabaya', '1', '', '', '', '', '', '', '', '', '', '3', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '2020-02-13', '', '0', '7702003R2', '', '0', '', '', '0', '');
 /*!40000 ALTER TABLE `sppd` ENABLE KEYS */;
+
+-- membuang struktur untuk table hrisori.sppd1
+CREATE TABLE IF NOT EXISTS `sppd1` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idsppd` varchar(60) DEFAULT '',
+  `tanggal` varchar(10) DEFAULT '',
+  `tingkat_sppd` varchar(1) NOT NULL DEFAULT '1',
+  `jenis_sppd` varchar(1) DEFAULT '',
+  `level_sppd` varchar(1) DEFAULT '',
+  `sub_jenis_sppd` varchar(30) DEFAULT '',
+  `kd_project_sap` varchar(30) DEFAULT '',
+  `nama_project_sap` varchar(250) DEFAULT '',
+  `no_sppd` varchar(60) DEFAULT '',
+  `nip` varchar(30) DEFAULT '',
+  `nama` varchar(200) DEFAULT '',
+  `grade` varchar(60) DEFAULT '',
+  `jabatan` varchar(250) DEFAULT '',
+  `maksud` text,
+  `agenda` text,
+  `kedudukan` varchar(200) DEFAULT '',
+  `tujuan` varchar(200) DEFAULT '',
+  `jarak` double NOT NULL DEFAULT '0',
+  `transportasi` varchar(200) DEFAULT '',
+  `tgl_awal` varchar(10) DEFAULT '',
+  `tgl_akhir` varchar(10) DEFAULT '',
+  `hari` double DEFAULT '0',
+  `kota1a` varchar(200) DEFAULT '',
+  `kota2a` varchar(200) DEFAULT '',
+  `transporta` varchar(200) DEFAULT '',
+  `kota1b` varchar(200) DEFAULT '',
+  `kota2b` varchar(200) DEFAULT '',
+  `transportb` varchar(200) DEFAULT '',
+  `kota1c` varchar(200) DEFAULT '',
+  `kota2c` varchar(200) DEFAULT '',
+  `transportc` varchar(200) DEFAULT '',
+  `kota1d` varchar(200) DEFAULT '',
+  `kota2d` varchar(200) DEFAULT '',
+  `transportd` varchar(200) DEFAULT '',
+  `jenis_tujuan` varchar(200) DEFAULT '',
+  `tgl_proses` varchar(10) DEFAULT '',
+  `petugas` varchar(120) DEFAULT '',
+  `approve1` varchar(1) NOT NULL DEFAULT '0',
+  `approval1` varchar(120) DEFAULT '',
+  `tgl_approve1` varchar(10) DEFAULT '',
+  `alasan_reject1` varchar(255) DEFAULT '',
+  `approve2` varchar(1) NOT NULL DEFAULT '0',
+  `approval2` varchar(120) DEFAULT '',
+  `tgl_approve2` varchar(10) DEFAULT '',
+  `alasan_reject2` varchar(255) DEFAULT '',
+  `validasi_biaya` varchar(1) NOT NULL DEFAULT '0',
+  `tgl_validasi` varchar(10) DEFAULT '',
+  `approvesdm` varchar(1) NOT NULL DEFAULT '0',
+  `approvalsdm` varchar(60) DEFAULT '',
+  `tgl_approvesdm` varchar(10) DEFAULT '',
+  `alasan_rejectsdm` varchar(255) DEFAULT '',
+  `approvebayar` varchar(1) NOT NULL DEFAULT '0',
+  `approvalbayar` varchar(120) DEFAULT '',
+  `tgl_approvebayar` varchar(10) DEFAULT '',
+  `alasan_rejectbayar` varchar(255) DEFAULT '',
+  `bayar` varchar(1) NOT NULL DEFAULT '0',
+  `tgl_bayar` varchar(10) NOT NULL DEFAULT '',
+  `editing` varchar(1) NOT NULL DEFAULT '0',
+  `validasi_restitusi` varchar(1) NOT NULL DEFAULT '0',
+  `tgl_validasi_restitusi` varchar(10) DEFAULT '',
+  `bayar_restitusi` varchar(1) NOT NULL DEFAULT '0',
+  `tgl_bayar_restitusi` varchar(10) DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idsppd` (`idsppd`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Membuang data untuk tabel hrisori.sppd1: 11 rows
+/*!40000 ALTER TABLE `sppd1` DISABLE KEYS */;
+INSERT INTO `sppd1` (`id`, `idsppd`, `tanggal`, `tingkat_sppd`, `jenis_sppd`, `level_sppd`, `sub_jenis_sppd`, `kd_project_sap`, `nama_project_sap`, `no_sppd`, `nip`, `nama`, `grade`, `jabatan`, `maksud`, `agenda`, `kedudukan`, `tujuan`, `jarak`, `transportasi`, `tgl_awal`, `tgl_akhir`, `hari`, `kota1a`, `kota2a`, `transporta`, `kota1b`, `kota2b`, `transportb`, `kota1c`, `kota2c`, `transportc`, `kota1d`, `kota2d`, `transportd`, `jenis_tujuan`, `tgl_proses`, `petugas`, `approve1`, `approval1`, `tgl_approve1`, `alasan_reject1`, `approve2`, `approval2`, `tgl_approve2`, `alasan_reject2`, `validasi_biaya`, `tgl_validasi`, `approvesdm`, `approvalsdm`, `tgl_approvesdm`, `alasan_rejectsdm`, `approvebayar`, `approvalbayar`, `tgl_approvebayar`, `alasan_rejectbayar`, `bayar`, `tgl_bayar`, `editing`, `validasi_restitusi`, `tgl_validasi_restitusi`, `bayar_restitusi`, `tgl_bayar_restitusi`) VALUES
+	(6639, 'S001', '2025-01-01', '1', '1', 'B', 'Sub-A', 'P001', 'Project A', 'SPPD001', 'NIP001', 'Nama A', 'Grade A', 'Jabatan A', 'Maksud A', 'Agenda A', 'Kedudukan A', 'Tujuan A', 10, 'Transportasi A', '2025-01-01', '2025-01-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis A', '2025-01-01', 'Petugas A', '0', '9720004ZTY', '2025-01-02', 'Alasan Reject1 A', '0', '7410021TRK', '2025-01-03', 'Alasan Reject2 A', '0', '2025-01-04', '0', '9420009ZTY', '2025-01-05', 'Alasan Rejectsdm A', '0', '92171742ZY', '2025-01-06', 'Alasan Rejectbayar A', '0', '2025-01-07', '0', '0', '2025-01-08', '0', '2025-01-09'),
+	(6640, 'S002', '2025-02-01', '2', '2', 'C', 'Sub-B', 'P002', 'Project B', 'SPPD002', 'NIP002', 'Nama B', 'Grade B', 'Jabatan B', 'Maksud B', 'Agenda B', 'Kedudukan B', 'Tujuan B', 20, 'Transportasi B', '2025-02-01', '2025-02-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis B', '2025-02-01', 'Petugas B', '1', 'Approval1 B', '2025-02-02', 'Alasan Reject1 B', '0', 'Approval2 B', '2025-02-03', 'Alasan Reject2 B', '1', '2025-02-04', '1', 'Approvalsdm B', '2025-02-05', 'Alasan Rejectsdm B', '0', 'Approvalbayar B', '2025-02-06', 'Alasan Rejectbayar B', '0', '2025-02-07', '1', '0', '2025-02-08', '1', '2025-02-09'),
+	(6641, 'S003', '2025-03-01', '3', '3', 'D', 'Sub-C', 'P003', 'Project C', 'SPPD003', 'NIP003', 'Nama C', 'Grade C', 'Jabatan C', 'Maksud C', 'Agenda C', 'Kedudukan C', 'Tujuan C', 30, 'Transportasi C', '2025-03-01', '2025-03-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis C', '2025-03-01', 'Petugas C', '0', 'Approval1 C', '2025-03-02', 'Alasan Reject1 C', '1', 'Approval2 C', '2025-03-03', 'Alasan Reject2 C', '0', '2025-03-04', '0', 'Approvalsdm C', '2025-03-05', 'Alasan Rejectsdm C', '1', 'Approvalbayar C', '2025-03-06', 'Alasan Rejectbayar C', '1', '2025-03-07', '0', '0', '2025-03-08', '0', '2025-03-09'),
+	(6643, '2025000002', '2025-02-11', '1', '1', '', 'DIKLAT', 'KAL1_2400_03_0005', 'O&M PLTD SANGGAU & KETAPANG (UIKL)', '0002.SPPD/MUM.00.07/PLN-TRK/2025', '6691029E', 'ABDUL HARIS DAUD', '', 'Jabatan1', 'MaksudPerjalananDinas1', 'AgendaKegiatan1', 'Aceh Barat Daya', 'Aceh Besar', 2, 'Pesawat Udara', '2025-02-12', '2025-02-13', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6644, '2025000003', '2025-02-11', '2', '2', '', '', 'KAL1_2400_03_0014', 'O&M UPDK KAPUAS', '0003.SPPD/MUM.00.07/PLN-TRK/2025', '9720004ZTY', 'ABDUL MALIK', '', 'Jabatan2', 'MaksudPerjalananDinas2', 'AgendaKegiatan2', 'Dairi', 'Aceh Jaya', 3, 'Pesawat Udara', '2025-02-12', '2025-02-20', 9, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '6691029E', '', '', '0', '9720004ZTY', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6647, '2025000006', '2025-02-13', '', '', '', '', '', '', '0006.SPPD/MUM.00.07/PLN-TRK/2025', '', '', '', '', '', '', '', '', 23, '', '', '', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6648, '2025000007', '2025-02-13', '', '', '', '', '', '', '0007.SPPD/MUM.00.07/PLN-TRK/2025', '', '', '', '', '', '', '', '', 3, '', '', '', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6646, '2025000005', '2025-02-13', '1', '1', '', 'NON-DIKLAT', 'KAL1_2400_03_0005', 'O&M PLTD SANGGAU & KETAPANG (UIKL)', '0005.SPPD/MUM.00.07/PLN-TRK/2025', '6691029E', 'ABDUL HARIS DAUD', '', 'Jabatan1', '1', '1', 'Pidie Jaya,Sabang', 'Lhokseumawe,Langsa', 3, 'Pesawat Udara,Taxi Darat', '2025-02-26', '2025-02-28', 3, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6649, '2025000008', '2025-02-13', '', '', '', '', '', '', '0008.SPPD/MUM.00.07/PLN-TRK/2025', '6793163Z', 'I KETUT WIRIANA', '', '', '', '', '', '', 1, '', '', '', 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6650, '2025000009', '2025-02-13', '', '', '', '', '', '', '0009.SPPD/MUM.00.07/PLN-TRK/2025', '92171742ZY', 'AGIL FRASSETYO', '', '', '', '', '', '', 22, '', '', '', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
+	(6652, '2025000010', '2025-02-14', '', '', '', '', '', '', '0010.SPPD/MUM.00.07/PLN-TRK/2025', '9420009ZTY', 'AFIF ASYKAR AMIR', '', '', '', '', '', '', 4, '', '', '', 4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', '');
+/*!40000 ALTER TABLE `sppd1` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.sub_jenis_sppd
 CREATE TABLE IF NOT EXISTS `sub_jenis_sppd` (

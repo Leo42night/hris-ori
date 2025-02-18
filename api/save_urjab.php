@@ -3,7 +3,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $nip = $_REQUEST['nipurjab'];
     $lokasi_file = $_REQUEST['lokasi_fileurjab'];
     $nama_file = $_REQUEST['nama_fileurjab'];

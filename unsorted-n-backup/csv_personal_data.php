@@ -7,7 +7,7 @@ $namaloginsipeg = $_SESSION["userfullnamesipeg"];
 $adminpajak = $_SESSION["adminpajak"];
 ini_set('date.timezone', 'Asia/Jakarta');
 if ($userloginsipeg){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $blth = $_GET['blth'];
     $kelompok2 = $_GET['kelompok'];
     $kelompok = str_replace("_"," ",$kelompok2);

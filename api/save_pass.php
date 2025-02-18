@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     //$pass_lama = md5(htmlspecialchars($_REQUEST['pass_lama']));
     //$pass_baru = md5(htmlspecialchars($_REQUEST['pass_baru']));
     //$pass_baru2 = md5(htmlspecialchars($_REQUEST['pass_baru2']));

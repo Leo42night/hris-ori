@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     //$kode_ee_group = isset($_POST['namapegawaicari']) ? $_POST['namapegawaicari'] : "";
 
     $queryjns = "SELECT * FROM m_ee_subgroup ORDER BY kode_ee_subgroup ASC";

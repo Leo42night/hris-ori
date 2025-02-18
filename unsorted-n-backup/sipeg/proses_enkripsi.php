@@ -4,9 +4,9 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris){
-    include "koneksi.php";
-    include "../fungsi.php";
-    include "../stringvalidasi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/stringvalidasi.php";
     $kunci = "cipher.hris@s7o";
     $sukses = 0;
     $gagal = 0;

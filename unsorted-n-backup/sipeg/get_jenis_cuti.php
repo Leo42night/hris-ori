@@ -2,8 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $queryjns = "SELECT * FROM jenis_cuti ORDER BY kd_cuti ASC";
     $sqljns = mysqli_query ($koneksi,$queryjns);
     $items = array();

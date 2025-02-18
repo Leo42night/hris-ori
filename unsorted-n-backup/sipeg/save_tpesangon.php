@@ -5,7 +5,7 @@ $userhris = $_SESSION["userakseshris"];
 if ($userhris){
     date_default_timezone_set("Asia/Jakarta");
     $hari_ini = date("Y-m-d", strtotime("+1 hour"));
-    include 'koneksi_sipeg.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $nip = $_REQUEST['niptpesangon'];
     $blth = $_REQUEST['blthtpesangon'];
     $uang_pesangon = $_REQUEST['uang_pesangontpesangon'];

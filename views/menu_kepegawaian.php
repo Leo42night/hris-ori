@@ -43,7 +43,7 @@ if ($userhris) {
         $state = $hasil['state'];
         $proses = $hasil['proses'];
         $lihat = $hasil['lihat'];
-        $filter = "$name|$url|$proses|$lihat";
+        $filter = "$name|kepegawaian/$url|$proses|$lihat";
 
         $datanya = array(
             "id" => $id,
@@ -70,7 +70,7 @@ if ($userhris) {
                 $state2 = $hasil2['state'];
                 $proses2 = $hasil2['proses'];
                 $lihat2 = $hasil2['lihat'];
-                $filter2 = "$name2|$url2|$proses2|$lihat2";
+                $filter2 = "$name2|kepegawaian/$url2|$proses2|$lihat2";
 
                 $rs92 = mysqli_query($koneksi, "SELECT * FROM aksesuser WHERE idmenu='$id2' 
                     AND username='$userhris' 

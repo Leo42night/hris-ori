@@ -29,7 +29,7 @@ $emailhris = $_SESSION["emailhris"];
 
 //echo $userhris."-".$superadminhris;
 include_once "database/koneksi.php";
-include_once "fungsi.php";
+include_once "tools/fungsi.php";
 
 // a = nodes, b = aksesuser
 $rs1 = mysqli_query($koneksi, "select a.*, b.proses, b.lihat from nodes a inner join aksesuser b ON a.id=b.idmenu and b.username='$userhris' and (b.proses='1' or b.lihat='1') where a.grup='DASHBOARD' and a.url<>''");
@@ -326,9 +326,11 @@ $imgpegawai = "pegawai1.png";
 										<ul id="tt2_payroll" class="easyui-tree" data-options="url:'views/menu_payroll.php',method:'get',animate:true,lines:true"></ul>
 									</div>
 								</div>
+								<!-- nonrutin sudah tidak ada, tapi jika tag ini dihapus, Uncaught TypeError: Cannot read properties of null (reading 'panel')  -->
+								<!-- ini karena id tidak terdeteksi, tapi saya tidak menemukan id ini digunakan -->
 								<div title="<span style='color:#000;'>PERPAJAKAN</span>" style="overflow:auto;background:#fff;padding:10px;">
 									<div id="menu_nonrutin" class="easyui-panel" style="padding:0px; background: transparent; border: none;">
-										<ul id="tt2_nonrutin" class="easyui-tree" data-options="url:'views/menu_nonrutin.php',method:'get',animate:true,lines:true"></ul>
+										<ul id="tt2_nonrutin" class="easyui-tree" data-options="method:'get',animate:true,lines:true"></ul>
 									</div>
 								</div>
 								<div title="<span style='color:#000;'>PERPAJAKAN</span>" style="overflow:auto;background:#fff;padding:10px;">
@@ -480,7 +482,7 @@ $imgpegawai = "pegawai1.png";
 	function shownonrutin(){
 		hideallpanel();
 		<?php if ($jumlah_nonrutin > 0) { ?>
-								$('#divmenu').accordion('showPanel', 8);//Non Rutin
+								$('#divmenu').accordion('showPanel', 8);//Non Rutin (sudah tidak digunakan)
 								$('#divmenu').accordion('getPanel',8).panel('expand');
 		<?php } ?>
 	}

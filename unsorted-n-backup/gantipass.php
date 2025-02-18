@@ -4,7 +4,7 @@ $userhris = $_SESSION["userakseshris"];
 if (!$userhris){
     echo "<br/>&nbsp;Anda tidak memiliki akses<br/>";    
 } else {
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     ?>
 	<div style="width:380px; padding:10px; border:2px solid #337ab7;margin-top:20px;margin-left:20px;">
 	    <form id="ffpass" method="post">

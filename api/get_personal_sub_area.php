@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $personal_area = $_REQUEST['personal_area'];
     $queryjns = "SELECT * FROM m_personal_sub_area WHERE personal_area='$personal_area' ORDER BY kode ASC";
     $sqljns = mysqli_query ($koneksi,$queryjns);

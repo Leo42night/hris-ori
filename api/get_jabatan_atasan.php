@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include "koneksi.php"; 
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php"; 
     $nip = $_REQUEST['nip'];
 
     //$rs = mysqli_query($koneksi,"select jabatan FROM r_jabatan WHERE nip='$nip' order by start_date desc, end_date desc limit 1");

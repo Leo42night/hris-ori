@@ -4,7 +4,7 @@ $userhris = $_SESSION["userakseshris"];
 if ($userhris){
     date_default_timezone_set("Asia/Jakarta");
     $hari_ini = date("Y-m-d H:i:s", strtotime("+1 hour"));
-    include "koneksi.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
     $sukses = 0;
     $gagal = 0;

@@ -4,7 +4,7 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris && $superadminhris=="1"){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $id = intval($_REQUEST['id']);
     if($_REQUEST['superadmin']){
         $superadmin = $_REQUEST['superadmin'];

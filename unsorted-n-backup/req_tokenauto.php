@@ -1,8 +1,8 @@
 <?php 
-require '../vendor/autoload.php';
-require_once '../vendor/pear/http_request2/HTTP/Request2.php'; // Only when installed with PEAR
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/pear/http_request2/HTTP/Request2.php"; // Only when installed with PEAR
 date_default_timezone_set("Asia/Jakarta");   
-include '../koneksi.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 $hari_ini = date("Y-m-d H:i:s", strtotime("+1 hour"));
 $tgl_expire = date('Y-m-d H:i:s', strtotime($hari_ini. ' + 8 hours'));
 

@@ -3,7 +3,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 if ($userhris){
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $kode_grade = $_REQUEST['kode_grademgrade'];
     //$label = $_REQUEST['labelmgrade'];
     $label = mysqli_real_escape_string($koneksi, $_REQUEST["labelmgrade"]);

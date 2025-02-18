@@ -1,7 +1,6 @@
 <?php 
 date_default_timezone_set("Asia/Jakarta");
-include 'koneksi.php';
-include 'koneksi_sipeg.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -34,7 +33,7 @@ if((int)$httpCode===200 || (int)$httpCode===201) {
 
         $sql3 = "insert into data_project(kd_project_sap,nama_project,status) values('$kd_project','$nama_project','$status')";
         $sql3 .= " on duplicate key update nama_project='$nama_project',status='$status'";
-        $result3 = @mysqli_query($koneksi_sipeg,$sql3);
+        $result3 = @mysqli_query($koneksi,$sql3);
     }
     $pesan .= "Sukses Load Project";
 } else {

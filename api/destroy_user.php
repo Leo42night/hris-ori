@@ -4,7 +4,7 @@ $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 if ($userhris && $superadminhris=="1"){
     $id = intval($_REQUEST['id']);
-    include 'koneksi.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $sql = "delete from masteruser where id=$id";
     $result = @mysqli_query($koneksi,$sql);
     if ($result){
