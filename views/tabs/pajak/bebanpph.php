@@ -27,8 +27,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectregionbebanpphcari(){
             var nilai1 = $('#kd_regionbebanpphcari').combobox('getValue');
-            var url2 = 'get_cabangcari.php?kd_region='+nilai1; // tidak ditemukan
-            var url3 = 'get_unitcari.php?kd_region='+nilai1; // tidak ditemukan
+            var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai1; // tidak ditemukan
+            var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai1; // tidak ditemukan
             $('#kd_cabangbebanpphcari').combobox('enable');
             $('#kd_cabangbebanpphcari').combobox('clear'); 
             $('#kd_cabangbebanpphcari').combobox('reload',url2);
@@ -43,7 +43,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectcabangbebanpphcari(){
             var nilai1 = $('#kd_regionbebanpphcari').combobox('getValue');
             var nilai2 = $('#kd_cabangbebanpphcari').combobox('getValue');
-            var url2 = 'get_unitcari.php?kd_region='+nilai1+'&kd_cabang='+nilai2; // tidak ditemukan
+            var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2; // tidak ditemukan
             $('#kd_unitbebanpphcari').combobox('enable');
             $('#kd_unitbebanpphcari').combobox('clear'); 
             $('#kd_unitbebanpphcari').combobox('reload',url2);
@@ -52,7 +52,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectkelompokbebanpph(){
             var nilai1 = $('#kelompokbebanpph').combobox('getValue');
-            var url3 = 'get_spt2.php?kelompok='+nilai1; // not found
+            var url3 = 'get_spt2.php[not_found]?kelompok='+nilai1; // not found
             $('#no_spkbebanpph').combogrid('clear');
             $('#no_spkbebanpph').combogrid('grid').datagrid('reload',url3);
             $('#no_spkbebanpph').combogrid('setValue','SEMUA');
@@ -61,8 +61,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectregionbebanpph(){
             var nilai1 = $('#kd_regionbebanpph').combobox('getValue');
             var nilai2 = $('#kelompokbebanpph').combobox('getValue');
-            var url2 = 'get_cabang2.php?kd_region='+nilai1; // not found
-            var url3 = 'get_spt2.php?kd_region='+nilai1+'&kelompok='+nilai2;  // not found
+            var url2 = 'get_cabang2.php[not_found]?kd_region='+nilai1; // not found
+            var url3 = 'get_spt2.php[not_found]?kd_region='+nilai1+'&kelompok='+nilai2;  // not found
             $('#kd_cabangbebanpph').combobox('enable');
             $('#kd_cabangbebanpph').combobox('clear'); 
             $('#kd_cabangbebanpph').combobox('reload',url2);
@@ -77,7 +77,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai1 = $('#kd_regionbebanpph').combobox('getValue');
             var nilai2 = $('#kd_cabangbebanpph').combobox('getValue');
             var nilai3 = $('#kelompokbebanpph').combobox('getValue');
-            var url2 = 'get_spk2.php?kd_region='+nilai1+'&kd_cabang='+nilai2+'&kelompok='+nilai3; // not found
+            var url2 = 'get_spk2.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2+'&kelompok='+nilai3; // not found
             $('#no_spkbebanpph').combogrid('clear');
             $('#no_spkbebanpph').combogrid('grid').datagrid('reload',url2);
             $('#no_spkbebanpph').combogrid('setValue','SEMUA');
@@ -85,8 +85,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectregionbebanpph2(){
             var nilai1 = $('#kd_regionbebanpph2').combobox('getValue');
-            var url2 = 'get_cabang2.php?kd_region='+nilai1; // not found
-            var url3 = 'get_unit2.php?kd_region='+nilai1; // not found
+            var url2 = 'get_cabang2.php[not_found]?kd_region='+nilai1; // not found
+            var url3 = 'get_unit2.php[not_found]?kd_region='+nilai1; // not found
             $('#kd_cabangbebanpph2').combobox('enable');
             $('#kd_cabangbebanpph2').combobox('clear'); 
             $('#kd_cabangbebanpph2').combobox('reload',url2);
@@ -101,7 +101,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectcabangbebanpph2(){
             var nilai1 = $('#kd_regionbebanpph2').combobox('getValue');
             var nilai2 = $('#kd_cabangbebanpph2').combobox('getValue');
-            var url2 = 'get_unit2.php?kd_region='+nilai1+'&kd_cabang='+nilai2; // not found
+            var url2 = 'get_unit2.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2; // not found
             $('#kd_unitbebanpph2').combobox('enable');
             $('#kd_unitbebanpph2').combobox('clear'); 
             $('#kd_unitbebanpph2').combobox('reload',url2);
@@ -140,7 +140,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectprojectbebanpph2(){
             var nilai1 = $('#kd_projectbebanpph2').combobox('getValue');
-            var url2 = 'get_unit2.php?kd_project='+nilai1; // not found
+            var url2 = 'get_unit2.php[not_found]?kd_project='+nilai1; // not found
             $('#kd_unitbebanpph2').combobox('enable');
             $('#kd_unitbebanpph2').combobox('clear'); 
             $('#kd_unitbebanpph2').combobox('reload',url2);
@@ -689,7 +689,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_regionnya = $("#kd_regionbebanpphcari").combobox('getValue');
             var kd_cabangnya = $("#kd_cabangbebanpphcari").combobox('getValue');
             //window.open("exportcsv1721a1.php?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank");
-            window.open("exportcsvmasa.php?blth="+blthnya+"&kelompok="+kelompoknya,"_blank"); // not found
+            window.open("exportcsvmasa.php[not_found]?blth="+blthnya+"&kelompok="+kelompoknya,"_blank"); // not found
         }
         
     	function csv1721i(){
@@ -704,7 +704,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_regionnya = $("#kd_regionbebanpphcari").combobox('getValue');
             var kd_cabangnya = $("#kd_cabangbebanpphcari").combobox('getValue');
             //alert(kd_regionnya+" "+kd_cabangnya);
-            window.open("lapspt.php?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank"); // not found
+            window.open("lapspt.php[not_found]?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank"); // not found
         }
   
     	function cetakList(){
@@ -713,12 +713,12 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_unitnya2 = $("#kd_unitbebanpphcari").combobox('getValue');
             var kd_jenisnya2 = $("#kd_jenisbebanpphcari").combobox('getValue');
             var kd_kategorinya2 = $("#kd_kategoribebanpphcari").combobox('getValue');
-            //var urlnya = 'cetaklist.php?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_lategorinya2; // not found
-            //var urlnya = 'cetaklist.php?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2; // not found
+            //var urlnya = 'cetaklist.php[not_found]?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_lategorinya2; // not found
+            //var urlnya = 'cetaklist.php[not_found]?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2; // not found
             //alert(urlnya);
             //alert(blthnya2+" "+kd_regionalnya2+" "+kd_unitnya2+" "+kd_jenisnya2+" "+kd_kategorinya2);
     		$('#dlglist').dialog('open').dialog('setTitle','List Gaji');
-            $('#panellist').prop('src','cetaklist.php?blth='+blthnya2+'&kd_project='+kd_projectnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_kategorinya2); // not found
+            $('#panellist').prop('src','cetaklist.php[not_found]?blth='+blthnya2+'&kd_project='+kd_projectnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_kategorinya2); // not found
         }
         $("#dgbebanpph").height($(window).height() - 0);
     </script>

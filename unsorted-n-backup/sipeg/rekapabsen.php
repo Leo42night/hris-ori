@@ -221,7 +221,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectup3cari(){
             var kd_wilayah = $('#kd_wilayahrekapabsencari').combobox('getValue');
             var kd_up3 = $('#kd_up3rekapabsencari').combobox('getValue');
-            var url1 = 'get_unitcari.php?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
+            var url1 = 'get_unitcari.php[not_found]?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
             $('#kd_unitrekapabsencari').combobox('clear');
             $('#kd_unitrekapabsencari').combobox('reload',url1);
             $('#kd_unitrekapabsencari').combobox('setValue','semua');
@@ -238,8 +238,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai3 = $('#kd_cabangrekapabsencari').combobox('getValue');
             //var kelompoknya = nilai1.replace(" ", "_");
             //var url1 = 'get_spkrekapabsencari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_cabangcari.php?kd_region='+nilai2;
-            var url3 = 'get_unitcari.php?kd_region='+nilai2;
+            var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai2;
+            var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai2;
             $('#kd_cabangrekapabsencari').combobox('clear');
             $('#kd_cabangrekapabsencari').combobox('reload',url2);
             $('#kd_cabangrekapabsencari').combobox('setValue','000');
@@ -259,7 +259,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai2 = $('#kd_regionrekapabsencari').combobox('getValue');
             var nilai3 = $('#kd_cabangrekapabsencari').combobox('getValue');
             //var url1 = 'get_spkrekapabsencari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_unitcari.php?kd_region='+nilai2+'&kd_cabang='+nilai3;
+            var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai2+'&kd_cabang='+nilai3;
 
             $('#kd_unitrekapabsencari').combobox('clear');
             $('#kd_unitrekapabsencari').combobox('reload',url2);

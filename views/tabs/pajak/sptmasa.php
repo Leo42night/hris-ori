@@ -8,7 +8,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    // include "koneksi.php";
     $foldernya = "api/pajak/";
     $blth = date("Y-m",strtotime('+1 hour'));
     ?>
@@ -31,8 +30,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectregionsptmasacari(){
             var nilai1 = $('#kd_regionsptmasacari').combobox('getValue');
-            var url2 = 'get_cabangcari.php?kd_region='+nilai1;
-            var url3 = 'get_unitcari.php?kd_region='+nilai1;
+            var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai1; // not found
+            var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai1; // not found
             $('#kd_cabangsptmasacari').combobox('enable');
             $('#kd_cabangsptmasacari').combobox('clear'); 
             $('#kd_cabangsptmasacari').combobox('reload',url2);
@@ -47,7 +46,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectcabangsptmasacari(){
             var nilai1 = $('#kd_regionsptmasacari').combobox('getValue');
             var nilai2 = $('#kd_cabangsptmasacari').combobox('getValue');
-            var url2 = 'get_unitcari.php?kd_region='+nilai1+'&kd_cabang='+nilai2;
+            var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2; // not found
             $('#kd_unitsptmasacari').combobox('enable');
             $('#kd_unitsptmasacari').combobox('clear'); 
             $('#kd_unitsptmasacari').combobox('reload',url2);
@@ -56,7 +55,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectkelompoksptmasa(){
             var nilai1 = $('#kelompoksptmasa').combobox('getValue');
-            var url3 = 'get_spt2.php?kelompok='+nilai1;
+            var url3 = 'get_spt2.php[not_found]?kelompok='+nilai1;
             $('#no_spksptmasa').combogrid('clear');
             $('#no_spksptmasa').combogrid('grid').datagrid('reload',url3);
             $('#no_spksptmasa').combogrid('setValue','SEMUA');
@@ -65,8 +64,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectregionsptmasa(){
             var nilai1 = $('#kd_regionsptmasa').combobox('getValue');
             var nilai2 = $('#kelompoksptmasa').combobox('getValue');
-            var url2 = 'get_cabang2.php?kd_region='+nilai1;
-            var url3 = 'get_spt2.php?kd_region='+nilai1+'&kelompok='+nilai2;
+            var url2 = 'get_cabang2.php[not_found]?kd_region='+nilai1;
+            var url3 = 'get_spt2.php[not_found]?kd_region='+nilai1+'&kelompok='+nilai2;
             $('#kd_cabangsptmasa').combobox('enable');
             $('#kd_cabangsptmasa').combobox('clear'); 
             $('#kd_cabangsptmasa').combobox('reload',url2);
@@ -81,7 +80,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai1 = $('#kd_regionsptmasa').combobox('getValue');
             var nilai2 = $('#kd_cabangsptmasa').combobox('getValue');
             var nilai3 = $('#kelompoksptmasa').combobox('getValue');
-            var url2 = 'get_spk2.php?kd_region='+nilai1+'&kd_cabang='+nilai2+'&kelompok='+nilai3;
+            var url2 = 'get_spk2.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2+'&kelompok='+nilai3;
             $('#no_spksptmasa').combogrid('clear');
             $('#no_spksptmasa').combogrid('grid').datagrid('reload',url2);
             $('#no_spksptmasa').combogrid('setValue','SEMUA');
@@ -89,8 +88,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectregionsptmasa2(){
             var nilai1 = $('#kd_regionsptmasa2').combobox('getValue');
-            var url2 = 'get_cabang2.php?kd_region='+nilai1;
-            var url3 = 'get_unit2.php?kd_region='+nilai1;
+            var url2 = 'get_cabang2.php[not_found]?kd_region='+nilai1;
+            var url3 = 'get_unit2.php[not_found]?kd_region='+nilai1;
             $('#kd_cabangsptmasa2').combobox('enable');
             $('#kd_cabangsptmasa2').combobox('clear'); 
             $('#kd_cabangsptmasa2').combobox('reload',url2);
@@ -105,7 +104,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectcabangsptmasa2(){
             var nilai1 = $('#kd_regionsptmasa2').combobox('getValue');
             var nilai2 = $('#kd_cabangsptmasa2').combobox('getValue');
-            var url2 = 'get_unit2.php?kd_region='+nilai1+'&kd_cabang='+nilai2;
+            var url2 = 'get_unit2.php[not_found]?kd_region='+nilai1+'&kd_cabang='+nilai2;
             $('#kd_unitsptmasa2').combobox('enable');
             $('#kd_unitsptmasa2').combobox('clear'); 
             $('#kd_unitsptmasa2').combobox('reload',url2);
@@ -144,7 +143,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         
         function onSelectprojectsptmasa2(){
             var nilai1 = $('#kd_projectsptmasa2').combobox('getValue');
-            var url2 = 'get_unit2.php?kd_project='+nilai1;
+            var url2 = 'get_unit2.php[not_found]?kd_project='+nilai1;
             $('#kd_unitsptmasa2').combobox('enable');
             $('#kd_unitsptmasa2').combobox('clear'); 
             $('#kd_unitsptmasa2').combobox('reload',url2);
@@ -608,7 +607,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     		$('#fmsptmasa3').form('clear');
             $("#blthsptmasa3").datebox('setValue', blthnya);
             $("#nipsptmasa3").textbox('setValue', nipnya);
-    		url = 'save_sptmasa3.php';
+    		url = 'save_sptmasa3.php[not_found]'; 
     	}
     	function savesptmasa3(){
     		$('#fmsptmasa3').form('submit',{
@@ -637,7 +636,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             $("#blthsptmasa4").datebox('setValue', blthnya);
             $("#nipsptmasa4").textbox('setValue', nipnya);
             // $("#kppsptmasa4").combobox('setValue', kppnya);
-    		url2 = 'save_sptmasa4.php';
+    		url2 = 'save_sptmasa4.php[not_found]';
     	}
     	function savesptmasa4(){
 			$.messager.confirm('Konfirmasi','Anda yakin melakukan proses ini?',function(r){
@@ -673,7 +672,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     			$('#dlgsptmasa3').dialog('open').dialog('setTitle','Proses sptmasaroll Per Pegawai');
                 $('#fmsptmasa3').form('clear');
     			$('#fmsptmasa3').form('load',row);            
-    			url = 'save_sptmasa3.php';
+    			url = 'save_sptmasa3.php[not_found]';
     		}
     	}
     	function destroysptmasa(){
@@ -681,7 +680,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     		if (row){
     			$.messager.confirm('Konfirmasi','Yakin menghapus sptmasa "'+row.nama_sptmasa+'"?',function(r){
     				if (r){
-    					$.post('destroy_sptmasa.php',{id:row.id},function(result){
+    					$.post('destroy_sptmasa.php[not_found]',{id:row.id},function(result){
     						if (result.success){
     							$('#dgsptmasa').datagrid('reload');
     						} else {
@@ -738,7 +737,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_regionnya = $("#kd_regionsptmasacari").combobox('getValue');
             var kd_cabangnya = $("#kd_cabangsptmasacari").combobox('getValue');
             //window.open("exportcsv1721a1.php?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank");
-            window.open("exportcsvmasa.php?blth="+blthnya+"&kelompok="+kelompoknya,"_blank");
+            window.open("exportcsvmasa.php[not_found]?blth="+blthnya+"&kelompok="+kelompoknya,"_blank");
         }
         
     	function csv1721i(){
@@ -753,7 +752,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_regionnya = $("#kd_regionsptmasacari").combobox('getValue');
             var kd_cabangnya = $("#kd_cabangsptmasacari").combobox('getValue');
             //alert(kd_regionnya+" "+kd_cabangnya);
-            window.open("lapspt.php?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank");
+            window.open("lapspt.php[not_found]?blth="+blthnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya,"_blank");
         }
   
     	function cetakformrampung(nipnya){
@@ -782,12 +781,12 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_unitnya2 = $("#kd_unitsptmasacari").combobox('getValue');
             var kd_jenisnya2 = $("#kd_jenissptmasacari").combobox('getValue');
             var kd_kategorinya2 = $("#kd_kategorisptmasacari").combobox('getValue');
-            //var urlnya = 'cetaklist.php?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_lategorinya2;
-            //var urlnya = 'cetaklist.php?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2;
+            //var urlnya = 'cetaklist.php[not_found]?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_lategorinya2;
+            //var urlnya = 'cetaklist.php[not_found]?blth='+blthnya2+'&kd_regional='+kd_regionalnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2;
             //alert(urlnya);
             //alert(blthnya2+" "+kd_regionalnya2+" "+kd_unitnya2+" "+kd_jenisnya2+" "+kd_kategorinya2);
     		$('#dlglist').dialog('open').dialog('setTitle','List Gaji');
-            $('#panellist').prop('src','cetaklist.php?blth='+blthnya2+'&kd_project='+kd_projectnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_kategorinya2);
+            $('#panellist').prop('src','cetaklist.php[not_found]?blth='+blthnya2+'&kd_project='+kd_projectnya2+'&kd_unit='+kd_unitnya2+'&kd_jenis='+kd_jenisnya2+'&kd_kategori='+kd_kategorinya2);
         }
         // $("#dgsptmasa").height($(window).height() - 0);
     </script>

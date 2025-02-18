@@ -62,7 +62,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectup3cari(){
             var kd_wilayah = $('#kd_wilayahabsensihcari').combobox('getValue');
             var kd_up3 = $('#kd_up3absensihcari').combobox('getValue');
-            var url1 = 'get_unitcari.php?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
+            var url1 = 'get_unitcari.php[not_found]?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
             $('#kd_unitabsensihcari').combobox('clear');
             $('#kd_unitabsensihcari').combobox('reload',url1);
             $('#kd_unitabsensihcari').combobox('setValue','semua');
@@ -72,7 +72,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var no_spknya = $('#no_spkabsensihcari').combogrid('getValues').join('|');
             alert(no_spknya);
             //var no_spknya = $('#no_spkabsensihcari').combogrid('getValues');
-            var url1 = 'get_unitcari.php?no_spk='+no_spknya;
+            var url1 = 'get_unitcari.php[not_found]?no_spk='+no_spknya;
             $('#kd_unitabsensihcari').combobox('clear');
             $('#kd_unitabsensihcari').combobox('reload',url1);
     	}
@@ -84,8 +84,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai3 = $('#kd_cabangabsensihcari').combobox('getValue');
             //var kelompoknya = nilai1.replace(" ", "_");
             //var url1 = 'get_spkabsensihcari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_cabangcari.php?kd_region='+nilai2;
-            var url3 = 'get_unitcari.php?kd_region='+nilai2;
+            var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai2;
+            var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai2;
             $('#kd_cabangabsensihcari').combobox('clear');
             $('#kd_cabangabsensihcari').combobox('reload',url2);
             $('#kd_cabangabsensihcari').combobox('setValue','000');
@@ -105,7 +105,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai2 = $('#kd_regionabsensihcari').combobox('getValue');
             var nilai3 = $('#kd_cabangabsensihcari').combobox('getValue');
             //var url1 = 'get_spkabsensihcari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_unitcari.php?kd_region='+nilai2+'&kd_cabang='+nilai3;
+            var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai2+'&kd_cabang='+nilai3;
 
             $('#kd_unitabsensihcari').combobox('clear');
             $('#kd_unitabsensihcari').combobox('reload',url2);

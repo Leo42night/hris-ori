@@ -1,4 +1,5 @@
 <?php
+// Tidak ada tabs views: kartupenghasilan.php, 
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];

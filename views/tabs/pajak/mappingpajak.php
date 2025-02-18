@@ -3,12 +3,11 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    $foldernya = "sipeg/";
-    include "koneksi.php";    
-    include "koneksi_sipeg.php";    
+    $foldernya = "api/pajak/";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -1102,7 +1101,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     		$('#dlgmappingpajak').dialog('open').dialog('setTitle','Input Mapping Pajak');
     		$('#fmmappingpajak').form('clear');
             $("#end_datemappingpajak").datebox('setValue','9999-12-31');
-    		url = '<?=$foldernya;?>save_mappingpajak.php';
+    		url = '<?=$foldernya;?>save_mappingpajak.php[not_found]';
     	}
     	function editmappingpajak(index){
             var row = $('#dgmappingpajak').datagrid('getRow', index);
@@ -1149,7 +1148,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     		if (row){
     			$.messager.confirm('Konfirmasi','Yakin menghapus data mappingpajak "'+row.nama_lengkapmappingpajak+'"?',function(r){
     				if (r){
-    					$.post('<?=$foldernya;?>destroy_mappingpajak.php',{id:row.idmappingpajak},function(result){
+    					$.post('<?=$foldernya;?>destroy_mappingpajak.php[not_found]',{id:row.idmappingpajak},function(result){
     						if (result.success){
     							$('#dgmappingpajak').datagrid('reload');	// reload the user data
     						} else {
@@ -1209,11 +1208,11 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                 if ($('#tt').tabs('exists','Riwayat mappingpajak')){
                     $('#tt').tabs('select','Riwayat mappingpajak');
                     var tab = $('#tt').tabs('getSelected');
-                    tab.panel('refresh', '<?=$foldernya;?>mappingpajak2.php?nip='+row.nipmappingpajak+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>');
+                    tab.panel('refresh', '<?=$foldernya;?>mappingpajak2.php[not_found]?nip='+row.nipmappingpajak+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>');
                 } else {
                     $('#tt').tabs('add',{
                         title: 'Riwayat mappingpajak',
-                        href: 'mappingpajak2.php?nip='+row.nipmappingpajak+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>',
+                        href: 'mappingpajak2.php[not_found]?nip='+row.nipmappingpajak+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>',
                         closable: true
                     });
                 }

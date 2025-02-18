@@ -1,14 +1,14 @@
 <?php
+// Master Mapping
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    $foldernya = "sipeg/";
-    include "koneksi.php";    
-    include "koneksi_sipeg.php";    
+    $foldernya = "api/pajak/";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -476,11 +476,11 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                 if ($('#tt').tabs('exists','Riwayat mapping')){
                     $('#tt').tabs('select','Riwayat mapping');
                     var tab = $('#tt').tabs('getSelected');
-                    tab.panel('refresh', '<?=$foldernya;?>mapping2.php?nip='+row.nipmapping+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>');
+                    tab.panel('refresh', '<?=$foldernya;?>mapping2.php[not_found]?nip='+row.nipmapping+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>');
                 } else {
                     $('#tt').tabs('add',{
                         title: 'Riwayat mapping',
-                        href: 'mapping2.php?nip='+row.nipmapping+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>',
+                        href: 'mapping2.php[not_found]?nip='+row.nipmapping+'&proses=<?=$akses_proses;?>&view=<?=$akses_view;?>',
                         closable: true
                     });
                 }

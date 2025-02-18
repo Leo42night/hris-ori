@@ -222,7 +222,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function onSelectup3cari(){
             var kd_wilayah = $('#kd_wilayahrekapkehadirancari').combobox('getValue');
             var kd_up3 = $('#kd_up3rekapkehadirancari').combobox('getValue');
-            var url1 = 'get_unitcari.php?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
+            var url1 = 'get_unitcari.php[not_found]?kd_wilayah='+kd_wilayah+'&kd_up3='+kd_up3;
             $('#kd_unitrekapkehadirancari').combobox('clear');
             $('#kd_unitrekapkehadirancari').combobox('reload',url1);
             $('#kd_unitrekapkehadirancari').combobox('setValue','semua');
@@ -239,8 +239,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai3 = $('#kd_cabangrekapkehadirancari').combobox('getValue');
             //var kelompoknya = nilai1.replace(" ", "_");
             //var url1 = 'get_spkrekapkehadirancari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_cabangcari.php?kd_region='+nilai2;
-            var url3 = 'get_unitcari.php?kd_region='+nilai2;
+            var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai2;
+            var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai2;
             $('#kd_cabangrekapkehadirancari').combobox('clear');
             $('#kd_cabangrekapkehadirancari').combobox('reload',url2);
             $('#kd_cabangrekapkehadirancari').combobox('setValue','000');
@@ -260,7 +260,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai2 = $('#kd_regionrekapkehadirancari').combobox('getValue');
             var nilai3 = $('#kd_cabangrekapkehadirancari').combobox('getValue');
             //var url1 = 'get_spkrekapkehadirancari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
-            var url2 = 'get_unitcari.php?kd_region='+nilai2+'&kd_cabang='+nilai3;
+            var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai2+'&kd_cabang='+nilai3;
 
             $('#kd_unitrekapkehadirancari').combobox('clear');
             $('#kd_unitrekapkehadirancari').combobox('reload',url2);
