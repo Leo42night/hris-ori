@@ -2,8 +2,8 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include 'koneksi_sipeg.php';
     $id = intval($_REQUEST['id']);
     $sql = "delete from perhitungan_pajak_khusus where id=$id";
     $result = @mysqli_query($koneksi,$sql);

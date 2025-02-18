@@ -1,6 +1,7 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
     function TanggalIndo2($date){
         if(!is_null($date) && strtotime($date)){
@@ -35,8 +36,6 @@ if ($userhris){
         }
     }
 
-    include "koneksi.php"; 
-    include "koneksi_sipeg.php"; 
     //$nip2 = $_REQUEST['nip'];
     //$id2 = $_REQUEST['id'];
     $nip2 = "9215907ZY";

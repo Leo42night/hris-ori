@@ -2,6 +2,7 @@
 session_start();
 date_default_timezone_set("Asia/Jakarta");
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
     function TanggalIndo2($date){
         if(!is_null($date) && strtotime($date)){
@@ -14,8 +15,6 @@ if ($userhris){
             return("");
         }
     }
-
-    include 'koneksi.php';
     $tanggal = $_REQUEST['tanggallibur'];
     $keterangan = $_REQUEST['keteranganlibur'];
     

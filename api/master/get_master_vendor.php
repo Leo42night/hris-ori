@@ -1,9 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
 

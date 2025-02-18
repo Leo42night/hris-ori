@@ -1,10 +1,9 @@
 <?php
 error_reporting(0);
 ini_set('memory_limit', '-1');
-
-include('koneksi.php');
-include('../fungsi.php');
-require '../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;

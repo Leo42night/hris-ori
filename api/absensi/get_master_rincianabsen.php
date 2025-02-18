@@ -2,6 +2,7 @@
 //error_reporting(0);
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
     function TanggalIndo2($date){
         if(!is_null($date) && strtotime($date)){
@@ -84,9 +85,6 @@ if ($userhris){
     
         return $datesArray;
     }
-        
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
 

@@ -2,6 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
     function TanggalIndo2($date){
         if($date!="" && $date!=null){
@@ -14,9 +15,6 @@ if ($userhris){
             return("");
         }
     }
-
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
     $tahuncari = isset($_POST['tahundatamutasi2cari']) ? $_POST['tahundatamutasi2cari'] : date("Y");
     $blth_awalcari = $tahuncari."-01";
     $blth_akhircari = $tahuncari."-11";

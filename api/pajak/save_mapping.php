@@ -2,8 +2,8 @@
 //error_reporting(0);
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include 'koneksi.php';
     $kolom = $_REQUEST['kolommapping'];
     $kode_akun = $_REQUEST['kode_akunmapping'];
     $nama_akun = $_REQUEST['nama_akunmapping'];

@@ -1,7 +1,6 @@
 <?php 
 date_default_timezone_set("Asia/Jakarta");
-include 'koneksi.php';
-include 'koneksi_sipeg.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(

@@ -2,11 +2,10 @@
 error_reporting(1);
 ini_set('memory_limit', '-1');
 
-include('koneksi.php');
-include('koneksi_sipeg.php');
-include "../stringvalidasi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/stringvalidasi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
 $kunci = "cipher.hris@s7o";
-require '../vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;

@@ -11,6 +11,7 @@ $namavsipeg = $_SESSION["namavsipeg"];
 $idspkvsipeg = $_SESSION["idspkvsipeg"];
 $unitvsipeg = $_SESSION["kd_unitvsipeg"];
 $approval1vsipeg = $_SESSION["approval1vsipeg"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($up3vsipeg){
     function TanggalIndo2($date){
         if(!is_null($date) && strtotime($date)){
@@ -39,7 +40,6 @@ if ($up3vsipeg){
         return $jam2.":".$menit2; 
     }
     
-    include 'koneksi.php';
     $nip= $_REQUEST['nipabsensih'];    
     $tgl_masuk = $_REQUEST['tgl_absenabsensih'];
     $jam_masuk = $_REQUEST['jam_masukabsensih'];

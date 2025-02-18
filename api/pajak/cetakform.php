@@ -1,11 +1,11 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/rotation.php";
 if ($userhris){
-    include "koneksi.php";
-    include "../fungsi.php";
     // require('../force_justify.php');
-    require('../rotation.php');
     class PDF extends PDF_Rotate{
         function RotatedText($x,$y,$txt,$angle){
             //Text rotated around its origin

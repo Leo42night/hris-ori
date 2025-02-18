@@ -1,7 +1,9 @@
 <?php
 //error_reporting(0);
 session_start();
-require '../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Csv;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
@@ -20,9 +22,6 @@ if ($userhris){
             return("");
         }
     }
-
-    include 'koneksi.php';
-    include '../fungsi.php';
 
     $hari_ini = date("Y-m-d H:i:s", strtotime("+1 hour"));
     $tgl_proses = date("Y-m-d", strtotime("+1 hour"));

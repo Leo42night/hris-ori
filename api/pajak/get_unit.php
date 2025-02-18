@@ -1,9 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
     $sqljns = mysqli_query ($koneksi,"SELECT nama_unit FROM master_penempatan group by nama_unit ORDER BY nama_unit ASC");
     $items = array();
     $datanya = array();

@@ -2,9 +2,8 @@
 //error_reporting(0);
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include 'koneksi.php';
-    include 'koneksi_sipeg.php';
     $id = intval($_REQUEST['id']);
     $kpp = $_REQUEST['kppkpp'];
     $npwp_pemotong = $_REQUEST['npwp_pemotongkpp'];

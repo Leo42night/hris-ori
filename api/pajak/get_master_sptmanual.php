@@ -1,6 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
 if ($userhris){
     function TanggalIndo2($date){
         $tahun = substr($date, 0, 4);
@@ -9,8 +11,6 @@ if ($userhris){
         $result = $tgl . "-" . $bulan . "-". $tahun;	
         return($result);
     }
-    include "koneksi.php";
-    include "../fungsi.php";
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
     $tahun_ini = date("Y");

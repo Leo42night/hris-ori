@@ -1,8 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include 'koneksi.php';
     $id = intval($_REQUEST['id']);
 
     $sql = "delete from libur_nasional where id=$id";

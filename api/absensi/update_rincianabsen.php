@@ -30,7 +30,6 @@ if ($userhris){
         return $jam2.":".$menit2; 
     }
     
-    include 'koneksi.php';
     $id= intval($_REQUEST['id']);
     $nip= $_REQUEST['niprincianabsen'];    
     $tgl_absen = $_REQUEST['tgl_absenrincianabsen'];

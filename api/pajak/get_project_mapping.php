@@ -1,9 +1,9 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include "koneksi.php";
-    include "koneksi_teams.php";
+    // include "koneksi_teams.php"; ??? db "teams"
     $kode_departemen2 = isset($_GET['kode_departemen']) ? $_GET['kode_departemen'] : "xxx";
     $perintah = "";
     if($kode_departemen2!=""){

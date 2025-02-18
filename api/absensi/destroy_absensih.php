@@ -10,8 +10,8 @@ $namavsipeg = $_SESSION["namavsipeg"];
 $idspkvsipeg = $_SESSION["idspkvsipeg"];
 $unitvsipeg = $_SESSION["kd_unitvsipeg"];
 $approval1vsipeg = $_SESSION["approval1vsipeg"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($uservsipeg){
-    include 'koneksi.php';
     $id = intval($_REQUEST['id']);
 
     $sql = "delete from absensi where id=$id";

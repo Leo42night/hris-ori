@@ -2,7 +2,7 @@
 session_start();
 $userhris = $_SESSION["userakseshris"];
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/fungsi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
 
 if ($userhris){
     $queryjns = "SELECT * FROM master_penempatan ORDER BY id ASC";

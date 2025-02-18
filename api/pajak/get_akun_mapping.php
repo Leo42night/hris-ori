@@ -1,9 +1,9 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
 if ($userhris){
-    include "koneksi.php";
-    include "../fungsi.php";
     $kolom = $_REQUEST['kolom'];
 
     $items = array();

@@ -1,9 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if ($userhris){
-    include 'koneksi.php';
-    include 'koneksi_sipeg.php';
     $hari_ini = date("Y-m-d H:i:s");
     $jam_ini = date("H:i:s");
 

@@ -2,12 +2,11 @@
 error_reporting(1);
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/stringvalidasi.php";
 if ($userhris){
     ini_set('date.timezone', 'Asia/Jakarta');
-    include 'koneksi.php';
-    // include 'koneksi_sipeg.php';
-    include '../fungsi.php';
-    include "../stringvalidasi.php";
     $kunci = "cipher.hris@s7o";
     $hari_ini = date("Y-m-d H:i:s");
     $jam_ini = date("H:i:s");    

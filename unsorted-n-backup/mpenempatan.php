@@ -387,7 +387,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     	function uploadtemplatempenempatan(){
     		$('#dlgtemplatempenempatan').dialog('open').dialog('setTitle','Upoad Template Penempatan');
             $('#fmtemplatempenempatan').form('clear');
-    		url = 'save_templatempenempatan.php';
+    		url = 'save_templatempenempatan.php[not_found]';
     	}
     	function savetemplatempenempatan(){
             $.messager.progress({height:75, text:'Proses import Data'});

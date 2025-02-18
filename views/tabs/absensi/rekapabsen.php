@@ -9,6 +9,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
     $foldernya = "api/absensi/";
+    $viewspath = "views/tabs/absensi/";
     ?>
     <script>       
         var myVarsetoranspk1,myVarrincianspk1,myVarpotonganspk1,myVarsetorangab1,myVarrinciangab1;
@@ -543,12 +544,12 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             if ($('#tt').tabs('exists','Rincian Absen')){
                 $('#tt').tabs('select','Rincian Absen');
                 var p = $('#tt').tabs('getTab', 'Rincian Absen');
-		        p.panel('refresh',"<?=$foldernya;?>rincianabsen.php?datanya="+datanya);
+		        p.panel('refresh',"<?=$viewspath;?>rincianabsen.php?datanya="+datanya);
 
             } else {
     			$('#tt').tabs('add',{
     				title: 'Rincian Absen',                                
-                    href: "<?=$foldernya;?>rincianabsen.php?datanya="+datanya,
+                    href: "<?=$viewspath;?>rincianabsen.php?datanya="+datanya,
     				closable: true
     			});
             }
