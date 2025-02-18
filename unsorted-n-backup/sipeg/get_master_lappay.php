@@ -1,0 +1,177 @@
+<?php
+session_start();
+$userhris = $_SESSION["userakseshris"];
+if ($userhris){
+    include "koneksi.php";
+    // include "koneksi_sipeg.php";
+    include "../fungsi.php";
+	// function stripslashesx($value){
+	// 	$value = (is_null($value)) ? "" : $value;
+	// 	return $value;
+	// }
+
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
+
+    $tahun_ini = date("Y");
+    $nip2 = isset($_POST['niplappaycari']) ? $_POST['niplappaycari'] : "";
+    $blth2 = isset($_POST['blthlappaycari']) ? $_POST['blthlappaycari'] : date("Y-m");
+    
+    $offset = ($page-1)*$rows;
+    $result = array();
+    $perintah = "";    
+    if($nip2!=""){
+        $perintah .= " and (a.nip='$nip2' or b.nama like '%$nip2%')";
+        //$perintah .= " and (nip='$nip2' or nip in (select nip fro b.nama_lengkap like '%$nip2%')";
+    }
+    
+    $offset = ($page-1)*$rows;
+    $result = array();
+    //$rs = mysqli_query($koneksi,"select count(*) from gaji a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah);
+    $rs = mysqli_query($koneksi,"select count(*) from gaji a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah);
+    $row = mysqli_fetch_row($rs);
+    $result["total"] = $row[0];    
+    
+    $items = array();
+    $rs = mysqli_query($koneksi,"select a.*,b.nama,b.jenis from gaji a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah." order by id asc limit $offset,$rows");
+    while ($hasil = mysqli_fetch_array($rs)) {
+    	$id = stripslashesx ($hasil['id']);
+    	$blth = stripslashesx ($hasil['blth']);
+    	$nip = stripslashesx ($hasil['nip']);
+            $rs2 = mysqli_query($koneksi,"select * from data_pegawai where nip='$nip'");
+            $hasil2 = mysqli_fetch_array($rs2);
+            $bank_lappayroll = stripslashesx ($hasil2['nama_bank']);
+            $no_rek_lappayroll = stripslashesx ($hasil2['no_rekening']);
+            $an_lappayroll = stripslashesx ($hasil2['nama_rekening']);
+    	$nama_lengkap = stripslashesx ($hasil['nama']);
+    	$npwp = stripslashesx ($hasil['npwp']);
+    	$kpp = stripslashesx ($hasil['kpp']);
+    	$jenis = stripslashesx ($hasil['jenis']);
+    	$gaji_dasar = floatval(stripslashesx ($hasil['gaji_dasar']));
+    	$honorarium = floatval(stripslashesx ($hasil['honorarium']));
+        $honorer = floatval(stripslashesx ($hasil['honorer']));
+    	$tarif_grade = floatval(stripslashesx ($hasil['tarif_grade']));
+    	$tunjangan_posisi = floatval(stripslashesx ($hasil['tunjangan_posisi']));
+    	$p21b = floatval(stripslashesx ($hasil['p21b']));
+    	$tunjangan_kemahalan = floatval(stripslashesx ($hasil['tunjangan_kemahalan']));
+    	$tunjangan_perumahan = floatval(stripslashesx ($hasil['tunjangan_perumahan']));
+    	$tunjangan_transportasi = floatval(stripslashesx ($hasil['tunjangan_transportasi']));
+    	$bantuan_pulsa = floatval(stripslashesx ($hasil['bantuan_pulsa']));
+    	$tunjangan_kompetensi = floatval(stripslashesx ($hasil['tunjangan_kompetensi']));
+        $dplk_persero = floatval(stripslashesx ($hasil['dplk_persero']));
+        $dplk_simponi_pr = floatval(stripslashesx ($hasil['dplk_simponi_pr']));
+        $lembur = floatval(stripslashesx ($hasil['lembur']));
+    	$nama_tunjangan1 = stripslashesx ($hasil['nama_tunjangan1']);
+    	$tunjangan1 = floatval(stripslashesx ($hasil['tunjangan1']));
+    	$nama_tunjangan2 = stripslashesx ($hasil['nama_tunjangan2']);
+    	$tunjangan2 = floatval(stripslashesx ($hasil['tunjangan2']));
+    	$nama_tunjangan3 = stripslashesx ($hasil['nama_tunjangan3']);
+    	$tunjangan3 = floatval(stripslashesx ($hasil['tunjangan3']));
+    	$nama_tunjangan4 = stripslashesx ($hasil['nama_tunjangan4']);
+    	$tunjangan4 = floatval(stripslashesx ($hasil['tunjangan4']));
+        $bpjs_tk_pp = floatval(stripslashesx ($hasil['bpjs_tk_pp']));
+        $bpjs_tk_kp = floatval(stripslashesx ($hasil['bpjs_tk_kp']));
+        $bpjs_tk_kkp = floatval(stripslashesx ($hasil['bpjs_tk_kkp']));
+        $bpjs_tk_htp = floatval(stripslashesx ($hasil['bpjs_tk_htp']));
+        $bpjs_tk_jhtk = floatval(stripslashesx ($hasil['bpjs_tk_jhtk']));
+        $bpjs_tk_pk = floatval(stripslashesx ($hasil['bpjs_tk_pk']));
+        $bpjs_kes_pp = floatval(stripslashesx ($hasil['bpjs_kes_pp']));
+        $bpjs_kes_pk = floatval(stripslashesx ($hasil['bpjs_kes_pk']));
+        $total_pendapatan = floatval(stripslashesx ($hasil['total_pendapatan']));
+        $bpjs_pr = floatval(stripslashesx ($hasil['bpjs_pr']));
+        $benefit = floatval(stripslashesx ($hasil['benefit']));        
+        $pendapatan_benefit = floatval(stripslashesx ($hasil['pendapatan_benefit']));        
+        $pot_koperasi = floatval(stripslashesx ($hasil['pot_koperasi']));        
+        $pot_bazis = floatval(stripslashesx ($hasil['pot_bazis']));        
+        $dplk_simponi = floatval(stripslashesx ($hasil['dplk_simponi']));        
+        $pot_dplk_pribadi = floatval(stripslashesx ($hasil['pot_dplk_pribadi']));        
+        $cop_kendaraan = floatval(stripslashesx ($hasil['cop_kendaraan']));
+        $iuran_peserta = floatval(stripslashesx ($hasil['iuran_peserta']));
+        $brpr = floatval(stripslashesx ($hasil['brpr']));
+        $sewa_mess = floatval(stripslashesx ($hasil['sewa_mess']));
+        $qurban = floatval(stripslashesx ($hasil['qurban']));
+        $arisan = floatval(stripslashesx ($hasil['arisan']));
+    	$nama_potongan1 = stripslashesx ($hasil['nama_potongan1']);
+    	$potongan1 = floatval(stripslashesx ($hasil['potongan1']));
+    	$nama_potongan2 = stripslashesx ($hasil['nama_potongan2']);
+    	$potongan2 = floatval(stripslashesx ($hasil['potongan2']));
+    	$nama_potongan3 = stripslashesx ($hasil['nama_potongan3']);
+    	$potongan3 = floatval(stripslashesx ($hasil['potongan3']));
+    	$nama_potongan4 = stripslashesx ($hasil['nama_potongan4']);
+    	$potongan4 = floatval(stripslashesx ($hasil['potongan4']));
+    	$total_potongan = floatval(stripslashesx ($hasil['total_potongan']));
+        $pph21 = floatval(stripslashesx ($hasil['pph21']));
+        $upah_bersih = floatval(stripslashesx ($hasil['upah_bersih']));
+    
+        $datanya = array();
+        $datanya["idlappay"] = $id;
+        $datanya["blthlappay"] = $blth;
+        $datanya["niplappay"] = $nip;
+        $datanya["nama_lengkaplappay"] = $nama_lengkap;
+        $datanya["npwplappay"] = $npwp;
+        $datanya["kpplappay"] = $kpp;
+        $datanya["jenislappay"] = $jenis;
+        $datanya["gaji_dasarlappay"] = $gaji_dasar;
+        $datanya["honorariumlappay"] = $honorarium;
+        $datanya["honorerlappay"] = $honorer;
+        $datanya["tarif_gradelappay"] = $tarif_grade;
+        $datanya["tunjangan_posisilappay"] = $tunjangan_posisi;
+        $datanya["p21blappay"] = $p21b;
+        $datanya["tunjangan_kemahalanlappay"] = $tunjangan_kemahalan;
+        $datanya["tunjangan_perumahanlappay"] = $tunjangan_perumahan;
+        $datanya["tunjangan_transportasilappay"] = $tunjangan_transportasi;
+        $datanya["bantuan_pulsalappay"] = $bantuan_pulsa;
+        $datanya["tunjangan_kompetensilappay"] = $tunjangan_kompetensi;
+        $datanya["dplk_perserolappay"] = $dplk_persero;
+        $datanya["dplk_simponi_prlappay"] = $dplk_simponi_pr;
+        $datanya["lemburlappay"] = $lembur;
+        $datanya["nama_tunjangan1lappay"] = $nama_tunjangan1;
+        $datanya["tunjangan1lappay"] = $tunjangan1;
+        $datanya["nama_tunjangan2lappay"] = $nama_tunjangan2;
+        $datanya["tunjangan2lappay"] = $tunjangan2;
+        $datanya["nama_tunjangan3lappay"] = $nama_tunjangan3;
+        $datanya["tunjangan3lappay"] = $tunjangan3;
+        $datanya["nama_tunjangan4lappay"] = $nama_tunjangan4;
+        $datanya["tunjangan4lappay"] = $tunjangan4;
+        $datanya["bpjs_tk_pplappay"] = $bpjs_tk_pp;
+        $datanya["bpjs_tk_kplappay"] = $bpjs_tk_kp;
+        $datanya["bpjs_tk_kkplappay"] = $bpjs_tk_kkp;
+        $datanya["bpjs_tk_htplappay"] = $bpjs_tk_htp;
+        $datanya["bpjs_tk_jhtklappay"] = $bpjs_tk_jhtk;
+        $datanya["bpjs_tk_pklappay"] = $bpjs_tk_pk;
+        $datanya["bpjs_kes_pplappay"] = $bpjs_kes_pp;
+        $datanya["bpjs_kes_pklappay"] = $bpjs_kes_pk;
+        $datanya["total_pendapatanlappay"] = $total_pendapatan;
+        $datanya["bpjs_prlappay"] = $bpjs_pr;
+        $datanya["benefitlappay"] = $benefit;
+        $datanya["pendapatan_benefitlappay"] = $pendapatan_benefit;
+        $datanya["pot_koperasilappay"] = $pot_koperasi;
+        $datanya["pot_bazislappay"] = $pot_bazis;
+        $datanya["dplk_simponilappay"] = $dplk_simponi;
+        $datanya["pot_dplk_pribadilappay"] = $pot_dplk_pribadi;
+        $datanya["cop_kendaraanlappay"] = $cop_kendaraan;
+        $datanya["iuran_pesertalappay"] = $iuran_peserta;
+        $datanya["brprlappay"] = $brpr;
+        $datanya["sewa_messlappay"] = $sewa_mess;
+        $datanya["qurbanlappay"] = $qurban;
+        $datanya["arisanlappay"] = $arisan;
+        $datanya["nama_potongan1lappay"] = $nama_potongan1;
+        $datanya["potongan1lappay"] = $potongan1;
+        $datanya["nama_potongan2lappay"] = $nama_potongan2;
+        $datanya["potongan2lappay"] = $potongan2;
+        $datanya["nama_potongan3lappay"] = $nama_potongan3;
+        $datanya["potongan3lappay"] = $potongan3;
+        $datanya["nama_potongan4lappay"] = $nama_potongan4;
+        $datanya["potongan4lappay"] = $potongan4;
+        $datanya["total_potonganlappay"] = $total_potongan;
+        $datanya["pph21lappay"] = $pph21;
+        $datanya["upah_bersihlappay"] = $upah_bersih;
+        $datanya["bank_lappayrolllappay"] = $bank_lappayroll;
+        $datanya["no_rek_lappayrolllappay"] = $no_rek_lappayroll;
+        $datanya["an_lappayrolllappay"] = $an_lappayroll;
+        array_push($items, $datanya);
+    }
+    $result["rows"] = $items;
+    echo json_encode($result);
+}
+?>

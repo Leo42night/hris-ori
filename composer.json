@@ -1,0 +1,7 @@
+{
+    "require": {
+        "pear/http_request2": "^2.5",
+        "phpmailer/phpmailer": "^6.9",
+        "phpoffice/phpspreadsheet": "^2.0"
+    }
+}
