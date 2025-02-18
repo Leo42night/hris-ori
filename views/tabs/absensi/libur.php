@@ -3,12 +3,11 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
-    $foldernya = "sipeg/"
+    $foldernya = "api/absensi/";
     ?>
 	<script type="text/javascript">                     
 		function doSearchlibur(){
@@ -35,7 +34,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai1 = $('#kelompokliburcari').combobox('getValue');
             var nilai2 = $('#kd_regionliburcari').combobox('getValue');
             var nilai3 = $('#kd_cabangliburcari').combobox('getValue');
-            var url1 = 'get_spkliburcari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
+            var url1 = 'get_spkliburcari.php[not_found]?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
 			/*
             $('#no_spkliburcari').combogrid('clear');
             $('#no_spkliburcari').combogrid('grid').datagrid('reload',url1);
@@ -48,7 +47,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai2 = $('#kd_regionliburcari').combobox('getValue');
             var nilai3 = $('#kd_cabangliburcari').combobox('getValue');
             //var kelompoknya = nilai1.replace(" ", "_");
-            //var url1 = 'get_spkliburcari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
+            //var url1 = 'get_spkliburcari.php[not_found]?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
             var url2 = 'get_cabangcari.php[not_found]?kd_region='+nilai2;
             var url3 = 'get_unitcari.php[not_found]?kd_region='+nilai2;
             $('#kd_cabangliburcari').combobox('clear');
@@ -69,7 +68,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var nilai1 = $('#kelompokliburcari').combobox('getValue');
             var nilai2 = $('#kd_regionliburcari').combobox('getValue');
             var nilai3 = $('#kd_cabangliburcari').combobox('getValue');
-            //var url1 = 'get_spkliburcari.php?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
+            //var url1 = 'get_spkliburcari.php[not_found]?kelompok='+nilai1+'&kd_region='+nilai2+'&kd_cabang='+nilai3;
             var url2 = 'get_unitcari.php[not_found]?kd_region='+nilai2+'&kd_cabang='+nilai3;
 
             $('#kd_unitliburcari').combobox('clear');
@@ -459,7 +458,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 			var kd_unitnya = $('#kd_unitliburcari').combobox('getValue');
 			var no_spknya = $('#no_spkliburcari').textbox('getText');
             var tanggalnya = $('#tanggalliburcari').datebox('getValue');
-            window.open("download_libur.php?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&no_spk="+no_spknya,"_blank");
+            window.open("download_libur.php[not_found]?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&no_spk="+no_spknya,"_blank");
         } 
 
         $("#dglibur").height($(window).height() - 0);

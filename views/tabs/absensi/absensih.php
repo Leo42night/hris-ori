@@ -3,12 +3,11 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {    
-    include "koneksi.php";
-    include "koneksi_sipeg.php";
-    $foldernya = "sipeg/";
+    $foldernya = "api/absensi/";
     ?>
     <!--<script type="text/javascript" src="datagrid-filter.js"></script>-->
 	<script type="text/javascript">                     
@@ -55,7 +54,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         */
         function onSelectwilayahcari(){
             var kd_wilayah = $('#kd_wilayahabsensihcari').combobox('getValue');
-            var url1 = 'get_up3cari.php?kd_wilayah='+kd_wilayah;
+            var url1 = 'get_up3cari.php[not_found]?kd_wilayah='+kd_wilayah;
             $('#kd_up3absensihcari').combobox('clear');
             $('#kd_up3absensihcari').combobox('reload',url1);
     	}
@@ -501,8 +500,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 			var kd_unitnya = $('#kd_unitabsensihcari').combobox('getValue');
 			var no_spknya = $('#no_spkabsensihcari').textbox('getText');
             var tanggalnya = $('#tanggalabsensihcari').datebox('getValue');
-            //window.open("lapabsensih.php?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&nip_nama="+nip_namanya,"_blank");
-            window.open("lapabsensih.php?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&no_spk="+no_spknya,"_blank");
+            //window.open("lapabsensih.php[not_found]?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&nip_nama="+nip_namanya,"_blank");
+            window.open("lapabsensih.php[not_found]?tanggal="+tanggalnya+"&kelompok="+kelompoknya+"&kd_region="+kd_regionnya+"&kd_cabang="+kd_cabangnya+"&kd_unit="+kd_unitnya+"&no_spk="+no_spknya,"_blank");
         } 
 
         function downloadabsensi(){
@@ -511,7 +510,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var kd_unit = $('#kd_unitabsensihcari').combobox('getValue');
             var tanggal = $('#tanggalabsensihcari').datebox('getValue');	
             var kd_unit = kd_unit.replace(",", "|");		
-            window.open("download_absensih.php?tanggal="+tanggal+"&kd_wilayah="+kd_wilayah+"&kd_up3="+kd_up3+"&kd_unit="+kd_unit,"_blank");
+            window.open("download_absensih.php[not_found]?tanggal="+tanggal+"&kd_wilayah="+kd_wilayah+"&kd_up3="+kd_up3+"&kd_unit="+kd_unit,"_blank");
         } 
 
         $("#dgabsensih").height($(window).height() - 0);

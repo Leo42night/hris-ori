@@ -4,11 +4,11 @@ $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    include "koneksi.php";
-    $foldernya = "sipeg/";
+    $foldernya = "api/absensi/";
     ?>
     <script>       
         var myVarsetoranspk1,myVarrincianspk1,myVarpotonganspk1,myVarsetorangab1,myVarrinciangab1;
@@ -214,7 +214,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         */
         function onSelectwilayahcari(){
             var kd_wilayah = $('#kd_wilayahrekapabsencari').combobox('getValue');
-            var url1 = 'get_up3cari.php?kd_wilayah='+kd_wilayah;
+            var url1 = 'get_up3cari.php[not_found]?kd_wilayah='+kd_wilayah;
             $('#kd_up3rekapabsencari').combobox('clear');
             $('#kd_up3rekapabsencari').combobox('reload',url1);
     	}
@@ -522,7 +522,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 			var nama_up3nya = $('#kd_up3rekapabsencari').combobox('getText');            
 			var kd_unitnya = $('#kd_unitrekapabsencari').combobox('getValue');
             var blthnya = $('#blthrekapabsencari').datebox('getValue');
-            window.open("laprekapabsen.php?blth="+blthnya+"&kd_wilayah="+kd_wilayahnya+"&kd_up3="+kd_up3nya+"&kd_unit="+kd_unitnya,"_blank");
+            window.open("laprekapabsen.php[not_found]?blth="+blthnya+"&kd_wilayah="+kd_wilayahnya+"&kd_up3="+kd_up3nya+"&kd_unit="+kd_unitnya,"_blank");
         } 
 
         function downloadrekapabsensi(){
@@ -533,7 +533,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function downloadrincian(nipnya){
             //alert(nipnya);
             var blthnya = $('#blthrekapabsencari').datebox('getValue');
-            window.open("<?=$foldernya;?>download_rabsensi.php?blth="+blthnya+"&nip="+nipnya,"_blank");
+            window.open("<?=$foldernya;?>download_rabsensi.php[not_found]?blth="+blthnya+"&nip="+nipnya,"_blank");
         } 
         
     	function rincianabsen(datanya){

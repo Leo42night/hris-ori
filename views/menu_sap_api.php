@@ -1,4 +1,5 @@
 <?php
+// missing tabs views files: apinvoice1.php [Lumpsum SPPD], apinvoice2.php [Restitusi SPPD], apinvoice3.php [Payrool]
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $superadminhris = $_SESSION["superadminhris"];

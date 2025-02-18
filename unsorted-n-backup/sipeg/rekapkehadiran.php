@@ -215,7 +215,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         */
         function onSelectwilayahcari(){
             var kd_wilayah = $('#kd_wilayahrekapkehadirancari').combobox('getValue');
-            var url1 = 'get_up3cari.php?kd_wilayah='+kd_wilayah;
+            var url1 = 'get_up3cari.php[not_found]?kd_wilayah='+kd_wilayah;
             $('#kd_up3rekapkehadirancari').combobox('clear');
             $('#kd_up3rekapkehadirancari').combobox('reload',url1);
     	}
@@ -536,7 +536,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         function downloadrincian(nipnya){
             //alert(nipnya);
             var blthnya = $('#blthrekapkehadirancari').datebox('getValue');
-            window.open("<?=$foldernya;?>download_rabsensi.php?blth="+blthnya+"&nip="+nipnya,"_blank");
+            window.open("<?=$foldernya;?>download_rabsensi.php[not_found]?blth="+blthnya+"&nip="+nipnya,"_blank");
         } 
         
     	function rincianabsen(datanya){
