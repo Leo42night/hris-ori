@@ -96,7 +96,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 
         function onSelectprovinsilembaga(){
             var nilai1 = $('#id_provinsilembaga').combobox('getValue');
-            var url1 = 'get_kabupaten.php?id_provinsi='+nilai1;
+            var url1 = 'api/hxms-api/get_kabupaten.php?id_provinsi='+nilai1;
             $('#id_kabupatenlembaga').combobox('enable');
             $('#id_kabupatenlembaga').combobox('clear'); 
             $('#id_kabupatenlembaga').combobox('reload',url1);
@@ -201,7 +201,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     });
     </script>
     <table id="dglembaga" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_lembaga.php?nip=<?=$nip;?>" pageSize="20"        
+            url="<?=$api_path?>get_master_lembaga.php?nip=<?=$nip;?>" pageSize="20"        
     		toolbar="#toolbarlembaga" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

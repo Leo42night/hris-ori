@@ -96,7 +96,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 
         function onSelectprovinsipmutasi(){
             var nilai1 = $('#id_provinsipmutasi').combobox('getValue');
-            var url1 = 'get_kabupaten.php?id_provinsi='+nilai1;
+            var url1 = 'api/hxms-api/get_kabupaten.php?id_provinsi='+nilai1;
             $('#id_kabupatenpmutasi').combobox('enable');
             $('#id_kabupatenpmutasi').combobox('clear'); 
             $('#id_kabupatenpmutasi').combobox('reload',url1);

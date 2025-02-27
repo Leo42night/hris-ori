@@ -14,12 +14,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Membuang struktur basisdata untuk hrisori
-DROP DATABASE IF EXISTS `hrisori`;
-CREATE DATABASE IF NOT EXISTS `hrisori` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `hrisori`;
-
 -- membuang struktur untuk table hrisori.absensi
 CREATE TABLE IF NOT EXISTS `absensi` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT 'id ini diberi komentar',
@@ -439,7 +433,6 @@ INSERT INTO `beban_pph` (`id`, `blth`, `nip`, `beban_pph21`, `kode`) VALUES
 /*!40000 ALTER TABLE `beban_pph` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.beban_pph21
--- important row: nip, blth
 CREATE TABLE IF NOT EXISTS `beban_pph21` (
   `id` int NOT NULL AUTO_INCREMENT,
   `kpp` varchar(120) DEFAULT '',
@@ -493,7 +486,7 @@ CREATE TABLE IF NOT EXISTS `beban_pph21` (
   UNIQUE KEY `blthnip` (`blthnip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.beban_pph21: 0 rows
+-- Membuang data untuk tabel hrisori.beban_pph21: 2 rows
 /*!40000 ALTER TABLE `beban_pph21` DISABLE KEYS */;
 /*!40000 ALTER TABLE `beban_pph21` ENABLE KEYS */;
 
@@ -663,7 +656,7 @@ CREATE TABLE IF NOT EXISTS `biaya_sppd1` (
   UNIQUE KEY `idsppd` (`idsppd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.biaya_sppd1: ~10 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.biaya_sppd1: ~11 rows (lebih kurang)
 INSERT INTO `biaya_sppd1` (`id`, `idsppd`, `transportasi`, `transporta`, `transportb`, `transportc`, `transportd`, `total_transport`, `transportasi_lokal`, `airport_tax`, `hari_konsumsi1`, `persen_konsumsi1`, `nilai_konsumsi1`, `total_konsumsi1`, `hari_laundry1`, `persen_laundry1`, `nilai_laundry1`, `total_laundry1`, `hari_penginapan1`, `persen_penginapan1`, `nilai_penginapan1`, `total_penginapan1`, `hari_konsumsi2`, `persen_konsumsi2`, `nilai_konsumsi2`, `total_konsumsi2`, `hari_laundry2`, `persen_laundry2`, `nilai_laundry2`, `total_laundry2`, `hari_penginapan2`, `persen_penginapan2`, `nilai_penginapan2`, `total_penginapan2`, `hari_pegawai`, `persen_pegawai`, `nilai_pegawai`, `total_pegawai`, `keluarga`, `hari_keluarga`, `persen_keluarga`, `nilai_keluarga`, `total_keluarga`, `pengantar`, `hari_pengantar`, `persen_pengantar`, `nilai_pengantar`, `total_pengantar`, `hari_suamiistri`, `persen_suamiistri`, `nilai_suamiistri`, `total_suamiistri`, `anak`, `hari_anak`, `persen_anak`, `nilai_anak`, `total_anak`, `berat_pengepakan`, `nilai_pengepakan`, `total_pengepakan`, `kurs_ln`, `transporta_ln`, `transportb_ln`, `transportc_ln`, `transportd_ln`, `transportasi_lokal_ln`, `airport_tax_ln`, `hari_lumpsum`, `nilai_lumpsum`, `hari_pegawai_ln`, `persen_pegawai_ln`, `nilai_pegawai_ln`, `hari_keluarga_ln`, `persen_keluarga_ln`, `nilai_keluarga_ln`, `hari_pengantar_ln`, `persen_pengantar_ln`, `nilai_pengantar_ln`, `baju_hangat_ln`, `total`) VALUES
 	(1, '2025000001', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(2, '2025000002', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -859,7 +852,6 @@ INSERT INTO `data_keluarga` (`id`, `nip`, `nama`, `jenis_kelamin`, `tgl_lahir`, 
 /*!40000 ALTER TABLE `data_keluarga` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.data_pegawai
-DROP TABLE IF EXISTS `data_pegawai`;
 CREATE TABLE IF NOT EXISTS `data_pegawai` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `nip` varchar(30) DEFAULT '',
@@ -907,8 +899,6 @@ CREATE TABLE IF NOT EXISTS `data_pegawai` (
   `atasan_langsung` varchar(60) NOT NULL DEFAULT '',
   `atasan_atasan_langsung` varchar(60) DEFAULT '',
   `level_sppd` varchar(1) DEFAULT '',
-
-  -- tambahan dari organikplnt2_backup.sql
   `jenis_mutasi` varchar(120) NOT NULL DEFAULT 'BARU',
   `jenis` varchar(120) DEFAULT '',
   `no_sk` varchar(200) DEFAULT '',
@@ -969,23 +959,22 @@ CREATE TABLE IF NOT EXISTS `data_pegawai` (
   `approval_konsumsi` varchar(1) NOT NULL DEFAULT '0',
   `kasir` varchar(1) NOT NULL DEFAULT '0',
   `kd_project_sap` varchar(60) DEFAULT '',
-
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Membuang data untuk tabel hrisori.data_pegawai: ~10 rows (lebih kurang)
-INSERT INTO `data_pegawai` (`id`, `nip`, `jabatan`, `grade`, `start_date`, `end_date`, `tgl_masuk`, `tgl_capeg`, `tgl_tetap`, `title`, `nama`, `gelar_depan`, `gelar_belakang`, `know_as`, `tempat_lahir`, `tgl_lahir`, `kode_negara`, `jenis_kelamin`, `id_agama`, `status_nikah`, `tgl_nikah`, `status_warganegara`, `gol_darah`, `suku`, `telepon_utama`, `telepon_cadangan1`, `telepon_cadangan2`, `telepon_cadangan3`, `telepon_darurat`, `jenis_dplk`, `id_dplk`, `bank_dplk`, `no_bpjs_kes`, `no_bpjs_tk`, `bank_payroll`, `an_payroll`, `no_rek_payroll`, `status_integrasi`, `status_edit`, `tgl_edit`, `user_edit`, `aktif`, `atasan_langsung`, `atasan_atasan_langsung`, `level_sppd`) VALUES
-	(1, '6793163Z', '', '', '1967-12-24', '9999-12-31', '1993-02-06', '1993-02-06', '1994-07-03', 'T1', 'I KETUT WIRIANA', 'GD8', '', 'Ir. I KETUT WIRIANA', 'MATARAM', '1967-12-24', 'ID', 'JK1', 'HND', 'SN2', '1998-12-31', 'SK1', '', 'BALI', '62811111724', '', '', '', '', 'JDPLK1', '', '', '0001770994506', '16003726268', 'BNI', 'I KETUT WIRIANA', '0001729328', '1', '0', '', '', '1', '', '', ''),
-	(2, '93151332ZY', '', '', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', '', '1', '', '', ''),
-	(3, '9720004ZTY', '', '', '1997-09-10', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'ABDUL MALIK', '', 'GB5', 'ABDUL MALIK GB5', 'MAROS', '1997-09-10', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '082395235023', '', '', '', '', 'JDPLK3', '804545490', 'BNI', '0002041428284', '20088670904', 'BNI', 'ABD. MALIK', '1133366615', '1', '0', '', '', '1', '', '', ''),
-	(4, '6691029E', '', '', '1966-10-10', '9999-12-31', '1991-04-01', '1994-05-01', '1997-07-01', 'T1', 'ABDUL HARIS DAUD', '', 'GB103', 'ABDUL HARIS DAUD S.T.', 'GORONTALO', '1966-10-10', 'ID', 'JK1', 'ISL', 'SN2', '1991-10-05', 'SK1', '', 'GORONTALO', '085256335785', '', '', '', '', 'JDPLK1', '', '', '0002137969574', '16003782493', 'BRI', 'ABDUL HARIS DAUD', '517901003407508', '1', '0', '', '', '1', '', '', ''),
-	(5, '8017001TRK', '', '', '1980-01-28', '9999-12-31', '2017-03-01', '2017-03-01', '2017-03-01', 'T1', 'ADE JANUAR SUCIADI', '', 'GB103', 'ADE JANUAR SUCIADI S.T.', 'SUKABUMI', '1980-01-28', 'ID', 'JK1', 'ISL', 'SN2', '2016-09-02', 'SK1', '', 'SUNDA', '082112019399', '', '', '', '', 'JDPLK3', '802681038', 'BNI', '0001129338652', '02K00161376', 'BNI', 'ADE JANUAR SUCIADI', '0381218457', '1', '0', '', '', '1', '', '', ''),
-	(6, '7410021TRK', '', '', '1974-08-23', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'ADRI HARYANTO', '', 'GB5', 'ADRI HARYANTO A.Md.', 'SAMARINDA', '1974-08-23', 'ID', 'JK1', 'ISL', 'SN2', '2001-01-12', 'SK1', '', 'BANJAR', '081350536952', '', '', '', '', 'JDPLK3', '795196801', 'BNI', '0001131983763', '06S20050214', 'BNI', 'ADRI HARYANTO', '0673679438', '1', '0', '', '', '1', '', '', ''),
-	(7, '9420009ZTY', '', '', '1994-02-20', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'AFIF ASYKAR AMIR', '', 'GB103', 'AFIF ASYKAR AMIR S.T.', 'UJUNG PANDANG', '1994-02-20', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '085343647509', '', '', '', '', 'JDPLK3', '804595453', 'BNI', '0000127421561', '20088670946', 'BNI', 'AFIF ASYKAR AMIR', '1133679163', '1', '0', '', '', '1', '', '', ''),
-	(8, '92171742ZY', '', '', '1992-02-22', '2024-05-31', '2017-09-01', '2017-09-01', '2017-09-01', 'T1', 'AGIL FRASSETYO', '', 'GB65', 'AGIL FRASSETYO SE', 'JAKARTA', '1992-02-22', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'JAKARTA', '082231844631', '', '', '', '', 'JDPLK3', '802394770', 'BNI', '0000039326916', '17044742975', 'BRI', 'AGIL FRASSETYO', '123701006656504', '1', '0', '', '', '1', '', '', ''),
-	(9, '8110015TRK', '', '', '1981-04-19', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'AGUNG SEDAYU', '', 'GB5', 'AGUNG SEDAYU A.Md.', 'MALANG', '1981-04-19', 'ID', 'JK1', 'ISL', 'SN3', '2006-05-19', 'SK1', '', 'JAWA', '081346231482', '', '', '', '', 'JDPLK3', '795344797', 'BNI', '0001131988397', '06S20050594', 'BRI', 'AGUNG SEDAYU', '18301019012507', '1', '0', '', '', '1', '', '', ''),
-	(10, '8509719Z', '', '', '1985-10-01', '2024-02-28', '2009-12-01', '2009-12-01', '2009-12-01', 'T1', 'AINUL YAQIN', '', 'GB89', 'AINUL YAQIN S.M.', 'BANYUWANGI', '1985-10-01', 'ID', 'JK1', 'ISL', 'SN2', '2011-09-11', 'SK1', '', 'JAWA', '085213530546', '', '', '', '', 'JDPLK1', '', '', '0002614708629', '16003740137', 'BSI', 'AINUL YAQIN', '2101985558', '1', '0', '', '', '1', '', '', '');
+INSERT INTO `data_pegawai` (`id`, `nip`, `jabatan`, `grade`, `start_date`, `end_date`, `tgl_masuk`, `tgl_capeg`, `tgl_tetap`, `title`, `nama`, `gelar_depan`, `gelar_belakang`, `know_as`, `tempat_lahir`, `tgl_lahir`, `kode_negara`, `jenis_kelamin`, `id_agama`, `status_nikah`, `tgl_nikah`, `status_warganegara`, `gol_darah`, `suku`, `telepon_utama`, `telepon_cadangan1`, `telepon_cadangan2`, `telepon_cadangan3`, `telepon_darurat`, `jenis_dplk`, `id_dplk`, `bank_dplk`, `no_bpjs_kes`, `no_bpjs_tk`, `bank_payroll`, `an_payroll`, `no_rek_payroll`, `status_integrasi`, `status_edit`, `tgl_edit`, `user_edit`, `aktif`, `tgl_berhenti`, `atasan_langsung`, `atasan_atasan_langsung`, `level_sppd`, `jenis_mutasi`, `jenis`, `no_sk`, `alamat`, `alamat_domisili`, `divisi`, `bidang`, `sub_bidang`, `region`, `unit`, `penempatan`, `skala_grade`, `pendidikan`, `jurusan`, `nik`, `no_kk`, `status`, `telepon`, `tgl_pegawai`, `tgl_awal_pkwt`, `tgl_akhir_pkwt`, `tgl_awal_pkwtt`, `tgl_awal_tugaskarya`, `tgl_akhir_tugaskarya`, `email`, `email2`, `agama`, `npwp`, `kpp`, `nama_bank`, `no_rekening`, `nama_rekening`, `nama_bank2`, `no_rekening2`, `nama_rekening2`, `ibu_kandung`, `baju`, `celana`, `sepatu`, `tgl_bpjs_kes`, `va_bpjs_kes`, `tgl_bpjs_tk`, `va_bpjs_tk`, `no_inhealth`, `tgl_inhealth`, `nama_bankdplk`, `no_rekeningdplk`, `no_cifdplk`, `keterangan`, `password`, `akses`, `kode_device`, `userid`, `welcome`, `foto`, `approval_sdm`, `approval_pembayaran`, `approval_konsumsi`, `kasir`, `kd_project_sap`) VALUES
+	(1, '6793163Z', '', '', '1967-12-24', '9999-12-31', '1993-02-06', '1993-02-06', '1994-07-03', 'T1', 'I KETUT WIRIANA', 'GD8', '', 'Ir. I KETUT WIRIANA', 'MATARAM', '1967-12-24', 'ID', 'JK1', 'HND', 'SN2', '1998-12-31', 'SK1', '', 'BALI', '62811111724', '', '', '', '', 'JDPLK1', '', '', '0001770994506', '16003726268', 'BNI', 'I KETUT WIRIANA', '0001729328', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(2, '93151332ZY', '', '', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(3, '9720004ZTY', '', '', '1997-09-10', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'ABDUL MALIK', '', 'GB5', 'ABDUL MALIK GB5', 'MAROS', '1997-09-10', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '082395235023', '', '', '', '', 'JDPLK3', '804545490', 'BNI', '0002041428284', '20088670904', 'BNI', 'ABD. MALIK', '1133366615', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(4, '6691029E', '', '', '1966-10-10', '9999-12-31', '1991-04-01', '1994-05-01', '1997-07-01', 'T1', 'ABDUL HARIS DAUD', '', 'GB103', 'ABDUL HARIS DAUD S.T.', 'GORONTALO', '1966-10-10', 'ID', 'JK1', 'ISL', 'SN2', '1991-10-05', 'SK1', '', 'GORONTALO', '085256335785', '', '', '', '', 'JDPLK1', '', '', '0002137969574', '16003782493', 'BRI', 'ABDUL HARIS DAUD', '517901003407508', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(5, '8017001TRK', '', '', '1980-01-28', '9999-12-31', '2017-03-01', '2017-03-01', '2017-03-01', 'T1', 'ADE JANUAR SUCIADI', '', 'GB103', 'ADE JANUAR SUCIADI S.T.', 'SUKABUMI', '1980-01-28', 'ID', 'JK1', 'ISL', 'SN2', '2016-09-02', 'SK1', '', 'SUNDA', '082112019399', '', '', '', '', 'JDPLK3', '802681038', 'BNI', '0001129338652', '02K00161376', 'BNI', 'ADE JANUAR SUCIADI', '0381218457', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(6, '7410021TRK', '', '', '1974-08-23', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'ADRI HARYANTO', '', 'GB5', 'ADRI HARYANTO A.Md.', 'SAMARINDA', '1974-08-23', 'ID', 'JK1', 'ISL', 'SN2', '2001-01-12', 'SK1', '', 'BANJAR', '081350536952', '', '', '', '', 'JDPLK3', '795196801', 'BNI', '0001131983763', '06S20050214', 'BNI', 'ADRI HARYANTO', '0673679438', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(7, '9420009ZTY', '', '', '1994-02-20', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'AFIF ASYKAR AMIR', '', 'GB103', 'AFIF ASYKAR AMIR S.T.', 'UJUNG PANDANG', '1994-02-20', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '085343647509', '', '', '', '', 'JDPLK3', '804595453', 'BNI', '0000127421561', '20088670946', 'BNI', 'AFIF ASYKAR AMIR', '1133679163', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(8, '92171742ZY', '', '', '1992-02-22', '2024-05-31', '2017-09-01', '2017-09-01', '2017-09-01', 'T1', 'AGIL FRASSETYO', '', 'GB65', 'AGIL FRASSETYO SE', 'JAKARTA', '1992-02-22', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'JAKARTA', '082231844631', '', '', '', '', 'JDPLK3', '802394770', 'BNI', '0000039326916', '17044742975', 'BRI', 'AGIL FRASSETYO', '123701006656504', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(9, '8110015TRK', '', '', '1981-04-19', '9999-12-31', '2011-04-01', '2011-04-01', '2011-04-01', 'T1', 'AGUNG SEDAYU', '', 'GB5', 'AGUNG SEDAYU A.Md.', 'MALANG', '1981-04-19', 'ID', 'JK1', 'ISL', 'SN3', '2006-05-19', 'SK1', '', 'JAWA', '081346231482', '', '', '', '', 'JDPLK3', '795344797', 'BNI', '0001131988397', '06S20050594', 'BRI', 'AGUNG SEDAYU', '18301019012507', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(10, '8509719Z', '', '', '1985-10-01', '2024-02-28', '2009-12-01', '2009-12-01', '2009-12-01', 'T1', 'AINUL YAQIN', '', 'GB89', 'AINUL YAQIN S.M.', 'BANYUWANGI', '1985-10-01', 'ID', 'JK1', 'ISL', 'SN2', '2011-09-11', 'SK1', '', 'JAWA', '085213530546', '', '', '', '', 'JDPLK1', '', '', '0002614708629', '16003740137', 'BSI', 'AINUL YAQIN', '2101985558', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', '');
 
 -- membuang struktur untuk table hrisori.data_project
 CREATE TABLE IF NOT EXISTS `data_project` (
@@ -4473,7 +4462,7 @@ CREATE TABLE IF NOT EXISTS `pengikut_sppd` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.pengikut_sppd: 9 rows
+-- Membuang data untuk tabel hrisori.pengikut_sppd: 11 rows
 /*!40000 ALTER TABLE `pengikut_sppd` DISABLE KEYS */;
 INSERT INTO `pengikut_sppd` (`id`, `idsppd`, `nama`, `hubungan`) VALUES
 	(2, '2020000002', 'Putri Ayu Kresnawaty', 'istri'),
@@ -6391,8 +6380,7 @@ CREATE TABLE IF NOT EXISTS `sppd1` (
   UNIQUE KEY `idsppd` (`idsppd`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.sppd1: 11 rows
-/*!40000 ALTER TABLE `sppd1` DISABLE KEYS */;
+-- Membuang data untuk tabel hrisori.sppd1: ~6 rows (lebih kurang)
 INSERT INTO `sppd1` (`id`, `idsppd`, `tanggal`, `tingkat_sppd`, `jenis_sppd`, `level_sppd`, `sub_jenis_sppd`, `kd_project_sap`, `nama_project_sap`, `no_sppd`, `nip`, `nama`, `grade`, `jabatan`, `maksud`, `agenda`, `kedudukan`, `tujuan`, `jarak`, `transportasi`, `tgl_awal`, `tgl_akhir`, `hari`, `kota1a`, `kota2a`, `transporta`, `kota1b`, `kota2b`, `transportb`, `kota1c`, `kota2c`, `transportc`, `kota1d`, `kota2d`, `transportd`, `jenis_tujuan`, `tgl_proses`, `petugas`, `approve1`, `approval1`, `tgl_approve1`, `alasan_reject1`, `approve2`, `approval2`, `tgl_approve2`, `alasan_reject2`, `validasi_biaya`, `tgl_validasi`, `approvesdm`, `approvalsdm`, `tgl_approvesdm`, `alasan_rejectsdm`, `approvebayar`, `approvalbayar`, `tgl_approvebayar`, `alasan_rejectbayar`, `bayar`, `tgl_bayar`, `editing`, `validasi_restitusi`, `tgl_validasi_restitusi`, `bayar_restitusi`, `tgl_bayar_restitusi`) VALUES
 	(6639, 'S001', '2025-01-01', '1', '1', 'B', 'Sub-A', 'P001', 'Project A', 'SPPD001', 'NIP001', 'Nama A', 'Grade A', 'Jabatan A', 'Maksud A', 'Agenda A', 'Kedudukan A', 'Tujuan A', 10, 'Transportasi A', '2025-01-01', '2025-01-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis A', '2025-01-01', 'Petugas A', '0', '9720004ZTY', '2025-01-02', 'Alasan Reject1 A', '0', '7410021TRK', '2025-01-03', 'Alasan Reject2 A', '0', '2025-01-04', '0', '9420009ZTY', '2025-01-05', 'Alasan Rejectsdm A', '0', '92171742ZY', '2025-01-06', 'Alasan Rejectbayar A', '0', '2025-01-07', '0', '0', '2025-01-08', '0', '2025-01-09'),
 	(6640, 'S002', '2025-02-01', '2', '2', 'C', 'Sub-B', 'P002', 'Project B', 'SPPD002', 'NIP002', 'Nama B', 'Grade B', 'Jabatan B', 'Maksud B', 'Agenda B', 'Kedudukan B', 'Tujuan B', 20, 'Transportasi B', '2025-02-01', '2025-02-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis B', '2025-02-01', 'Petugas B', '1', 'Approval1 B', '2025-02-02', 'Alasan Reject1 B', '0', 'Approval2 B', '2025-02-03', 'Alasan Reject2 B', '1', '2025-02-04', '1', 'Approvalsdm B', '2025-02-05', 'Alasan Rejectsdm B', '0', 'Approvalbayar B', '2025-02-06', 'Alasan Rejectbayar B', '0', '2025-02-07', '1', '0', '2025-02-08', '1', '2025-02-09'),
@@ -6405,7 +6393,6 @@ INSERT INTO `sppd1` (`id`, `idsppd`, `tanggal`, `tingkat_sppd`, `jenis_sppd`, `l
 	(6649, '2025000008', '2025-02-13', '', '', '', '', '', '', '0008.SPPD/MUM.00.07/PLN-TRK/2025', '6793163Z', 'I KETUT WIRIANA', '', '', '', '', '', '', 1, '', '', '', 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
 	(6650, '2025000009', '2025-02-13', '', '', '', '', '', '', '0009.SPPD/MUM.00.07/PLN-TRK/2025', '92171742ZY', 'AGIL FRASSETYO', '', '', '', '', '', '', 22, '', '', '', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
 	(6652, '2025000010', '2025-02-14', '', '', '', '', '', '', '0010.SPPD/MUM.00.07/PLN-TRK/2025', '9420009ZTY', 'AFIF ASYKAR AMIR', '', '', '', '', '', '', 4, '', '', '', 4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', '');
-/*!40000 ALTER TABLE `sppd1` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.sub_jenis_sppd
 CREATE TABLE IF NOT EXISTS `sub_jenis_sppd` (

@@ -29,9 +29,9 @@ def move_files(php_files, source_dirs, destination_dir):
     return moved_files
 
 # Input path file
-file_path = "./views/tabs/[nama_file].php"
-source_dirs = ["./unsorted-n-backup/", "./unsorted-n-backup/sipeg/","./api/"]
-destination_dir = "./api/[nama_menu]/"
+file_path = "./views/tabs/kepegawaian/master.php"
+source_dirs = ["./unsorted-n-backup/", "./unsorted-n-backup/sipeg/","./api/","./api/kepegawaian/"]
+destination_dir = "./api/kepegawaian/master/"
 
 # Scan file PHP dan pindahkan jika ditemukan
 php_files = scan_php_files(file_path)

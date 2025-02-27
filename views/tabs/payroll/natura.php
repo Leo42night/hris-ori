@@ -96,7 +96,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 
         function onSelectprovinsinatura(){
             var nilai1 = $('#id_provinsinatura').combobox('getValue');
-            var url1 = 'get_kabupaten.php?id_provinsi='+nilai1;
+            var url1 = 'api/hxms-api/get_kabupaten.php?id_provinsi='+nilai1;
             $('#id_kabupatennatura').combobox('enable');
             $('#id_kabupatennatura').combobox('clear'); 
             $('#id_kabupatennatura').combobox('reload',url1);

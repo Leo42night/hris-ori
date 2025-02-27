@@ -6,7 +6,8 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+    // require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+    $api_path = "api/kepegawaian/master/";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -213,7 +214,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     });
     </script>
     <table id="dgdatapegawai" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_datapegawai.php" pageSize="20"        
+            url="<?=$api_path?>get_master_datapegawai.php" pageSize="20"        
     		toolbar="#toolbardatapegawai" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

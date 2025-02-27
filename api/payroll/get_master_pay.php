@@ -22,7 +22,7 @@ if ($userhris){
     $perintah = "";    
     if($nip2!=""){
         $perintah .= " and (a.nip='$nip2' or b.nama like '%$nip2%')";
-        //$perintah .= " and (nip='$nip2' or nip in (select nip fro b.nama_lengkap like '%$nip2%')";
+        //$perintah .= " and (nip='$nip2' or nip in (select nip fro b.nama like '%$nip2%')";
     }
     
     $offset = ($page-1)*$rows;

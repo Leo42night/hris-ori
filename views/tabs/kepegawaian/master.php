@@ -6,7 +6,7 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    $foldernya = "api/kepegawaian/"
+    $foldernya = "api/kepegawaian/master/"; // kasus khusus karena call nya view/html -> api/html -> api/master/php
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -383,6 +383,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     	var url;
         function addPanel1901(){			
             index=1901;
+            console.log('<?=$foldernya;?>mtitle.php?proses=<?=$akses_proses;?>&view=<?=$akses_view;?>');
             if ($('#tt4').tabs('exists','M-Title')){
                 $('#tt4').tabs('select','M-Title');
                 var tab = $('#tt4').tabs('getSelected');
@@ -396,7 +397,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             }			
         }
 
-        function addPanel1902(){			
+        function addPanel1902(){	
+            // console.log("addd panel");		
             index=1902;
             if ($('#tt4').tabs('exists','M-Gelar Depan')){
                 $('#tt4').tabs('select','M-Gelar Depan');

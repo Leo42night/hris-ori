@@ -50,7 +50,7 @@ if ($userhris){
     
     $idsnya = explode("|", $ids2);
     foreach($idsnya as $idsnya2){            
-        // $rs = mysqli_query($koneksi,"select a.*,b.nama_lengkap from organikplnt.gaji a left join hrisnew.data_pegawai b on a.nip=b.nip where a.blth='$blth2' and a.id='$idsnya2'");
+        // $rs = mysqli_query($koneksi,"select a.*,b.nama from organikplnt.gaji a left join hrisnew.data_pegawai b on a.nip=b.nip where a.blth='$blth2' and a.id='$idsnya2'");
         $rs = mysqli_query($koneksi,"select a.*,b.nama,b.jabatan,b.jenis,b.nama_bank,b.no_rekening,b.nama_rekening from gaji a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2' and a.id='$idsnya2'");
         $hasil = mysqli_fetch_array($rs);
         $id = stripslashes ($hasil['id']);

@@ -120,7 +120,7 @@ if (!$userhris || $superadminhris!="1"){
     });
     </script>
     <table id="dgsettinguser" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_settinguser.php?username=<?=$username2;?>" pageSize="20"        
+            url="<?=$api_path?>get_master_settinguser.php?username=<?=$username2;?>" pageSize="20"        
     		toolbar="#toolbarsettinguser" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

@@ -96,7 +96,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 
         function onSelectprovinsihukuman(){
             var nilai1 = $('#id_provinsihukuman').combobox('getValue');
-            var url1 = 'get_kabupaten.php?id_provinsi='+nilai1;
+            var url1 = 'api/hxms-api/get_kabupaten.php?id_provinsi='+nilai1;
             $('#id_kabupatenhukuman').combobox('enable');
             $('#id_kabupatenhukuman').combobox('clear'); 
             $('#id_kabupatenhukuman').combobox('reload',url1);
@@ -186,7 +186,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     });
     </script>
     <table id="dghukuman" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_hukuman.php?nip=<?=$nip;?>" pageSize="20"        
+            url="<?=$api_path?>get_master_hukuman.php?nip=<?=$nip;?>" pageSize="20"        
     		toolbar="#toolbarhukuman" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

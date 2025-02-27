@@ -45,7 +45,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     });
     </script>
     <table id="dgproject" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_project.php" pageSize="20"        
+            url="<?=$api_path?>get_master_project.php" pageSize="20"        
     		toolbar="#toolbarproject" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

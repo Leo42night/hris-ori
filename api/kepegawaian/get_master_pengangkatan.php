@@ -26,14 +26,14 @@ if ($userhris){
     
     $perintah = "";
     if($nama2!=""){
-        $perintah .= " where (a.nip='$nama2' or b.nama_lengkap like '%$nama2%')";
+        $perintah .= " where (a.nip='$nama2' or b.nama like '%$nama2%')";
     }
     
     $rs = mysqli_query($koneksi,"select count(a.id) from r_pengangkatan a left join data_pegawai b on a.nip=b.nip".$perintah);
     $row = mysqli_fetch_row($rs);
     $result["total"] = $row[0];    
     
-    $rs = mysqli_query($koneksi,"select a.*,b.nama_lengkap as nama from r_pengangkatan a left join data_pegawai b on a.nip=b.nip".$perintah." order by a.id asc limit $offset,$rows");
+    $rs = mysqli_query($koneksi,"select a.*,b.nama as nama from r_pengangkatan a left join data_pegawai b on a.nip=b.nip".$perintah." order by a.id asc limit $offset,$rows");
     $items = array();
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = stripslashes ($hasil['id']);

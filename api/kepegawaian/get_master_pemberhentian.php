@@ -26,77 +26,77 @@ if ($userhris){
     
     $perintah = "";
     if($nama2!=""){
-        $perintah .= " where (a.nip='$nama2' or b.nama_lengkap like '%$nama2%')";
+        $perintah .= " where (a.nip='$nama2' or b.nama like '%$nama2%')";
     }
     
     $rs = mysqli_query($koneksi,"select count(a.id) from r_pemberhentian a left join data_pegawai b on a.nip=b.nip".$perintah);
     $row = mysqli_fetch_row($rs);
     $result["total"] = $row[0];    
     
-    $rs = mysqli_query($koneksi,"select a.*,b.nama_lengkap as nama from r_pemberhentian a left join data_pegawai b on a.nip=b.nip".$perintah." order by a.id asc limit $offset,$rows");
+    $rs = mysqli_query($koneksi,"select a.*,b.nama as nama from r_pemberhentian a left join data_pegawai b on a.nip=b.nip".$perintah." order by a.id asc limit $offset,$rows");
     $items = array();
     while ($hasil = mysqli_fetch_array($rs)) {
-    	$id = stripslashes ($hasil['id']);
-    	$nip = stripslashes ($hasil['nip']);
-        $nama = stripslashes ($hasil['nama']);
-        $tgl_lahir = stripslashes ($hasil['tgl_lahir']);
+    	$id = stripslashes($hasil['id'] ?? '');
+    	$nip = stripslashes($hasil['nip'] ?? '');
+        $nama = stripslashes($hasil['nama'] ?? '');
+        $tgl_lahir = stripslashes ($hasil['tgl_lahir'] ?? '');
         $tgl_lahir2 = TanggalIndo2($tgl_lahir);
-    	$tgl_masuk = strtoupper(stripslashes ($hasil['tgl_masuk']));
+    	$tgl_masuk = strtoupper(stripslashes ($hasil['tgl_masuk']) ?? '');
         $tgl_masuk2 = TanggalIndo2($tgl_masuk);
-    	$tgl_capeg = stripslashes ($hasil['tgl_capeg']);
+    	$tgl_capeg = stripslashes ($hasil['tgl_capeg'] ?? '');
         $tgl_capeg2 = TanggalIndo2($tgl_capeg);
-        $tgl_tetap = stripslashes ($hasil['tgl_tetap']);
+        $tgl_tetap = stripslashes ($hasil['tgl_tetap'] ?? '');
         $tgl_tetap2 = TanggalIndo2($tgl_tetap);
-        $tgl_berhenti = stripslashes ($hasil['tgl_berhenti']);
+        $tgl_berhenti = stripslashes ($hasil['tgl_berhenti'] ?? '');
         $tgl_berhenti2 = TanggalIndo2($tgl_berhenti);
-        $alasan_berhenti = stripslashes ($hasil['alasan_berhenti']);
+        $alasan_berhenti = stripslashes ($hasil['alasan_berhenti'] ?? '');
             $rs2 = mysqli_query($koneksi,"select * from m_alasan_berhenti where kode='$alasan_berhenti'");
             $hasil2 = mysqli_fetch_array($rs2);
             if($hasil2){
-                $alasan_berhenti2 = stripslashes ($hasil2['name']);
+                $alasan_berhenti2 = stripslashes ($hasil2['name'] ?? '');
             } else {
                 $alasan_berhenti2 = "";
             }
-        $person_grade = stripslashes ($hasil['person_grade']);
+        $person_grade = stripslashes ($hasil['person_grade'] ?? '');
             $rs2 = mysqli_query($koneksi,"select label from m_grade where kode_grade='$person_grade'");
             $hasil2 = mysqli_fetch_array($rs2);
             if($hasil2){
-                $person_grade2 = stripslashes ($hasil2['label']);
+                $person_grade2 = stripslashes ($hasil2['label'] ?? '');
             } else {
                 $person_grade2 = "";
             }
-        $phdp_terakhir = stripslashes ($hasil['phdp_terakhir']);
-        $agama = stripslashes ($hasil['agama']);
+        $phdp_terakhir = stripslashes ($hasil['phdp_terakhir'] ?? '');
+        $agama = stripslashes ($hasil['agama'] ?? '');
             $rs2 = mysqli_query($koneksi,"select label from m_agama where id_agama='$agama'");
             $hasil2 = mysqli_fetch_array($rs2);
             if($hasil2){
-                $agama2 = stripslashes ($hasil2['label']);
+                $agama2 = stripslashes ($hasil2['label'] ?? '');
             } else {
                 $agama2 = "";
             }
-        $jenis_kelamin = stripslashes ($hasil['jenis_kelamin']);
+        $jenis_kelamin = stripslashes ($hasil['jenis_kelamin'] ?? '');
             $rs2 = mysqli_query($koneksi,"select label from m_jenis_kelamin where kode='$jenis_kelamin'");
             $hasil2 = mysqli_fetch_array($rs2);
             if($hasil2){
-                $jenis_kelamin2 = stripslashes ($hasil2['label']);
+                $jenis_kelamin2 = stripslashes ($hasil2['label'] ?? '');
             } else {
                 $jenis_kelamin2 = "";
             }
-        $nik = stripslashes ($hasil['nik']);
-    	$npwp = stripslashes ($hasil['npwp']);
-        $dplk_dapen = stripslashes ($hasil['dplk_dapen']);
+        $nik = stripslashes ($hasil['nik'] ?? '');
+    	$npwp = stripslashes ($hasil['npwp'] ?? '');
+        $dplk_dapen = stripslashes ($hasil['dplk_dapen'] ?? '');
             $rs2 = mysqli_query($koneksi,"select * from m_jenis_asuransi where kode='$dplk_dapen'");
             $hasil2 = mysqli_fetch_array($rs2);
             if($hasil2){
-                $dplk_dapen2 = stripslashes ($hasil2['name']);
+                $dplk_dapen2 = stripslashes ($hasil2['name'] ?? '');
             } else {
                 $dplk_dapen2 = "";
             }
-        $bank_dplk = stripslashes ($hasil['bank_dplk']);
-        $no_peserta = stripslashes ($hasil['no_peserta']);
-        $no_bpjs_kes = stripslashes ($hasil['no_bpjs_kes']);
-        $no_bpjs_tk = stripslashes ($hasil['no_bpjs_tk']);
-        $tahun_pemberhentian = stripslashes ($hasil['tahun_pemberhentian']);
+        $bank_dplk = stripslashes ($hasil['bank_dplk'] ?? '');
+        $no_peserta = stripslashes ($hasil['no_peserta'] ?? '');
+        $no_bpjs_kes = stripslashes ($hasil['no_bpjs_kes'] ?? '');
+        $no_bpjs_tk = stripslashes ($hasil['no_bpjs_tk'] ?? '');
+        $tahun_pemberhentian = stripslashes ($hasil['tahun_pemberhentian'] ?? '');
         
         $datanya = array();
         $datanya["idpemberhentian"] = $id;

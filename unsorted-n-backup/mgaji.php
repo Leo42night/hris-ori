@@ -247,7 +247,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     });
     </script>
     <table id="dgmgaji" title="" class="easyui-datagrid" style="width:100%;height:100%"	
-            url="get_master_mgaji.php" pageSize="20"        
+            url="<?=$api_path?>get_master_mgaji.php" pageSize="20"        
     		toolbar="#toolbarmgaji" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >

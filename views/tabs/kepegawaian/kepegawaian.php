@@ -840,8 +840,11 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     	}
         
     	function detailpegawai(index){
+            // console.log('detail pegawai');
             var row = $('#dgpegawai').datagrid('getRow', index);
     		if (row){
+                console.log('row',row);
+                // object tt tidak ada
                 if ($('#tt').tabs('exists','Riwayat Pegawai')){
                     $('#tt').tabs('select','Riwayat Pegawai');
                     var tab = $('#tt').tabs('getSelected');

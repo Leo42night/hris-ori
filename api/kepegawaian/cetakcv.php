@@ -81,7 +81,7 @@ if($hasil){
         } else {
             $title2 = "";
         }
-    $nama_lengkap = stripslashesx ($hasil['nama_lengkap']);
+    $nama_lengkap = stripslashesx ($hasil['nama']);
     $gelar_depan = stripslashesx ($hasil['gelar_depan']);
         $rs2 = mysqli_query($koneksi,"select label from m_gelar_depan where kode='$gelar_depan'");
         $hasil2 = mysqli_fetch_array($rs2);
@@ -242,7 +242,7 @@ if($hasil){
         $nama_grade = "";
     }
     
-    $pdf->setSourceFile('D:/laragon/www/hris/template/cover_cv2.pdf');
+    $pdf->setSourceFile($_SERVER['DOCUMENT_ROOT'] . '/hris-ori/template/cover_cv2.pdf');
     $tplIdx = $pdf->importPage(1);
     $size = $pdf->getTemplateSize($tplIdx);
     $orientation = $size['width'] <= $size['height'] ? 'P' : 'L';

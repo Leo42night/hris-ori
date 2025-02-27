@@ -60,7 +60,7 @@ if ($userhris){
             } else {
                 $title2 = "";
             }
-        $nama_lengkap = stripslashes ($hasil['nama_lengkap']);
+        $nama_lengkap = stripslashes ($hasil['nama']);
         $gelar_depan = stripslashes ($hasil['gelar_depan']);
             $rs2 = mysqli_query($koneksi,"select label from m_gelar_depan where kode='$gelar_depan'");
             $hasil2 = mysqli_fetch_array($rs2);
