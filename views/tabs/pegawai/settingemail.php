@@ -6,7 +6,7 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    $foldernya = "sipeg/pegawai/";
+    $foldernya = "api/pegawai/";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{
@@ -289,7 +289,6 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
         <a href="javascript:void(0)" class="easyui-linkbutton c1" iconCls="fa fa-plus-circle" plain="false" onclick="addsettingemail()" style="min-width:90px;">Tambah</a>
         <?php } ?>
     </div>
-    
     <div id="dlgsettingemail" class="easyui-dialog" modal="true" style="min-width:200px;min-height:120px;max-height:500px;padding:5px 20px 10px 10px;top:40px;"
     		closed="true" buttons="#dlg-buttonssettingemail">
     	<form id="fmsettingemail" class="easyui-form" method="post" data-options="novalidate:true" enctype="multipart/form-data">

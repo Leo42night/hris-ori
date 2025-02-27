@@ -31,7 +31,7 @@ if ($userhris){
     $tujuan = $_REQUEST['tujuansppd'];
     $jarak = $_REQUEST['jaraksppd'];
     //$transportasi = $_REQUEST['transportasisppd'];
-    $transportasinya = $_REQUEST['transportasinya'];
+    $transportasinya = is_null($_REQUEST['transportasisppd']) ? "" : $_REQUEST['transportasisppd'];
     $transportasi = str_replace("|",",",$transportasinya);
     $tgl_awal = $_REQUEST['tgl_awalsppd'];
     $tgl_akhir = $_REQUEST['tgl_akhirsppd'];
@@ -43,7 +43,10 @@ if ($userhris){
     $result = @mysqli_query($koneksi,$sql);
     if ($result){
     	echo json_encode(array(
-    		'id' => $id
+    		'id' => $id,    
+            'result' => $result,
+            'approval1' => $approval1,
+            'approval2' => $approval2
     	));
     } else {
     	echo json_encode(array('errorMsg'=>mysqli_error($koneksi)));

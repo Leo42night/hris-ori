@@ -45,14 +45,14 @@ if ($userhris){
     $result = array();
     // $rs = mysqli_query($koneksi,"select count(*) from v_sppd where restitusi>0".$perintah);
     // $rs = mysqli_query($koneksi,"select count(*) from v_sppd where restitusi>0".$perintah);
-    $rs = mysqli_query($koneksi,"select count(*) from v_sppd".$perintah);
+    $rs = mysqli_query($koneksi,"select count(*) from sppd1".$perintah);
     $row = mysqli_fetch_row($rs);
     $result["total"] = $row[0];    
     //$result["total"] = mysqli_num_rows($rs);
     
     $items = array();
     // $rs = mysqli_query($koneksi,"select * from v_sppd where restitusi>0".$perintah." order by id desc limit $offset,$rows");
-    $rs = mysqli_query($koneksi,"select * from v_sppd".$perintah." order by id desc limit $offset,$rows");
+    $rs = mysqli_query($koneksi,"select * from sppd1".$perintah." order by id desc limit $offset,$rows");
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = $hasil['id'];
     	$idsppd = $hasil['idsppd'];
@@ -99,7 +99,7 @@ if ($userhris){
         $tgl_akhir2 = TanggalIndo2($tgl_akhir);
     	$hari = $hasil['hari'];
     	$jenis_tujuan = $hasil['jenis_tujuan'];
-        $restitusi = floatval($hasil['restitusi']);
+        // $restitusi = floatval($hasil['restitusi']);
         $bayar_restitusi = intval($hasil['bayar_restitusi']);
     	$validasi_restitusi = $hasil['validasi_restitusi'];
     	$tgl_validasi_restitusi = $hasil['tgl_validasi_restitusi'];
@@ -135,8 +135,10 @@ if ($userhris){
         $datanya["tgl_akhir2restitusi"] = $tgl_akhir2;
         $datanya["harirestitusi"] = $hari;
         $datanya["jenis_tujuanrestitusi"] = $jenis_tujuan;
-        $datanya["restitusirestitusi"] = $restitusi;
-        $datanya["restitusi2restitusi"] = number_format($restitusi,0,',','.');
+        $datanya["restitusirestitusi"] = floatval($hasil['bayar_restitusi']);
+        // $datanya["restitusirestitusi"] = $restitusi;
+        $datanya["restitusi2restitusi"] = number_format(floatval($hasil['bayar_restitusi']),0,',','.');
+        // $datanya["restitusi2restitusi"] = number_format($restitusi,0,',','.');
         $datanya["validasi_restitusirestitusi"] = $validasi_restitusi;
         $datanya["tgl_validasi_restitusirestitusi"] = $tgl_validasi_restitusi;
         $datanya["tgl_validasi_restitusi2restitusi"] = $tgl_validasi_restitusi2;

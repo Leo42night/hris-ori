@@ -7,7 +7,7 @@ $akses_view = $_REQUEST['view'];
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
-    $foldernya = "sipeg/pegawai/";
+    $foldernya = "api/pegawai/";
     ?>
     <script>
         $.extend($.fn.tabs.methods,{

@@ -75,6 +75,7 @@ if ($userhris){
     $sql .= "(idsppd,tanggal,tingkat_sppd,jenis_sppd,level_sppd,sub_jenis_sppd,kd_project_sap,nama_project_sap,no_sppd,nip,nama,grade,jabatan,maksud,agenda,kedudukan,tujuan,jarak,transportasi,tgl_awal,tgl_akhir,hari,approval1,approval2)";
     $sql .= " values('$idsppd','$tanggal','$tingkat_sppd','$jenis_sppd','$level_sppd','$sub_jenis_sppd','$kd_project_sap','$nama_project_sap','$no_sppd','$nip','$nama','$grade','$jabatan','$maksud','$agenda','$kedudukan','$tujuan','$jarak','$transportasi','$tgl_awal','$tgl_akhir','$hari','$approval1','$approval2')";
     $result = mysqli_query($koneksi,$sql);
+    
     if ($result){
         $sql2 = "insert into biaya_sppd1(idsppd) values('$idsppd')";
         $result2 = mysqli_query($koneksi,$sql2);

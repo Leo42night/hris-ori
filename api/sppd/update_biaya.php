@@ -80,7 +80,7 @@ if ($userhris){
     $sql .= " where idsppd='$idsppd'";
     $result = @mysqli_query($koneksi,$sql);
     if ($result){
-        echo json_encode(array('success'=>true));
+        echo json_encode(array('success'=>true, 'idsppd'=>$idsppd,'total'=>$total));  
     } else {
     	echo json_encode(array('errorMsg'=>mysqli_error($koneksi)));
     }

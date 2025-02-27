@@ -1,4 +1,5 @@
 <?php
+// Data yang pembayarannya sudah di approve
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];

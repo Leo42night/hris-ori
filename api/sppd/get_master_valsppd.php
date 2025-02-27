@@ -1,6 +1,8 @@
 <?php
 session_start();
 $userhris = $_SESSION["userakseshris"];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+
 if ($userhris){
     function TanggalIndo2($date){
         if($date!="" && $date!=null){
@@ -14,7 +16,6 @@ if ($userhris){
         }
     }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
 
@@ -34,13 +35,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     
     $offset = ($page-1)*$rows;
     $result = array();
+    // Approve SDM 2 (Sudah di Approve) dan Bayar 0 (Belum Bayar)
     $rs = mysqli_query($koneksi,"select count(*) from sppd1 where approvesdm='2' and bayar='0'".$perintah);
     $row = mysqli_fetch_row($rs);
     $result["total"] = $row[0];    
     
     $items = array();
     $rs = mysqli_query($koneksi,"select * from sppd1 where approvesdm='2' and bayar='0'".$perintah." order by id desc limit $offset,$rows");
+    
     while ($hasil = mysqli_fetch_array($rs)) {
+        // var_dump($hasil);
     	$id = $hasil['id'];
     	$idsppd = $hasil['idsppd'];
     	$tanggal = $hasil['tanggal'];

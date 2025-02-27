@@ -1,5 +1,5 @@
 <?php
-// file hilang: 
+// Rincian SPPD
 session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
@@ -168,41 +168,41 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
             return s + x.join("") + (num[1] ? dec + num[1] : "");
         }
 
-        function formatrp3(val, row) {
-            if (val === "") {
-                return "";
-            } else {
-                return number_format3(val, 3, ',', '.');
-            }
-        };
+        // function formatrp3(val, row) {
+        //     if (val === "") {
+        //         return "";
+        //     } else {
+        //         return number_format3(val, 3, ',', '.');
+        //     }
+        // };
 
-        function number_format3(num, dig, dec, sep) {
-            x = new Array();
-            s = (num < 0 ? "-" : "");
-            num = Math.abs(num).toFixed(dig).split(".");
-            r = num[0].split("").reverse();
-            for (var i = 1; i <= r.length; i++) { x.unshift(r[i - 1]); if (i % 3 == 0 && i != r.length) x.unshift(sep); }
-            //return "Rp "+s+x.join("")+(num[1]?dec+num[1]:"");
-            return s + x.join("") + (num[1] ? dec + num[1] : "");
-        }
+        // function number_format3(num, dig, dec, sep) {
+        //     x = new Array();
+        //     s = (num < 0 ? "-" : "");
+        //     num = Math.abs(num).toFixed(dig).split(".");
+        //     r = num[0].split("").reverse();
+        //     for (var i = 1; i <= r.length; i++) { x.unshift(r[i - 1]); if (i % 3 == 0 && i != r.length) x.unshift(sep); }
+        //     //return "Rp "+s+x.join("")+(num[1]?dec+num[1]:"");
+        //     return s + x.join("") + (num[1] ? dec + num[1] : "");
+        // }
 
-        function formatrp4(val, row) {
-            if (val === "") {
-                return "";
-            } else {
-                return number_format4(val, 2, ',', '.');
-            }
-        };
+        // function formatrp4(val, row) {
+        //     if (val === "") {
+        //         return "";
+        //     } else {
+        //         return number_format4(val, 2, ',', '.');
+        //     }
+        // };
 
-        function number_format4(num, dig, dec, sep) {
-            x = new Array();
-            s = (num < 0 ? "-" : "");
-            num = Math.abs(num).toFixed(dig).split(".");
-            r = num[0].split("").reverse();
-            for (var i = 1; i <= r.length; i++) { x.unshift(r[i - 1]); if (i % 3 == 0 && i != r.length) x.unshift(sep); }
-            //return "Rp "+s+x.join("")+(num[1]?dec+num[1]:"");
-            return s + x.join("") + (num[1] ? dec + num[1] : "");
-        }
+        // function number_format4(num, dig, dec, sep) {
+        //     x = new Array();
+        //     s = (num < 0 ? "-" : "");
+        //     num = Math.abs(num).toFixed(dig).split(".");
+        //     r = num[0].split("").reverse();
+        //     for (var i = 1; i <= r.length; i++) { x.unshift(r[i - 1]); if (i % 3 == 0 && i != r.length) x.unshift(sep); }
+        //     //return "Rp "+s+x.join("")+(num[1]?dec+num[1]:"");
+        //     return s + x.join("") + (num[1] ? dec + num[1] : "");
+        // }
 
         function aksisppd(value, row, index) {
             var akses_proses = "<?= $akses_proses; ?>";
@@ -216,80 +216,91 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
             // console.log("row.bayarsppd : ", row.bayarsppd); 
             // console.log("-------------------------------");
             if (parseInt(akses_proses) === 1) {
-                // Total SPPD: (tabel biaya_sppd) Biaya untuk Perjalanan SPPD, diinputkan ketika?
+                // Total SPPD: (tabel biaya_sppd['total']) Biaya untuk Perjalanan SPPD, diinputkan ketika?
                 // jika totalsppd = 0, validasi_biayasppd = 0, bayarsppd = 0
                 // fungsi on: edit, hapus, pengikut, resetsdm
                 // fungsi off: VALIDASI, RESETVALIDASI
+                // Approve SDM 2 berarti sudah 
                 if (parseFloat(row.totalsppd) === 0 && parseFloat(row.validasi_biayasppd) === 0 && parseFloat(row.bayarsppd) === 0) {
                     // bisa edit jika belum bayar SPPD
-                    var edit = '<a href="javascript:void(0)" title="Edit Data" onclick="editsppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:8px !important;"></i></button></a>';
-                    var b = '<a href="javascript:void(0)" title="Hapus Data" onclick="destroysppd(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
-                    var c = '<a href="javascript:void(0)" title="Pengikut" onclick="pengikutsppd(\'' + index + '\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;"><i class="fa fa-user" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a href="javascript:void(0)" title="Reset Approval SDM" onclick="resetsdm(\'' + index + '\')"><button class="easyui-linkbutton info" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET SDM<span></button></a>';
-                    var e = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">VALIDASI</span></button></a>';
-                    var f = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET VALIDASI</span></button></a>';
+                    var edit = '<a href="javascript:void(0)" title="Edit Data" onclick="editsppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;"><i class="fa fa-pencil-alt"></i></button></a>';
+                    var hapus = '<a href="javascript:void(0)" title="Hapus Data" onclick="destroysppd(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;"><i class="fa fa-times"></i></button></a>';
+                    var pengikut = '<a href="javascript:void(0)" title="Pengikut" onclick="pengikutsppd(\'' + index + '\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;"><i class="fa fa-user"></i></button></a>';
+                    var resetSDM = '<a href="javascript:void(0)" title="Reset Approval SDM" onclick="resetsdm(\'' + index + '\')"><button class="easyui-linkbutton info" style="width:90px;height:25px;font-size:.7rem !important">RESET SDM</button></a>';
+                    var validasi = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;">VALIDASI</button></a>';
+                    var resetValidasi = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;">RESET VALIDASI</button></a>';
                 } else {
-                    var edit = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
-                    var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
-                    var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;"><i class="fa fa-user" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET SDM<span></button></a>';
+                    var edit = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
+                    var hapus = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
+                    var pengikut = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-user"></i></button></a>';
+                    var resetSDM = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:.7rem !important">RESET SDM</button></a>';
+                    // dibawah aktif jika total sppd agendasppd
                     if (parseFloat(row.bayarsppd) === 0) {
-                        // Validasi Aktif jika totalsppd ada, validasi_biayasppd ada, dan bayarsppd ada
                         if (parseFloat(row.validasi_biayasppd) === 0) {
-                            var e = '<a href="javascript:void(0)" title="Validasi Biaya" onclick="validasi(\'' + index + '\')"><button class="easyui-linkbutton c1" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">VALIDASI</span></button></a>';
-                            var f = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET VALIDASI</span></button></a>';
+                            // Validasi Aktif jika belum bayarsppd, tapi totalsppd == 1, atau validasi_biayasppd === 1 
+                            var validasi = '<a href="javascript:void(0)" title="Validasi Biaya" onclick="validasi(\'' + index + '\')"><button class="easyui-linkbutton c1" style="width:90px;height:25px;">VALIDASI BIAYA</button></a>';
+                            var resetValidasi = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;">RESET VALIDASI</button></a>';
                         } else {
-                            var e = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">VALIDASI</span></button></a>';
-                            var f = '<a href="javascript:void(0)" title="Reset Validasi Biaya" onclick="resetvalidasi(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:90px;min-height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET VALIDASI</span></button></a>';
+                            // Reset validasi dilakukan ketika sudah validasi biaya (vaiidasi)
+                            var validasi = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;">VALIDASI</button></a>';
+                            var resetValidasi = '<a href="javascript:void(0)" title="Reset Validasi Biaya" onclick="resetvalidasi(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:90px;min-height:25px;">RESET VALIDASI</button></a>';
                         }
                     } else {
-                        var e = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">VALIDASI</span></button></a>';
-                        var f = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET VALIDASI</span></button></a>';
+                        // Jika sudah Bayar (tidak bisa validasi ataupun )
+                        var validasi = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;">VALIDASI</button></a>';
+                        var resetValidasi = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;">RESET VALIDASI</button></a>';
                     }
                 }
             } else {
-                var edit = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
-                var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
-                var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;"><i class="fa fa-user" style="font-size:8px !important;"></i></button></a>';
-                var d = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET SDM<span></button></a>';
-                var e = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">VALIDASI</span></button></a>';
-                var f = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-bottom:3px;"><span style="font-size:9px !important;">RESET VALIDASI</span></button></a>';
+                var edit = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
+                var hapus = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
+                var pengikut = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-user"></i></button></a>';
+                var resetSDM = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;font-size:.7rem !important">RESET SDM</button></a>';
+                var validasi = '<a><button class="easyui-linkbutton c2" style="width:90px;height:25px;">VALIDASI</button></a>';
+                var resetValidasi = '<a><button class="easyui-linkbutton c2" style="width:90px;min-height:25px;">RESET VALIDASI</button></a>';
             }
-            return edit + b + c + "<br/>" + d + "<br/>" + e + "<br/>" + f;
+            return edit + hapus + pengikut + "<br/>" + resetSDM + "<br/>" + validasi + "<br/>" + resetValidasi;
         }
 
         function biayasppd(value, row, index) {
             var akses_proses = "<?= $akses_proses; ?>";
             if (parseInt(akses_proses) === 1) {
                 if (parseInt(row.validasi_biayasppd) === 0 && parseInt(row.approvesdmsppd) === 2) {
-                    var a = '<a href="javascript:void(0)" title="Hitung Biaya" onclick="hitungbiaya(\'' + index + '\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
-                    var b = '<a href="javascript:void(0)" title="Reset Biaya" onclick="resetbiaya(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
+                    var hitungBiaya = '<a href="javascript:void(0)" title="Hitung Biaya" onclick="hitungbiaya(\'' + index + '\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
+                    var resetBiaya = '<a href="javascript:void(0)" title="Reset Biaya" onclick="resetbiaya(\'' + index + '\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
                 } else {
-                    var a = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
-                    var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
+                    var hitungBiaya = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
+                    var resetBiaya = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
                 }
+                // Total SPPD harus diatas 1 agar bisa di ajukan validasi biaya
+                // Untuk sekarang dibuat always true karena kita tidak tau kapan memang rincian dan cetak tidak digunakan??
+                // Cetak Hanya bisa dilakuan ketika sudah di validasi biaya nya
+                // if (parseFloat(row.totalsppd) == 0) {
+                // } else {
+                //     // Form hanya dapat dicetak jika Sudah divalidasi oleh semua ORG (Admin SPPD)
+                //     var rincianBiaya = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
+                // }
+                var rincianBiaya = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiaya(\'' + index + '\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
                 if (parseFloat(row.totalsppd) > 0) {
-                    var c = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiaya(\'' + index + '\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a href="javascript:void(0)" title="Cetak Form SPPD" onclick="cetaksppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+                    var cetakForm = '<a href="javascript:void(0)" title="Cetak Form SPPD" onclick="cetaksppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
                 } else {
-                    var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+                    var cetakForm = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
                 }
             } else {
-                var a = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
-                var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
-                var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
-                var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+                var hitungBiaya = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
+                var resetBiaya = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
+                var rincianBiaya = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
+                var cetakForm = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
             }
             // jika biaya sudah divalidasi maka cukup berikan icon centang ✅
             if (parseInt(row.validasi_biayasppd) === 1) {
-                var e = '<button class="easyui-linkbutton c1" style="width:40px;height:40px;font-size:16px;border:none;cursor:pointer;border-radius:50%;margin-top:5px;pointer-events: none;"><i class="fa fa-check"></i></button>';
+                var setApproval = '<button class="easyui-linkbutton c1" style="width:40px;height:40px;font-size:16px;border:none;cursor:pointer;border-radius:50%;margin-top:5px;pointer-events: none;"><i class="fa fa-check"></i></button>';
             } else {
                 // kita bisa melakukan setapproval jika biaya belum di validasi
                 // var e = '';
-                var e = '<a href="javascript:void(0)" title="Set Approval" onclick="setapprovalsppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:54px;height:25px;font-size:9.5px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;">APROVAL</button></a>';
+                var setApproval = '<a href="javascript:void(0)" title="Set Approval" onclick="setapprovalsppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:54px;height:25px;font-size:9.5px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;">APROVAL</button></a>';
             }
-            return a + b + "<br/>" + c + d + "<br/>" + e;
+            return hitungBiaya + resetBiaya + "<br/>" + rincianBiaya + cetakForm + "<br/>" + setApproval;
         }
 
         function timelinesppd(value, row, index) {
@@ -575,7 +586,6 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
                 }
             })
         });
-
     </script>
 
     <script type="text/javascript">
@@ -593,12 +603,12 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
         <thead frozen="true">
             <tr>
                 <th field="aksisppd" width="110" align="center" halign="center"
-                    data-options="formatter:aksisppd,styler:styler1">Aksis</th>
+                    data-options="formatter:aksisppd,styler:styler1">Aksi</th>
                 <th field="biayasppd" width="90" align="center" halign="center"
                     data-options="formatter:biayasppd,styler:styler1">Perhitungan<br />Biaya</th>
                 <th field="timelinesppd" width="250" align="center" halign="center"
                     data-options="formatter:timelinesppd,styler:styler1">Timeline</th>
-                <th field="namanyasppd" width="220" align="left" halign="center"
+                <th field="namanyasppd" width="100"align="left" halign="center"
                     data-options="formatter:namanyasppd,styler:styler1">Nama</th>
             </tr>
         </thead>
@@ -1485,6 +1495,7 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
                 </tr>
                 <tr>
                     <td>
+                        <!-- Jika Approve SDM = 2, maka data ditampilkan di menu Validasi SPPD -->
                         <div>
                             <div class="labelfor"><label>Approval SDM</label></div>
                             <input class="easyui-combobox" id="approvalsdmapproval" name="approvalsdmapproval"
@@ -1839,12 +1850,12 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
                             msg: result.errorMsg
                         });
                     } else {
+                        console.log(result);
                         $('#dlgbiaya').dialog('close');
                         $('#dgsppd').datagrid('reload');
                     }
                 }
             });
-
         }
 
         function validasi(index) {

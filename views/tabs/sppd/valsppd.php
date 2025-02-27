@@ -779,15 +779,27 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                             name="tingkat_valsppdvalsppd"
                             style="padding: 2px; width: 100%;" 
                             data-options="
-                                url:'<?=$foldernya;?>get_tingkat_valsppd.php',
+                                url:'<?=$foldernya;?>get_tingkat_sppd.php',
                                 required:true,
                                 method:'get',
                                 valueField:'value',
                                 textField:'text',
                                 panelHeight:'auto'
                         ">
+                        <!-- <input class="easyui-combobox"
+                            id="tingkat_valsppdvalsppd" editable="false"
+                            name="tingkat_valsppdvalsppd"
+                            style="padding: 2px; width: 100%;" 
+                            data-options="
+                                url:'<?//=//$foldernya;?>get_tingkat_valsppd.php[not_found]',
+                                required:true,
+                                method:'get',
+                                valueField:'value',
+                                textField:'text',
+                                panelHeight:'auto'
+                        "> -->
                     </div>
-                </td> 
+                </td> \
                 <td style="width:300px;padding-left:10px;">
                     <div>
                         <div class="labelfor"><label>Jenis valsppd</label></div>
@@ -796,13 +808,25 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                             name="jenis_valsppdvalsppd"
                             style="padding: 2px; width: 100%;" 
                             data-options="
-                                url:'<?=$foldernya;?>get_jenis_valsppd.php',
+                                url:'<?=$foldernya;?>get_jenis_sppd.php',
                                 required:true,
                                 method:'get',
                                 valueField:'value',
                                 textField:'text',
                                 panelHeight:'auto'
                         ">
+                        <!-- <input class="easyui-combobox"
+                            id="jenis_valsppdvalsppd" editable="false"
+                            name="jenis_valsppdvalsppd"
+                            style="padding: 2px; width: 100%;" 
+                            data-options="
+                                url:'<?//=$foldernya;?>get_jenis_valsppd.php',
+                                required:true,
+                                method:'get',
+                                valueField:'value',
+                                textField:'text',
+                                panelHeight:'auto'
+                        "> -->
                     </div>
                 </td> 
             </tr>

@@ -1,0 +1,1 @@
+- leo: menggabungkan data_pegawai dari hrisori.sql dengan organikplnt2_backup.sql

@@ -26,6 +26,7 @@ if ($userhris){
     
     $items = array();
     $rs = mysqli_query($koneksi,"select a.*,b.nama,b.nama_bank,b.no_rekening,b.nama_rekening from cuti_tahunan a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah." order by id asc limit $offset,$rows");
+    // echo "select a.*,b.nama,b.nama_bank,b.no_rekening,b.nama_rekening from cuti_tahunan a left join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah." order by id asc limit $offset,$rows";
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = stripslashesx ($hasil['id']);
     	$blth = stripslashesx ($hasil['blth']);
