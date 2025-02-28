@@ -8,6 +8,7 @@
 - Procedure:
   - prepare database in `database/hrisori.sql`, (bersama 2 file .sql backup jika struktur table yang dipanggil berbeda (2 file backup tidak perlu di jalankan, hanya untuk cadangan apabila tidak ada tabel ditemukan atau struktur kolom tabel berbeda))
   - `composer install`
+    - Jika Menggunakan composer install tidak berhasil bisa menggunakan perintah `composer install --ignore-platform-reqs`
   - running localhost server 
 
 ## Konfigurasi for next Developers
