@@ -479,6 +479,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             }
         } 
     	function savercuti(){
+            console.log("menyimpan data");
             $.messager.progress({height:75, text:'Proses simpan data...'});
             $('#fmrcuti').form('submit',{
                 url: url,
@@ -492,6 +493,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                     // alert(result);
                     $.messager.progress('close');
                     var result = eval('(' + result + ')');
+                    console.log(result);
                     if (result.errorMsg){
                         $.messager.alert('ERROR',result.errorMsg,'warning');
                     } else {

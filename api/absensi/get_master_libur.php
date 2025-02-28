@@ -55,6 +55,7 @@ if ($userhris){
     $items = array();
     $no=1;
     $rs2 = mysqli_query($koneksi,"select * from libur_nasional where substr(tanggal,1,4)='$tahun2' order by tanggal desc limit $offset,$rows");
+    // echo "select * from libur_nasional where substr(tanggal,1,4)='$tahun2' order by tanggal desc limit $offset,$rows";
     while ($hasil2 = mysqli_fetch_array($rs2)) {
     	$id = $hasil2['id'];
         $tanggal = $hasil2['tanggal'];

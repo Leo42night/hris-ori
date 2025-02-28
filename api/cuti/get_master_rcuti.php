@@ -125,10 +125,10 @@ if ($userhris){
         $approval1 = $hasil2['approval1'];
         $alasan_reject1 = $hasil2['alasan_reject1'];
         if($approval1!=""){
-            $rs31 = mysqli_query($koneksi,"select nama_lengkap from data_pegawai where nip='$approval1'");
+            $rs31 = mysqli_query($koneksi,"select nama from data_pegawai where nip='$approval1'");
             $hasil31 = mysqli_fetch_array($rs31);
             if($hasil31){
-                $nama_approval1 = $hasil31['nama_lengkap'];
+                $nama_approval1 = $hasil31['nama'];
             } else {
                 $nama_approval1 = "";
             }
@@ -142,10 +142,10 @@ if ($userhris){
         $approval2 = $hasil2['approval2'];
         $alasan_reject2 = $hasil2['alasan_reject2'];
         if($approval2!=""){
-            $rs32 = mysqli_query($koneksi,"select nama_lengkap from data_pegawai where nip='$approval2'");
+            $rs32 = mysqli_query($koneksi,"select nama from data_pegawai where nip='$approval2'");
             $hasil32 = mysqli_fetch_array($rs32);
             if($hasil32){
-                $nama_approval2 = $hasil32['nama_lengkap'];
+                $nama_approval2 = $hasil32['nama'];
             } else {
                 $nama_approval2 = "";
             }
