@@ -71,24 +71,24 @@ if ($userhris){
     
     $rs1 = mysqli_query($koneksi,"select * from data_pegawai where nip='$nip'");
     $hasil1 = mysqli_fetch_array($rs1);
-    $nama = stripslashesx ($hasil1['nama']);    
-    $kpp = stripslashesx ($hasil1['kpp']);    
+    $nama = stripslashesx ($hasil1['nama'] ?? "");    
+    $kpp = stripslashesx ($hasil1['kpp'] ?? "");    
         $rs9 = mysqli_query($koneksi,"select * from setting_pph where kpp='$kpp' order by id desc limit 1");
         $hasil9 = mysqli_fetch_array($rs9);
-        $npwp_pemotong = stripslashesx ($hasil9['npwp_pemotong']);
-        $nama_pemotong = stripslashesx ($hasil9['nama_pemotong']);
-        $npwp_pejabat = stripslashesx ($hasil9['npwp_pejabat']);
-        $nama_pejabat = stripslashesx ($hasil9['nama_pejabat']);
-        $path_ttd = stripslashesx ($hasil9['path_ttd']);
+        $npwp_pemotong = stripslashesx ($hasil9['npwp_pemotong'] ?? "");
+        $nama_pemotong = stripslashesx ($hasil9['nama_pemotong'] ?? "");
+        $npwp_pejabat = stripslashesx ($hasil9['npwp_pejabat'] ?? "");
+        $nama_pejabat = stripslashesx ($hasil9['nama_pejabat'] ?? "");
+        $path_ttd = stripslashesx ($hasil9['path_ttd'] ?? "");
 
-	$nik = stripslashesx ($hasil1['nik']);
-    $alamat = stripslashesx ($hasil1['alamat']);
+	$nik = stripslashesx ($hasil1['nik'] ?? "");
+    $alamat = stripslashesx ($hasil1['alamat'] ?? "");
     $alamat1 = substr($alamat,0,40);
     $alamat2 = substr($alamat,40,40);
-	$jenis_kelamin = stripslashesx ($hasil1['jenis_kelamin']);
-    $jabatan = stripslashesx ($hasil1['jabatan']);
+	$jenis_kelamin = stripslashesx ($hasil1['jenis_kelamin'] ?? "");
+    $jabatan = stripslashesx ($hasil1['jabatan'] ?? "");
     $jabatan2 = substr($jabatan,0,25);    
-	$npwp = stripslashesx ($hasil1['npwp']);
+	$npwp = stripslashesx ($hasil1['npwp'] ?? "");
     if($jenis_kelamin=="L"){
         $jenis_kelamin1 = "X";
         $jenis_kelamin2 = "";
@@ -99,36 +99,36 @@ if ($userhris){
     
     $rs2 = mysqli_query($koneksi,"select * from pph where nip='$nip' and blth='$blth'");
     $hasil2 = mysqli_fetch_array($rs2);
-	$no_urut = stripslashesx ($hasil2['no_urut']);
-	$tgl_buat = stripslashesx ($hasil2['tgl_proses']);
-	$tahun = stripslashesx ($hasil2['tahun']);
-	$status = stripslashesx ($hasil2['status']);
-	$blth_awal = stripslashesx ($hasil2['blth_awal']);
-	$blth_akhir = stripslashesx ($hasil2['blth_akhir']);
-	$masa_kerja = stripslashesx ($hasil2['masa_kerja']);
-	$gaji = (stripslashesx ($hasil2['gaji']))*1;
-	$tunjangan_pph = (stripslashesx ($hasil2['tunjangan_pph']))*1;
-	$tunjangan_variable = (stripslashesx ($hasil2['tunjangan_variable']))*1;
-	$honorarium = (stripslashesx ($hasil2['honorarium']))*1;
-	$benefit = (stripslashesx ($hasil2['benefit']))*1;
-	$natuna = (stripslashesx ($hasil2['natuna']))*1;
-	$bonus_thr = (stripslashesx ($hasil2['bonus_thr']))*1;
-	$brutob = (stripslashesx ($hasil2['brutob']))*1;
-	$biaya_jabatanb = (stripslashesx ($hasil2['biaya_jabatanb']))*1;
-	$iuran_pensiunb = (stripslashesx ($hasil2['iuran_pensiunb']))*1;
-	$brutot = (stripslashesx ($hasil2['brutot']))*1;
-	$biaya_jabatant = (stripslashesx ($hasil2['biaya_jabatant']))*1;
-	$iuran_pensiunt = (stripslashesx ($hasil2['iuran_pensiunt']))*1;
-	$biaya_pengurangt = (stripslashesx ($hasil2['biaya_pengurangt']))*1;
-	$nettot = (stripslashesx ($hasil2['nettot']))*1;
-	$nettot_sebelumnya = (stripslashesx ($hasil2['nettot_sebelumnya']))*1;
-	$nettot_akhir = (stripslashesx ($hasil2['nettot_akhir']))*1;
-	$ptkp = (stripslashesx ($hasil2['ptkp']))*1;
-	$pkp = (stripslashesx ($hasil2['pkp']))*1;
-	$ppht = (stripslashesx ($hasil2['ppht']))*1;
-	$ppht_sebelumnya = (stripslashesx ($hasil2['ppht_sebelumnya']))*1;
-	$ppht_terutang = (stripslashesx ($hasil2['ppht_terutang']))*1;
-	$pphb_terutang = (stripslashesx ($hasil2['pphb_terutang']))*1;
+	$no_urut = stripslashesx ($hasil2['no_urut'] ?? "");
+	$tgl_buat = stripslashesx ($hasil2['tgl_proses'] ?? "");
+	$tahun = stripslashesx ($hasil2['tahun'] ?? "");
+	$status = stripslashesx ($hasil2['status'] ?? "");
+	$blth_awal = stripslashesx ($hasil2['blth_awal'] ?? "");
+	$blth_akhir = stripslashesx ($hasil2['blth_akhir'] ?? "");
+	$masa_kerja = stripslashesx ($hasil2['masa_kerja'] ?? "");
+	$gaji = (stripslashesx ($hasil2['gaji'] ?? 0))*1;
+	$tunjangan_pph = (stripslashesx ($hasil2['tunjangan_pph'] ?? 0))*1;
+	$tunjangan_variable = (stripslashesx ($hasil2['tunjangan_variable'] ?? 0))*1;
+	$honorarium = (stripslashesx ($hasil2['honorarium'] ?? 0))*1;
+	$benefit = (stripslashesx ($hasil2['benefit'] ?? 0))*1;
+	$natuna = (stripslashesx ($hasil2['natuna'] ?? 0))*1;
+	$bonus_thr = (stripslashesx ($hasil2['bonus_thr'] ?? 0))*1;
+	$brutob = (stripslashesx ($hasil2['brutob'] ?? 0))*1;
+	$biaya_jabatanb = (stripslashesx ($hasil2['biaya_jabatanb'] ?? 0))*1;
+	$iuran_pensiunb = (stripslashesx ($hasil2['iuran_pensiunb'] ?? 0))*1;
+	$brutot = (stripslashesx ($hasil2['brutot'] ?? 0))*1;
+	$biaya_jabatant = (stripslashesx ($hasil2['biaya_jabatant'] ?? 0))*1;
+	$iuran_pensiunt = (stripslashesx ($hasil2['iuran_pensiunt'] ?? 0))*1;
+	$biaya_pengurangt = (stripslashesx ($hasil2['biaya_pengurangt'] ?? 0))*1;
+	$nettot = (stripslashesx ($hasil2['nettot'] ?? 0))*1;
+	$nettot_sebelumnya = (stripslashesx ($hasil2['nettot_sebelumnya'] ?? 0))*1;
+	$nettot_akhir = (stripslashesx ($hasil2['nettot_akhir'] ?? 0))*1;
+	$ptkp = (stripslashesx ($hasil2['ptkp'] ?? 0))*1;
+	$pkp = (stripslashesx ($hasil2['pkp'] ?? 0))*1;
+	$ppht = (stripslashesx ($hasil2['ppht'] ?? 0))*1;
+	$ppht_sebelumnya = (stripslashesx ($hasil2['ppht_sebelumnya'] ?? 0))*1;
+	$ppht_terutang = (stripslashesx ($hasil2['ppht_terutang'] ?? 0))*1;
+	$pphb_terutang = (stripslashesx ($hasil2['pphb_terutang'] ?? 0))*1;
     $status1 = "";
     $status2 = "";
     if($status!="TK0"){
@@ -190,7 +190,7 @@ if ($userhris){
     $dasar= $pdf->GetY();
 
     $y=$pdf->GetY();
-    $pdf->Image('../images/logopajak.png',30,10,20,0);
+    $pdf->Image($_SERVER['DOCUMENT_ROOT'].'/hris-ori/assets/img/logopajak.png',30,10,20,0);
     $pdf->SetFont('Arial','B',8);
     //$pdf->SetFont('Arial','',6);
     //$y= $pdf->GetY();
@@ -803,7 +803,7 @@ if ($userhris){
     */
     // $pdf->Image($path_ttd,168,267,0,16);
     if($path_ttd=="" || $path_ttd==null){
-        $pdf->Image('../assets/ttd/ttdbaru.jpeg',168,266.5,0,17);
+        $pdf->Image(__DIR__.'/../../assets/img/TTD.png',168,266.5,0,17);
     } else {
         $pdf->Image("../".$path_ttd,168,266.5,0,17);
     }

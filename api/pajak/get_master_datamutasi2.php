@@ -33,6 +33,7 @@ if ($userhris){
     
     $items = array();
     $rs = mysqli_query($koneksi,"select a.nip, min(a.blth) as blth_awal,max(a.blth) as blth_akhir from v_list_pajak a inner join data_pegawai b on a.nip=b.nip where a.blth>='$blth_awalcari' and a.blth<='$blth_akhircari' and b.aktif<>'1' group by a.nip order by blth_awal asc,blth_akhir asc,a.nip asc limit $offset,$rows");
+    // echo "select a.nip, min(a.blth) as blth_awal,max(a.blth) as blth_akhir from v_list_pajak a inner join data_pegawai b on a.nip=b.nip where a.blth>='$blth_awalcari' and a.blth<='$blth_akhircari' and b.aktif<>'1' group by a.nip order by blth_awal asc,blth_akhir asc,a.nip asc limit $offset,$rows";
     while ($hasil = mysqli_fetch_array($rs)) {
     	$nip = stripslashes ($hasil['nip']);
     	$blth_awal = stripslashes ($hasil['blth_awal']);

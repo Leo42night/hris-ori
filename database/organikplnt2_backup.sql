@@ -45,7 +45,7 @@ CREATE TABLE `absensi` (
   `kota` varchar(100) DEFAULT NULL,
   `durasi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=138176 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=138176;
 
 /*Table structure for table `absensi_2025` */
 
@@ -80,7 +80,7 @@ CREATE TABLE `absensi_2025` (
   `kota` varchar(100) DEFAULT NULL,
   `durasi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=138340 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=138340;
 
 /*Table structure for table `aktivitas_harian` */
 
@@ -94,7 +94,7 @@ CREATE TABLE `aktivitas_harian` (
   `keterangan` varchar(255) DEFAULT '',
   `eviden` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10906 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=10906;
 
 /*Table structure for table `atasan_langsung` */
 
@@ -104,7 +104,7 @@ CREATE TABLE `atasan_langsung` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nip` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=7;
 
 /*Table structure for table `attempt` */
 
@@ -147,7 +147,7 @@ CREATE TABLE `beban_pph` (
   `kode` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kode` (`kode`)
-) ENGINE=MyISAM AUTO_INCREMENT=2846 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=2846 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `beban_pph21` */
 
@@ -204,7 +204,7 @@ CREATE TABLE `beban_pph21` (
   `blth_gaji` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=19647 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=19647;
 
 /*Table structure for table `beban_pph21real` */
 
@@ -261,7 +261,7 @@ CREATE TABLE `beban_pph21real` (
   `blth_gaji` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=19647 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=19647;
 
 /*Table structure for table `biaya_restitusi` */
 
@@ -279,7 +279,7 @@ CREATE TABLE `biaya_restitusi` (
   `tanggal_approve1` date DEFAULT NULL,
   `keterangan_reject` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=108615 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=108615;
 
 /*Table structure for table `biaya_restitusidummy` */
 
@@ -293,7 +293,7 @@ CREATE TABLE `biaya_restitusidummy` (
   `keterangan` text,
   `lampiran` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4985 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4985;
 
 /*Table structure for table `biaya_sppd` */
 
@@ -329,7 +329,7 @@ CREATE TABLE `biaya_sppd` (
   `total` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6;
 
 /*Table structure for table `biaya_sppd1` */
 
@@ -506,7 +506,7 @@ CREATE TABLE `biaya_sppd1dummy` (
   `baju_hangat_ln` double NOT NULL DEFAULT '0',
   `total` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3586 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3586;
 
 /*Table structure for table `bonus` */
 
@@ -534,7 +534,7 @@ CREATE TABLE `bonus` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=1493 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1493;
 
 /*Table structure for table `bonus20210205` */
 
@@ -562,7 +562,7 @@ CREATE TABLE `bonus20210205` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=479 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=479;
 
 /*Table structure for table `bonus20210803` */
 
@@ -590,7 +590,7 @@ CREATE TABLE `bonus20210803` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=477 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=477;
 
 /*Table structure for table `bonus20210809` */
 
@@ -618,7 +618,7 @@ CREATE TABLE `bonus20210809` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=619 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=619;
 
 /*Table structure for table `cuti` */
 
@@ -648,7 +648,7 @@ CREATE TABLE `cuti` (
   `tgl_update` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1059 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1059;
 
 /*Table structure for table `cuti_besar` */
 
@@ -665,7 +665,7 @@ CREATE TABLE `cuti_besar` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `cuti_tahunan` */
 
@@ -691,7 +691,7 @@ CREATE TABLE `cuti_tahunan` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=1544 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1544;
 
 /*Table structure for table `cuti_tahunan20231207` */
 
@@ -717,7 +717,7 @@ CREATE TABLE `cuti_tahunan20231207` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=1300 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1300;
 
 /*Table structure for table `data_aktivitas` */
 
@@ -730,7 +730,7 @@ CREATE TABLE `data_aktivitas` (
   `user` varchar(200) DEFAULT '',
   `aktivitas` mediumtext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=118;
 
 /*Table structure for table `data_keluarga` */
 
@@ -744,7 +744,7 @@ CREATE TABLE `data_keluarga` (
   `tgl_lahir` varchar(10) DEFAULT '',
   `hubungan_keluarga` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=135;
 
 /*Table structure for table `data_keluargalama` */
 
@@ -765,7 +765,7 @@ CREATE TABLE `data_keluargalama` (
   `keterangan` varchar(255) DEFAULT '',
   `tunggakan` varchar(20) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `data_pegawai` */
 
@@ -857,7 +857,7 @@ CREATE TABLE `data_pegawai` (
   `session_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=377 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=377;
 
 /*Table structure for table `data_pegawai20200125` */
 
@@ -930,7 +930,7 @@ CREATE TABLE `data_pegawai20200125` (
   `format` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=305 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=305;
 
 /*Table structure for table `data_pegawai20200127` */
 
@@ -1003,7 +1003,7 @@ CREATE TABLE `data_pegawai20200127` (
   `format` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=305 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=305;
 
 /*Table structure for table `data_pegawai20200131` */
 
@@ -1076,7 +1076,7 @@ CREATE TABLE `data_pegawai20200131` (
   `format` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=305 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=305;
 
 /*Table structure for table `data_pegawai20200201backup` */
 
@@ -1148,7 +1148,7 @@ CREATE TABLE `data_pegawai20200201backup` (
   `password` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=101;
 
 /*Table structure for table `data_pegawai20200208` */
 
@@ -1220,7 +1220,7 @@ CREATE TABLE `data_pegawai20200208` (
   `password` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=101;
 
 /*Table structure for table `data_pegawai20200307` */
 
@@ -1294,7 +1294,7 @@ CREATE TABLE `data_pegawai20200307` (
   `level_sppd` varchar(1) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=114;
 
 /*Table structure for table `data_pegawai20200428(12)` */
 
@@ -1369,7 +1369,7 @@ CREATE TABLE `data_pegawai20200428(12)` (
   `level_sppd` varchar(1) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=144 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=144;
 
 /*Table structure for table `data_pegawai20210225` */
 
@@ -1445,7 +1445,7 @@ CREATE TABLE `data_pegawai20210225` (
   `level_sppd` varchar(1) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=176;
 
 /*Table structure for table `data_pegawai20210520` */
 
@@ -1524,7 +1524,7 @@ CREATE TABLE `data_pegawai20210520` (
   `kode_device` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=183 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=183;
 
 /*Table structure for table `data_pegawai20210628` */
 
@@ -1608,7 +1608,7 @@ CREATE TABLE `data_pegawai20210628` (
   `approval_pembayaran` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=189 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=189;
 
 /*Table structure for table `data_pegawai20240318` */
 
@@ -1695,7 +1695,7 @@ CREATE TABLE `data_pegawai20240318` (
   `ttd` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=301 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=301;
 
 /*Table structure for table `data_pegawai20240714` */
 
@@ -1786,7 +1786,7 @@ CREATE TABLE `data_pegawai20240714` (
   `session_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=305 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=305;
 
 /*Table structure for table `data_pegawai20240909` */
 
@@ -1877,7 +1877,7 @@ CREATE TABLE `data_pegawai20240909` (
   `session_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=315 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=315;
 
 /*Table structure for table `data_pegawailama` */
 
@@ -1968,7 +1968,7 @@ CREATE TABLE `data_pegawailama` (
   `session_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=315 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=315;
 
 /*Table structure for table `data_pegawailama2` */
 
@@ -2059,7 +2059,7 @@ CREATE TABLE `data_pegawailama2` (
   `session_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=315 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=315;
 
 /*Table structure for table `data_pegawaisalah` */
 
@@ -2132,7 +2132,7 @@ CREATE TABLE `data_pegawaisalah` (
   `format` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=330 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=330;
 
 /*Table structure for table `data_project` */
 
@@ -2145,7 +2145,7 @@ CREATE TABLE `data_project` (
   `status` varchar(10) NOT NULL DEFAULT 'tYES',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kd_project_sap` (`kd_project_sap`)
-) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=235 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `data_vendor` */
 
@@ -2158,7 +2158,7 @@ CREATE TABLE `data_vendor` (
   `valid` varchar(10) NOT NULL DEFAULT 'tYES',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kd_vendor` (`kd_vendor`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `eviden_restitusi` */
 
@@ -2269,7 +2269,7 @@ CREATE TABLE `gaji` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=45939 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=45939;
 
 /*Table structure for table `gaji2` */
 
@@ -2322,7 +2322,7 @@ CREATE TABLE `gaji2` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `gaji20200107` */
 
@@ -2355,7 +2355,7 @@ CREATE TABLE `gaji20200107` (
   `pph21` double NOT NULL DEFAULT '0',
   `upah_bersih` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=111;
 
 /*Table structure for table `gaji20200108` */
 
@@ -2388,7 +2388,7 @@ CREATE TABLE `gaji20200108` (
   `pph21` double NOT NULL DEFAULT '0',
   `upah_bersih` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=128 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=128;
 
 /*Table structure for table `gaji20200109fixgaji` */
 
@@ -2420,7 +2420,7 @@ CREATE TABLE `gaji20200109fixgaji` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=919 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=919;
 
 /*Table structure for table `gaji20200125` */
 
@@ -2452,7 +2452,7 @@ CREATE TABLE `gaji20200125` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=919 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=919;
 
 /*Table structure for table `gaji20201229` */
 
@@ -2521,7 +2521,7 @@ CREATE TABLE `gaji20201229` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=9479 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=9479;
 
 /*Table structure for table `gaji20220928` */
 
@@ -2590,7 +2590,7 @@ CREATE TABLE `gaji20220928` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=22369 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=22369;
 
 /*Table structure for table `gaji20230823` */
 
@@ -2660,7 +2660,7 @@ CREATE TABLE `gaji20230823` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=31237 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=31237;
 
 /*Table structure for table `gaji_tunjangan` */
 
@@ -2676,7 +2676,7 @@ CREATE TABLE `gaji_tunjangan` (
   `iks` double NOT NULL DEFAULT '0',
   `bonus` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `gajibackfix2` */
 
@@ -2708,7 +2708,7 @@ CREATE TABLE `gajibackfix2` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=849 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=849;
 
 /*Table structure for table `gajibackupfixsampaijuni` */
 
@@ -2740,7 +2740,7 @@ CREATE TABLE `gajibackupfixsampaijuni` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=540 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=540;
 
 /*Table structure for table `gajilama` */
 
@@ -2804,7 +2804,7 @@ CREATE TABLE `gajilama` (
   `bpjs_kes_pk` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `gajipph` */
 
@@ -2837,7 +2837,7 @@ CREATE TABLE `gajipph` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=1310 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1310;
 
 /*Table structure for table `gajipph20200129` */
 
@@ -2869,7 +2869,7 @@ CREATE TABLE `gajipph20200129` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=1085 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1085;
 
 /*Table structure for table `gajipph20200226` */
 
@@ -2901,7 +2901,7 @@ CREATE TABLE `gajipph20200226` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=1087 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1087;
 
 /*Table structure for table `gajipph20200419` */
 
@@ -2934,7 +2934,7 @@ CREATE TABLE `gajipph20200419` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=1309 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1309;
 
 /*Table structure for table `hasil_indikator_kinerja` */
 
@@ -2965,7 +2965,7 @@ CREATE TABLE `honorarium_eo` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `ijin` */
 
@@ -2992,7 +2992,7 @@ CREATE TABLE `ijin` (
   `tgl_update` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=300 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=300;
 
 /*Table structure for table `iklan` */
 
@@ -3006,7 +3006,7 @@ CREATE TABLE `iklan` (
   `link_aplikasi` varchar(200) DEFAULT '',
   `aktif` varchar(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=11;
 
 /*Table structure for table `iks` */
 
@@ -3059,7 +3059,7 @@ CREATE TABLE `iks` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2715 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2715;
 
 /*Table structure for table `iks20210308` */
 
@@ -3112,7 +3112,7 @@ CREATE TABLE `iks20210308` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=471 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=471;
 
 /*Table structure for table `iks20210510` */
 
@@ -3165,7 +3165,7 @@ CREATE TABLE `iks20210510` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=590 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=590;
 
 /*Table structure for table `iks20211109` */
 
@@ -3218,7 +3218,7 @@ CREATE TABLE `iks20211109` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=971 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=971;
 
 /*Table structure for table `iks20220509` */
 
@@ -3271,7 +3271,7 @@ CREATE TABLE `iks20220509` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1263 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1263;
 
 /*Table structure for table `jawaban` */
 
@@ -3297,7 +3297,7 @@ CREATE TABLE `jenis_acara` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6;
 
 /*Table structure for table `jenis_makanan` */
 
@@ -3307,7 +3307,7 @@ CREATE TABLE `jenis_makanan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `jenis_pegawai` */
 
@@ -3319,7 +3319,7 @@ CREATE TABLE `jenis_pegawai` (
   `kd_kelompok` varchar(1) NOT NULL DEFAULT '1',
   `nama_kelompok` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=12;
 
 /*Table structure for table `jenis_pegawailama` */
 
@@ -3329,7 +3329,7 @@ CREATE TABLE `jenis_pegawailama` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=12;
 
 /*Table structure for table `jenis_sppd` */
 
@@ -3340,7 +3340,7 @@ CREATE TABLE `jenis_sppd` (
   `kd_sppd` varchar(1) DEFAULT '',
   `nama_sppd` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6;
 
 /*Table structure for table `jenis_thr` */
 
@@ -3362,7 +3362,7 @@ CREATE TABLE `jenis_tujuan` (
   `kd_tujuan` varchar(1) DEFAULT '',
   `nama_tujuan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4;
 
 /*Table structure for table `kategori_pajak` */
 
@@ -3375,7 +3375,7 @@ CREATE TABLE `kategori_pajak` (
   `batas_akhir` double NOT NULL DEFAULT '0',
   `tarif` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `kategori_pegawai` */
 
@@ -3397,7 +3397,7 @@ CREATE TABLE `kategori_pegawai` (
   `status` varchar(1) NOT NULL DEFAULT '2',
   `kode_jabatan` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `kelebihan_bayar_rampung` */
 
@@ -3415,7 +3415,7 @@ CREATE TABLE `kelebihan_bayar_rampung` (
   `blthnip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2312 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2312;
 
 /*Table structure for table `kelebihan_bayar_rampungreal` */
 
@@ -3433,7 +3433,7 @@ CREATE TABLE `kelebihan_bayar_rampungreal` (
   `blthnip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2307 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2307;
 
 /*Table structure for table `kelebihan_bayar_rampungreallama` */
 
@@ -3451,7 +3451,7 @@ CREATE TABLE `kelebihan_bayar_rampungreallama` (
   `blthnip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2307 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2307;
 
 /*Table structure for table `keluhan` */
 
@@ -3480,7 +3480,7 @@ CREATE TABLE `kondisi_kesehatan` (
   `suhu2` varchar(30) DEFAULT '',
   `kondisi2` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58418 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=58418;
 
 /*Table structure for table `konsumsi` */
 
@@ -3519,7 +3519,7 @@ CREATE TABLE `konsumsi` (
   `approval3` varchar(120) DEFAULT '',
   `alasan_reject3` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=429 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=429;
 
 /*Table structure for table `konsumsi20221125` */
 
@@ -3558,7 +3558,7 @@ CREATE TABLE `konsumsi20221125` (
   `approval3` varchar(120) DEFAULT '',
   `alasan_reject3` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=64;
 
 /*Table structure for table `konsumsilama` */
 
@@ -3588,7 +3588,7 @@ CREATE TABLE `konsumsilama` (
   `tgl_approve3` varchar(10) DEFAULT '',
   `alasan_reject3` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=14;
 
 /*Table structure for table `kpi_pusat` */
 
@@ -3612,7 +3612,7 @@ CREATE TABLE `kunci_data` (
   `blth` varchar(7) NOT NULL DEFAULT '',
   `kunci` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=12;
 
 /*Table structure for table `libur_nasional` */
 
@@ -3623,7 +3623,7 @@ CREATE TABLE `libur_nasional` (
   `tanggal` varchar(10) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=119;
 
 /*Table structure for table `log_aktivitas` */
 
@@ -3637,7 +3637,7 @@ CREATE TABLE `log_aktivitas` (
   `aktivitas` text,
   `kode` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32244 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=32244;
 
 /*Table structure for table `m_grade` */
 
@@ -3697,7 +3697,7 @@ CREATE TABLE `mapping_pajak` (
   `sppd_mutasi` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=382 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=382;
 
 /*Table structure for table `mapping_sptmasa` */
 
@@ -3786,7 +3786,7 @@ CREATE TABLE `mapping_sptmasa` (
   `akun_sppd_mutasi` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kode` (`kode`)
-) ENGINE=MyISAM AUTO_INCREMENT=4913 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4913;
 
 /*Table structure for table `mapping_sptmasa20241226` */
 
@@ -3875,7 +3875,7 @@ CREATE TABLE `mapping_sptmasa20241226` (
   `akun_sppd_mutasi` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kode` (`kode`)
-) ENGINE=MyISAM AUTO_INCREMENT=2973 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2973;
 
 /*Table structure for table `master_bantuan_mutasi` */
 
@@ -3895,7 +3895,7 @@ CREATE TABLE `master_bantuan_mutasi` (
   `level6` double NOT NULL DEFAULT '0',
   `level7` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=81;
 
 /*Table structure for table `master_biaya_sppd` */
 
@@ -3912,7 +3912,7 @@ CREATE TABLE `master_biaya_sppd` (
   `penginapan` double NOT NULL DEFAULT '0',
   `lumpsum_penginapan` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=15;
 
 /*Table structure for table `master_biaya_sppd2` */
 
@@ -3929,7 +3929,7 @@ CREATE TABLE `master_biaya_sppd2` (
   `penginapan` double NOT NULL DEFAULT '0',
   `lumpsum_penginapan` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=15;
 
 /*Table structure for table `master_biaya_sppd2lama` */
 
@@ -3944,7 +3944,7 @@ CREATE TABLE `master_biaya_sppd2lama` (
   `penginapan` double NOT NULL DEFAULT '0',
   `lumpsum_penginapan` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8;
 
 /*Table structure for table `master_biaya_sppdlama` */
 
@@ -3958,7 +3958,7 @@ CREATE TABLE `master_biaya_sppdlama` (
   `transportasi_lokal` double NOT NULL DEFAULT '0',
   `penginapan` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8;
 
 /*Table structure for table `master_biaya_transportasi` */
 
@@ -3971,7 +3971,7 @@ CREATE TABLE `master_biaya_transportasi` (
   `jenis_transportasi` varchar(120) DEFAULT '',
   `biaya` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `master_divisi` */
 
@@ -3983,7 +3983,7 @@ CREATE TABLE `master_divisi` (
   `pejabat` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `divisi` (`divisi`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8;
 
 /*Table structure for table `master_gaji` */
 
@@ -4052,7 +4052,7 @@ CREATE TABLE `master_gaji` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=385 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=385;
 
 /*Table structure for table `master_gaji20200131` */
 
@@ -4107,7 +4107,7 @@ CREATE TABLE `master_gaji20200131` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=923 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=923;
 
 /*Table structure for table `master_gaji20200614` */
 
@@ -4162,7 +4162,7 @@ CREATE TABLE `master_gaji20200614` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=146 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=146;
 
 /*Table structure for table `master_gaji20230823` */
 
@@ -4230,7 +4230,7 @@ CREATE TABLE `master_gaji20230823` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=250 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=250;
 
 /*Table structure for table `master_gajilama` */
 
@@ -4281,7 +4281,7 @@ CREATE TABLE `master_gajilama` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=47;
 
 /*Table structure for table `master_grade` */
 
@@ -4291,7 +4291,7 @@ CREATE TABLE `master_grade` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `grade` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=28;
 
 /*Table structure for table `master_iki` */
 
@@ -4302,7 +4302,7 @@ CREATE TABLE `master_iki` (
   `iki` varchar(10) DEFAULT '',
   `nilai` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `master_isk` */
 
@@ -4313,7 +4313,7 @@ CREATE TABLE `master_isk` (
   `isk` varchar(10) DEFAULT '',
   `nilai` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `master_jenis` */
 
@@ -4323,7 +4323,7 @@ CREATE TABLE `master_jenis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=12;
 
 /*Table structure for table `master_kondisi` */
 
@@ -4333,7 +4333,7 @@ CREATE TABLE `master_kondisi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kondisi` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=15;
 
 /*Table structure for table `master_kota` */
 
@@ -4343,7 +4343,7 @@ CREATE TABLE `master_kota` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kota` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=529 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=529;
 
 /*Table structure for table `master_level` */
 
@@ -4354,7 +4354,7 @@ CREATE TABLE `master_level` (
   `level` varchar(1) DEFAULT '',
   `uraian` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8;
 
 /*Table structure for table `master_mapping` */
 
@@ -4367,7 +4367,7 @@ CREATE TABLE `master_mapping` (
   `nama_akun` varchar(160) CHARACTER SET utf8mb4 DEFAULT '',
   `item_no` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=93;
 
 /*Table structure for table `master_pendidikan` */
 
@@ -4378,7 +4378,7 @@ CREATE TABLE `master_pendidikan` (
   `pendidikan` varchar(60) DEFAULT '',
   `nama_pendidikan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `master_penempatan` */
 
@@ -4392,7 +4392,7 @@ CREATE TABLE `master_penempatan` (
   `lon` varchar(60) DEFAULT '',
   `waktu` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=66;
 
 /*Table structure for table `master_penempatan20210520` */
 
@@ -4404,7 +4404,7 @@ CREATE TABLE `master_penempatan20210520` (
   `lat` varchar(60) DEFAULT '',
   `lon` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=9;
 
 /*Table structure for table `master_ptkp` */
 
@@ -4415,7 +4415,7 @@ CREATE TABLE `master_ptkp` (
   `status` varchar(4) NOT NULL DEFAULT '',
   `ptkp` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=9;
 
 /*Table structure for table `master_ptkp20200228` */
 
@@ -4426,7 +4426,7 @@ CREATE TABLE `master_ptkp20200228` (
   `status` varchar(4) NOT NULL DEFAULT '',
   `ptkp` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6;
 
 /*Table structure for table `master_region` */
 
@@ -4436,7 +4436,7 @@ CREATE TABLE `master_region` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `region` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=11;
 
 /*Table structure for table `master_region20210520` */
 
@@ -4446,7 +4446,7 @@ CREATE TABLE `master_region20210520` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `region` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=9;
 
 /*Table structure for table `master_restitusi` */
 
@@ -4457,7 +4457,7 @@ CREATE TABLE `master_restitusi` (
   `nama_restitusi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nama_restitusi` (`nama_restitusi`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=7;
 
 /*Table structure for table `master_sertifikat` */
 
@@ -4468,7 +4468,7 @@ CREATE TABLE `master_sertifikat` (
   `kd_sertifikat` varchar(3) DEFAULT '',
   `nama_sertifikat` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `master_transportasi` */
 
@@ -4478,7 +4478,7 @@ CREATE TABLE `master_transportasi` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `transportasi` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `master_unit` */
 
@@ -4495,7 +4495,7 @@ CREATE TABLE `master_unit` (
   `kode_pos` varchar(10) CHARACTER SET utf8 DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kd_unit` (`kd_unit`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ROW_FORMAT=DYNAMIC;
 
 /*Table structure for table `masteruser` */
 
@@ -4524,7 +4524,7 @@ CREATE TABLE `masteruser` (
   `lock` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=4410 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) AUTO_INCREMENT=4410 ROW_FORMAT=DYNAMIC;
 
 /*Table structure for table `migrations` */
 
@@ -4657,7 +4657,7 @@ CREATE TABLE `mutasi_pegawai` (
   `petugas` varchar(120) DEFAULT '',
   `approve` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `natura` */
 
@@ -4679,7 +4679,7 @@ CREATE TABLE `natura` (
   `non_rutin_penyesuaian` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1621 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=1621 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `natura20240207` */
 
@@ -4698,7 +4698,7 @@ CREATE TABLE `natura20240207` (
   `sppd_manual` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1017 DEFAULT CHARSET=utf8mb4;
+) AUTO_INCREMENT=1017 DEFAULT CHARSET=utf8mb4;
 
 /*Table structure for table `nonaktif` */
 
@@ -4713,7 +4713,7 @@ CREATE TABLE `nonaktif` (
   `tgl_update` varchar(60) DEFAULT '',
   `petugas` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=88;
 
 /*Table structure for table `password_reset_tokens` */
 
@@ -4736,7 +4736,7 @@ CREATE TABLE `pejabat_laporan` (
   `jabatan` varchar(200) DEFAULT '',
   `aktif` varchar(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2;
 
 /*Table structure for table `pejabat_sdm` */
 
@@ -4747,7 +4747,7 @@ CREATE TABLE `pejabat_sdm` (
   `nama` varchar(120) DEFAULT '',
   `jabatan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `pendapatan_mutasi` */
 
@@ -4763,7 +4763,7 @@ CREATE TABLE `pendapatan_mutasi` (
   `netto` double NOT NULL DEFAULT '0',
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=228 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=228;
 
 /*Table structure for table `pendapatan_mutasi20250107` */
 
@@ -4779,7 +4779,7 @@ CREATE TABLE `pendapatan_mutasi20250107` (
   `netto` double NOT NULL DEFAULT '0',
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=154 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=154;
 
 /*Table structure for table `pengikut_sppd` */
 
@@ -4791,7 +4791,7 @@ CREATE TABLE `pengikut_sppd` (
   `nama` varchar(120) DEFAULT '',
   `hubungan` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=183 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=183;
 
 /*Table structure for table `penilaian_iks` */
 
@@ -4828,7 +4828,7 @@ CREATE TABLE `penilaian_iks` (
   `jtmk` double NOT NULL DEFAULT '0',
   `jkp` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `perhitungan_pajak_khusus` */
 
@@ -4839,7 +4839,7 @@ CREATE TABLE `perhitungan_pajak_khusus` (
   `nip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=10;
 
 /*Table structure for table `perhitungan_pajak_khususlama` */
 
@@ -4850,7 +4850,7 @@ CREATE TABLE `perhitungan_pajak_khususlama` (
   `nip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2;
 
 /*Table structure for table `perhitungan_pajak_pesangon` */
 
@@ -4861,7 +4861,7 @@ CREATE TABLE `perhitungan_pajak_pesangon` (
   `nip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `personal_access_tokens` */
 
@@ -4910,7 +4910,7 @@ CREATE TABLE `pesangon` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `pph` */
 
@@ -4958,7 +4958,7 @@ CREATE TABLE `pph` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=31174 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=31174;
 
 /*Table structure for table `pph20200204` */
 
@@ -5002,7 +5002,7 @@ CREATE TABLE `pph20200204` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=2453 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2453;
 
 /*Table structure for table `pph20200226` */
 
@@ -5046,7 +5046,7 @@ CREATE TABLE `pph20200226` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3228 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3228;
 
 /*Table structure for table `pph20200305` */
 
@@ -5090,7 +5090,7 @@ CREATE TABLE `pph20200305` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3513 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3513;
 
 /*Table structure for table `pph20200305(jaga)` */
 
@@ -5135,7 +5135,7 @@ CREATE TABLE `pph20200305(jaga)` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3513 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3513;
 
 /*Table structure for table `pph20200307` */
 
@@ -5180,7 +5180,7 @@ CREATE TABLE `pph20200307` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3531 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3531;
 
 /*Table structure for table `pph20200313` */
 
@@ -5225,7 +5225,7 @@ CREATE TABLE `pph20200313` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3535 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3535;
 
 /*Table structure for table `pph20200418` */
 
@@ -5270,7 +5270,7 @@ CREATE TABLE `pph20200418` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=4137 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4137;
 
 /*Table structure for table `pph20200420` */
 
@@ -5315,7 +5315,7 @@ CREATE TABLE `pph20200420` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=6325 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6325;
 
 /*Table structure for table `pph20200429` */
 
@@ -5360,7 +5360,7 @@ CREATE TABLE `pph20200429` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=8295 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8295;
 
 /*Table structure for table `pph20210107` */
 
@@ -5405,7 +5405,7 @@ CREATE TABLE `pph20210107` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=8296 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=8296;
 
 /*Table structure for table `pph20210108` */
 
@@ -5450,7 +5450,7 @@ CREATE TABLE `pph20210108` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=15342 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=15342;
 
 /*Table structure for table `pph20210111` */
 
@@ -5495,7 +5495,7 @@ CREATE TABLE `pph20210111` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=16072 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=16072;
 
 /*Table structure for table `pph20210112` */
 
@@ -5540,7 +5540,7 @@ CREATE TABLE `pph20210112` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=16802 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=16802;
 
 /*Table structure for table `pph20210113` */
 
@@ -5585,7 +5585,7 @@ CREATE TABLE `pph20210113` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=16948 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=16948;
 
 /*Table structure for table `pph20210130` */
 
@@ -5629,7 +5629,7 @@ CREATE TABLE `pph20210130` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18249 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=18249;
 
 /*Table structure for table `pph20210215` */
 
@@ -5673,7 +5673,7 @@ CREATE TABLE `pph20210215` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18264 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=18264;
 
 /*Table structure for table `pph20210222` */
 
@@ -5717,7 +5717,7 @@ CREATE TABLE `pph20210222` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18264 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=18264;
 
 /*Table structure for table `pph20210225` */
 
@@ -5761,7 +5761,7 @@ CREATE TABLE `pph20210225` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18411 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=18411;
 
 /*Table structure for table `pph20210226` */
 
@@ -5805,7 +5805,7 @@ CREATE TABLE `pph20210226` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18849 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=18849;
 
 /*Table structure for table `pph2022` */
 
@@ -5852,7 +5852,7 @@ CREATE TABLE `pph2022` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=748 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=748;
 
 /*Table structure for table `pph20220106` */
 
@@ -5896,7 +5896,7 @@ CREATE TABLE `pph20220106` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19537 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=19537;
 
 /*Table structure for table `pph20220202` */
 
@@ -5940,7 +5940,7 @@ CREATE TABLE `pph20220202` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=22042 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=22042;
 
 /*Table structure for table `pph2022backup` */
 
@@ -5987,7 +5987,7 @@ CREATE TABLE `pph2022backup` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=749 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=749;
 
 /*Table structure for table `pph20230104` */
 
@@ -6034,7 +6034,7 @@ CREATE TABLE `pph20230104` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=25803 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=25803;
 
 /*Table structure for table `pph20230111` */
 
@@ -6081,7 +6081,7 @@ CREATE TABLE `pph20230111` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=26177 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=26177;
 
 /*Table structure for table `pph20240109` */
 
@@ -6129,7 +6129,7 @@ CREATE TABLE `pph20240109` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=28803 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=28803;
 
 /*Table structure for table `pph21` */
 
@@ -6173,7 +6173,7 @@ CREATE TABLE `pph21` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=92;
 
 /*Table structure for table `pph2120191225` */
 
@@ -6214,7 +6214,7 @@ CREATE TABLE `pph2120191225` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=121;
 
 /*Table structure for table `pph2120200109` */
 
@@ -6256,7 +6256,7 @@ CREATE TABLE `pph2120200109` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=205;
 
 /*Table structure for table `pph2120200201` */
 
@@ -6297,7 +6297,7 @@ CREATE TABLE `pph2120200201` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=97;
 
 /*Table structure for table `pph21lama` */
 
@@ -6335,7 +6335,7 @@ CREATE TABLE `pph21lama` (
   `pphb` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `pph21masa` */
 
@@ -6391,7 +6391,21 @@ CREATE TABLE `pph21masa` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=60834 DEFAULT CHARSET=latin1;
+);
+
+INSERT INTO `pph21masa` (
+  `kpp`, `npwp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `blthnip`, 
+  `masa_kerja`, `gaji`
+) VALUES 
+('KPP001', '123456789012345', '00000001', 'NIP001', 'Tetap', '2024', '2024-02', '2024-02-NIP001', 
+ 5, 10000000),
+
+('KPP002', '987654321098765', '00000002', 'NIP002', 'Kontrak', '2024', '2024-02', '2024-02-NIP002', 
+ 3, 8000000),
+
+('KPP003', '112233445566778', '00000003', 'NIP003', 'Tetap', '2024', '2024-02', '2024-02-NIP003', 
+ 7, 12000000);
+
 
 /*Table structure for table `pph21masa20210105` */
 
@@ -6439,7 +6453,7 @@ CREATE TABLE `pph21masa20210105` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=8726 DEFAULT CHARSET=latin1;
+);
 
 /*Table structure for table `pph21masa20210111` */
 
@@ -6487,7 +6501,7 @@ CREATE TABLE `pph21masa20210111` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=14530 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=14530;
 
 /*Table structure for table `pph21masa20210203` */
 
@@ -6535,7 +6549,7 @@ CREATE TABLE `pph21masa20210203` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=15245 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=15245;
 
 /*Table structure for table `pph21masa20210226` */
 
@@ -6583,7 +6597,7 @@ CREATE TABLE `pph21masa20210226` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=16260 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=16260;
 
 /*Table structure for table `pph21masa20220106` */
 
@@ -6631,7 +6645,7 @@ CREATE TABLE `pph21masa20220106` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=26026 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=26026;
 
 /*Table structure for table `pph21masa20220202` */
 
@@ -6679,7 +6693,7 @@ CREATE TABLE `pph21masa20220202` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=28522 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=28522;
 
 /*Table structure for table `pph21masa20220810` */
 
@@ -6729,7 +6743,7 @@ CREATE TABLE `pph21masa20220810` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=31735 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=31735;
 
 /*Table structure for table `pph21masa20230104` */
 
@@ -6779,7 +6793,7 @@ CREATE TABLE `pph21masa20230104` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=35567 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=35567;
 
 /*Table structure for table `pph21masa20231010` */
 
@@ -6835,7 +6849,7 @@ CREATE TABLE `pph21masa20231010` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=41897 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=41897;
 
 /*Table structure for table `pph21masa20231224` */
 
@@ -6891,7 +6905,7 @@ CREATE TABLE `pph21masa20231224` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=44346 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=44346;
 
 /*Table structure for table `pph21masa20240107` */
 
@@ -6947,7 +6961,7 @@ CREATE TABLE `pph21masa20240107` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=44778 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=44778;
 
 /*Table structure for table `pph21masa20240109` */
 
@@ -7003,7 +7017,7 @@ CREATE TABLE `pph21masa20240109` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=45015 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=45015;
 
 /*Table structure for table `pph21masa20240109(2)` */
 
@@ -7059,7 +7073,7 @@ CREATE TABLE `pph21masa20240109(2)` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=45419 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=45419;
 
 /*Table structure for table `pph21masa20240110(okt salah))` */
 
@@ -7115,7 +7129,7 @@ CREATE TABLE `pph21masa20240110(okt salah))` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=48983 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=48983;
 
 /*Table structure for table `pph21masa20241226` */
 
@@ -7171,7 +7185,7 @@ CREATE TABLE `pph21masa20241226` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=57971 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=57971;
 
 /*Table structure for table `pph21masareal` */
 
@@ -7227,7 +7241,7 @@ CREATE TABLE `pph21masareal` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=60829 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=60829;
 
 /*Table structure for table `pph21tahunan` */
 
@@ -7269,7 +7283,7 @@ CREATE TABLE `pph21tahunan` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `pph_bulan` */
 
@@ -7310,7 +7324,7 @@ CREATE TABLE `pph_bulan` (
   `ppht_terutang` double NOT NULL DEFAULT '0',
   `pphb_terutang` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38444 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=38444;
 
 /*Table structure for table `pph_bulan20200319` */
 
@@ -7349,7 +7363,7 @@ CREATE TABLE `pph_bulan20200319` (
   `ppht_terutang` double NOT NULL DEFAULT '0',
   `pphb_terutang` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5311 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5311;
 
 /*Table structure for table `pphfixsebelumnya` */
 
@@ -7394,7 +7408,7 @@ CREATE TABLE `pphfixsebelumnya` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=3537 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3537;
 
 /*Table structure for table `pphlock` */
 
@@ -7442,7 +7456,7 @@ CREATE TABLE `pphlock` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1638 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1638;
 
 /*Table structure for table `pphmanual` */
 
@@ -7489,7 +7503,7 @@ CREATE TABLE `pphmanual` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1177 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1177;
 
 /*Table structure for table `pphmanual20240120` */
 
@@ -7536,7 +7550,7 @@ CREATE TABLE `pphmanual20240120` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1172 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1172;
 
 /*Table structure for table `pphmanual20240219` */
 
@@ -7583,7 +7597,7 @@ CREATE TABLE `pphmanual20240219` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1176 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1176;
 
 /*Table structure for table `promosi_pegawai` */
 
@@ -7605,7 +7619,7 @@ CREATE TABLE `promosi_pegawai` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2;
 
 /*Table structure for table `restore` */
 
@@ -7620,7 +7634,7 @@ CREATE TABLE `restore` (
   `tgl_update` varchar(60) DEFAULT '',
   `petugas` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=26;
 
 /*Table structure for table `riwayat_golongan` */
 
@@ -7632,7 +7646,7 @@ CREATE TABLE `riwayat_golongan` (
   `tanggal` varchar(10) DEFAULT '',
   `golongan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=344 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=344;
 
 /*Table structure for table `riwayat_grade` */
 
@@ -7644,7 +7658,7 @@ CREATE TABLE `riwayat_grade` (
   `tanggal` varchar(10) DEFAULT '',
   `grade` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=305 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=305;
 
 /*Table structure for table `riwayat_hukuman` */
 
@@ -7657,7 +7671,7 @@ CREATE TABLE `riwayat_hukuman` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4;
 
 /*Table structure for table `riwayat_jabatan` */
 
@@ -7671,7 +7685,7 @@ CREATE TABLE `riwayat_jabatan` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=398 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=398;
 
 /*Table structure for table `riwayat_kondite` */
 
@@ -7686,7 +7700,7 @@ CREATE TABLE `riwayat_kondite` (
   `talenta` varchar(120) DEFAULT '',
   `peringkat` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=751 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=751;
 
 /*Table structure for table `riwayat_kursus_eksternal` */
 
@@ -7701,7 +7715,7 @@ CREATE TABLE `riwayat_kursus_eksternal` (
   `lembaga_pendidikan` varchar(200) DEFAULT '',
   `lokasi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=425 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=425;
 
 /*Table structure for table `riwayat_kursus_internal` */
 
@@ -7716,7 +7730,7 @@ CREATE TABLE `riwayat_kursus_internal` (
   `lembaga_pendidikan` varchar(200) DEFAULT '',
   `lokasi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=641 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=641;
 
 /*Table structure for table `riwayat_pekerjaan_sebelum` */
 
@@ -7730,7 +7744,7 @@ CREATE TABLE `riwayat_pekerjaan_sebelum` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=11;
 
 /*Table structure for table `riwayat_pendidikan` */
 
@@ -7745,7 +7759,7 @@ CREATE TABLE `riwayat_pendidikan` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=184 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=184;
 
 /*Table structure for table `riwayat_penghargaan` */
 
@@ -7757,7 +7771,7 @@ CREATE TABLE `riwayat_penghargaan` (
   `nama_penghargaan` varchar(200) DEFAULT '',
   `tanggal` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=11;
 
 /*Table structure for table `riwayat_penugasan` */
 
@@ -7772,7 +7786,7 @@ CREATE TABLE `riwayat_penugasan` (
   `dari` varchar(64) DEFAULT '',
   `sampai` varchar(64) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `riwayat_penugasan_khusus` */
 
@@ -7787,7 +7801,7 @@ CREATE TABLE `riwayat_penugasan_khusus` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=25;
 
 /*Table structure for table `riwayat_profesi` */
 
@@ -7801,7 +7815,7 @@ CREATE TABLE `riwayat_profesi` (
   `sampai` varchar(64) DEFAULT '',
   `sebutan_profesi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `riwayat_sertifikasi` */
 
@@ -7815,7 +7829,7 @@ CREATE TABLE `riwayat_sertifikasi` (
   `sampai` varchar(10) DEFAULT '',
   `lembaga` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=229 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=229;
 
 /*Table structure for table `riwayat_tenaga_harian` */
 
@@ -7829,7 +7843,7 @@ CREATE TABLE `riwayat_tenaga_harian` (
   `sampai` varchar(10) DEFAULT '',
   `golongan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4;
 
 /*Table structure for table `riwayat_tugas_karya` */
 
@@ -7843,7 +7857,7 @@ CREATE TABLE `riwayat_tugas_karya` (
   `sampai` varchar(10) DEFAULT '',
   `jabatan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=10;
 
 /*Table structure for table `rwyt_grade` */
 
@@ -7884,7 +7898,7 @@ CREATE TABLE `setting_pph` (
   `email` varchar(200) DEFAULT '',
   `path_ttd` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `setting_pph20200305` */
 
@@ -7902,7 +7916,7 @@ CREATE TABLE `setting_pph20200305` (
   `email` varchar(200) DEFAULT '',
   `path_ttd` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2;
 
 /*Table structure for table `setting_pph20250109` */
 
@@ -7921,7 +7935,7 @@ CREATE TABLE `setting_pph20250109` (
   `email` varchar(200) DEFAULT '',
   `path_ttd` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `sppd` */
 
@@ -8007,7 +8021,7 @@ CREATE TABLE `sppd` (
   `tgl_bayar` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `sppd1` */
 
@@ -8079,7 +8093,7 @@ CREATE TABLE `sppd1` (
   `tgl_bayar_restitusi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=6639 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=6639;
 
 /*Table structure for table `sppd120210303` */
 
@@ -8128,7 +8142,7 @@ CREATE TABLE `sppd120210303` (
   `tgl_bayar` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3;
 
 /*Table structure for table `sppd120211216` */
 
@@ -8192,7 +8206,7 @@ CREATE TABLE `sppd120211216` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=445 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=445;
 
 /*Table structure for table `sppd120230328` */
 
@@ -8257,7 +8271,7 @@ CREATE TABLE `sppd120230328` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=2286 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2286;
 
 /*Table structure for table `sppd120230328(2)` */
 
@@ -8322,7 +8336,7 @@ CREATE TABLE `sppd120230328(2)` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=2992 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2992;
 
 /*Table structure for table `sppd120230929` */
 
@@ -8387,7 +8401,7 @@ CREATE TABLE `sppd120230929` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3169 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3169;
 
 /*Table structure for table `sppd120231023` */
 
@@ -8452,7 +8466,7 @@ CREATE TABLE `sppd120231023` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3311 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3311;
 
 /*Table structure for table `sppd120231208` */
 
@@ -8517,7 +8531,7 @@ CREATE TABLE `sppd120231208` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3607 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3607;
 
 /*Table structure for table `sppd120231218` */
 
@@ -8585,7 +8599,7 @@ CREATE TABLE `sppd120231218` (
   `editing` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3645 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3645;
 
 /*Table structure for table `sppd120240402` */
 
@@ -8657,7 +8671,7 @@ CREATE TABLE `sppd120240402` (
   `tgl_bayar_restitusi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=4478 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=4478;
 
 /*Table structure for table `sppd1dummy` */
 
@@ -8727,7 +8741,7 @@ CREATE TABLE `sppd1dummy` (
   `docDate` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM AUTO_INCREMENT=3628 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=3628;
 
 /*Table structure for table `sub_jenis_sppd` */
 
@@ -8738,7 +8752,7 @@ CREATE TABLE `sub_jenis_sppd` (
   `kd_sub_sppd` varchar(60) DEFAULT '',
   `nama_sub_sppd` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `suplisi` */
 
@@ -8766,7 +8780,7 @@ CREATE TABLE `suplisi` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1501 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1501;
 
 /*Table structure for table `suplisi20200317` */
 
@@ -8779,7 +8793,7 @@ CREATE TABLE `suplisi20200317` (
   `jumlah_suplisi` double NOT NULL DEFAULT '0',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `suplisi20220307` */
 
@@ -8806,7 +8820,7 @@ CREATE TABLE `suplisi20220307` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=401 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=401;
 
 /*Table structure for table `suplisi20240207` */
 
@@ -8834,7 +8848,7 @@ CREATE TABLE `suplisi20240207` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1191 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1191;
 
 /*Table structure for table `suplisi20240219` */
 
@@ -8862,7 +8876,7 @@ CREATE TABLE `suplisi20240219` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1199 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1199;
 
 /*Table structure for table `suplisi20240311` */
 
@@ -8890,7 +8904,7 @@ CREATE TABLE `suplisi20240311` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM AUTO_INCREMENT=1240 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1240;
 
 /*Table structure for table `tanggapan` */
 
@@ -8930,7 +8944,7 @@ CREATE TABLE `tantiem` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=9;
 
 /*Table structure for table `template_varcost` */
 
@@ -8948,7 +8962,7 @@ CREATE TABLE `template_varcost` (
   `status` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nama_file` (`nama_file`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `thr` */
 
@@ -8978,7 +8992,7 @@ CREATE TABLE `thr` (
   `petugas` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=1647 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1647;
 
 /*Table structure for table `thr20210205` */
 
@@ -9008,7 +9022,7 @@ CREATE TABLE `thr20210205` (
   `petugas` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=883 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=883;
 
 /*Table structure for table `thr20230103` */
 
@@ -9038,7 +9052,7 @@ CREATE TABLE `thr20230103` (
   `petugas` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM AUTO_INCREMENT=1192 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1192;
 
 /*Table structure for table `thrlama` */
 
@@ -9074,7 +9088,7 @@ CREATE TABLE `thrlama` (
   `jumlah_thr` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tahunnip` (`tahunnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `tingkat_sppd` */
 
@@ -9085,7 +9099,7 @@ CREATE TABLE `tingkat_sppd` (
   `kd_tingkat` varchar(1) DEFAULT '',
   `nama_tingkat` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `tunjanganpph` */
 
@@ -9109,7 +9123,7 @@ CREATE TABLE `tunjanganpph` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=521 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=521;
 
 /*Table structure for table `tunjanganpph20200307` */
 
@@ -9133,7 +9147,7 @@ CREATE TABLE `tunjanganpph20200307` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM AUTO_INCREMENT=364 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=364;
 
 /*Table structure for table `uang_sppd` */
 
@@ -9146,7 +9160,7 @@ CREATE TABLE `uang_sppd` (
   `nip` varchar(60) DEFAULT '',
   `jumlah` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `ubah_nip` */
 
@@ -9159,7 +9173,7 @@ CREATE TABLE `ubah_nip` (
   `user` varchar(200) DEFAULT '',
   `waktu` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=5;
 
 /*Table structure for table `varcost` */
 
@@ -9188,7 +9202,7 @@ CREATE TABLE `varcost` (
   `potonganvar4` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `varcost2` */
 
@@ -9214,7 +9228,7 @@ CREATE TABLE `varcost2` (
   `potonganvar3` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blth_nip` (`blth_nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `version` */
 
@@ -9253,7 +9267,7 @@ CREATE TABLE `winduan` (
   `petugas` varchar(200) DEFAULT '',
   `keterangan` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=21;
 
 /*Table structure for table `v_list_pajak` */
 

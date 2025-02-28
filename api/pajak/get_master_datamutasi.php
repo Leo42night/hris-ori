@@ -30,6 +30,7 @@ if ($userhris){
     
     $items = array();
     $rs = mysqli_query($koneksi,"select a.*,b.nama,b.jabatan from pendapatan_mutasi a left join data_pegawai b on a.nip=b.nip where a.tahun='$tahun2' order by a.id asc limit $offset,$rows");
+    // echo "select a.*,b.nama,b.jabatan from pendapatan_mutasi a left join data_pegawai b on a.nip=b.nip where a.tahun='$tahun2' order by a.id asc limit $offset,$rows";
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = stripslashes ($hasil['id']);
     	$nip = stripslashes ($hasil['nip']);

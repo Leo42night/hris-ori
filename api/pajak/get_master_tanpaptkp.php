@@ -29,10 +29,10 @@ if ($userhris){
     $items = array();
     $rs = mysqli_query($koneksi,"select a.*,b.nama,b.jabatan from perhitungan_pajak_khusus a left join data_pegawai b on a.nip=b.nip order by a.id asc limit $offset,$rows");
     while ($hasil = mysqli_fetch_array($rs)) {
-    	$id = stripslashes ($hasil['id']);
-    	$nip = stripslashes ($hasil['nip']);
-    	$nama = stripslashes ($hasil['nama']);
-    	$jabatan = stripslashes ($hasil['jabatan']);
+    	$id = stripslashes ($hasil['id'] ?? '');
+    	$nip = stripslashes ($hasil['nip'] ?? '');
+    	$nama = stripslashes ($hasil['nama'] ?? '');
+    	$jabatan = stripslashes ($hasil['jabatan'] ?? '');
         
         $datanya = array();
         $datanya["idtanpaptkp"] = $id;

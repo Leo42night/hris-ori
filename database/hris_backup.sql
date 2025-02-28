@@ -23,7 +23,7 @@ CREATE TABLE `akses_token` (
   `last_generated` varchar(60) DEFAULT '',
   `tgl_expire` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107;
 
 /*Table structure for table `aksesuser` */
 
@@ -36,7 +36,7 @@ CREATE TABLE `aksesuser` (
   `proses` varchar(1) NOT NULL DEFAULT '0',
   `lihat` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2456 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=2456;
 
 /*Table structure for table `aksesuser20220723` */
 
@@ -49,7 +49,7 @@ CREATE TABLE `aksesuser20220723` (
   `proses` varchar(1) NOT NULL DEFAULT '0',
   `lihat` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `aksesuser20221130` */
 
@@ -62,7 +62,7 @@ CREATE TABLE `aksesuser20221130` (
   `proses` varchar(1) NOT NULL DEFAULT '0',
   `lihat` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `aksesuser20240305` */
 
@@ -75,7 +75,7 @@ CREATE TABLE `aksesuser20240305` (
   `proses` varchar(1) NOT NULL DEFAULT '0',
   `lihat` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1892 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=1892;
 
 /*Table structure for table `baseurl_api` */
 
@@ -143,7 +143,7 @@ CREATE TABLE `data_pegawai` (
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=InnoDB AUTO_INCREMENT=261 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=261;
 
 /*Table structure for table `data_pegawai20220722` */
 
@@ -188,7 +188,7 @@ CREATE TABLE `data_pegawai20220722` (
   `status_integrasi` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `data_pegawai20220804` */
 
@@ -233,7 +233,7 @@ CREATE TABLE `data_pegawai20220804` (
   `status_integrasi` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `edata` */
 
@@ -247,7 +247,7 @@ CREATE TABLE `edata` (
   `file_export` varchar(255) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=120 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=120;
 
 /*Table structure for table `history_update` */
 
@@ -264,7 +264,7 @@ CREATE TABLE `history_update` (
   `status` varchar(30) DEFAULT '',
   `keterangan` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9794 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9794;
 
 /*Table structure for table `m_agama` */
 
@@ -276,7 +276,7 @@ CREATE TABLE `m_agama` (
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `label` (`label`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8;
 
 /*Table structure for table `m_alasan_berhenti` */
 
@@ -298,7 +298,7 @@ CREATE TABLE `m_business_area` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2;
 
 /*Table structure for table `m_cluster` */
 
@@ -309,7 +309,7 @@ CREATE TABLE `m_cluster` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16;
 
 /*Table structure for table `m_company_code` */
 
@@ -320,7 +320,7 @@ CREATE TABLE `m_company_code` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2;
 
 /*Table structure for table `m_dahan_profesi` */
 
@@ -333,7 +333,7 @@ CREATE TABLE `m_dahan_profesi` (
   `kode_pohon_profesi` varchar(5) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25;
 
 /*Table structure for table `m_dahan_profesilama` */
 
@@ -346,7 +346,7 @@ CREATE TABLE `m_dahan_profesilama` (
   `pohon_profesi` varchar(200) DEFAULT '',
   `dahan_profesi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_edata` */
 
@@ -362,7 +362,7 @@ CREATE TABLE `m_edata` (
   `url` varchar(200) DEFAULT '',
   `status` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28;
 
 /*Table structure for table `m_edata20221130` */
 
@@ -374,7 +374,7 @@ CREATE TABLE `m_edata20221130` (
   `nama_tabel` varchar(120) DEFAULT '',
   `nama_file` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_ee_group` */
 
@@ -386,7 +386,7 @@ CREATE TABLE `m_ee_group` (
   `ee_group` varchar(200) DEFAULT '',
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8;
 
 /*Table structure for table `m_ee_group20201010` */
 
@@ -397,7 +397,7 @@ CREATE TABLE `m_ee_group20201010` (
   `id_ee_group` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_ee_subgroup` */
 
@@ -411,7 +411,7 @@ CREATE TABLE `m_ee_subgroup` (
   `kode_ee_group` varchar(30) DEFAULT '',
   `ee_group` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38;
 
 /*Table structure for table `m_ee_subgroup20201010` */
 
@@ -422,7 +422,7 @@ CREATE TABLE `m_ee_subgroup20201010` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_gelar_belakang` */
 
@@ -433,7 +433,7 @@ CREATE TABLE `m_gelar_belakang` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=104 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_gelar_depan` */
 
@@ -444,7 +444,7 @@ CREATE TABLE `m_gelar_depan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=13 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_gol_darah` */
 
@@ -455,7 +455,7 @@ CREATE TABLE `m_gol_darah` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=9 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_grade` */
 
@@ -466,7 +466,7 @@ CREATE TABLE `m_grade` (
   `kode_grade` varchar(30) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=64 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_grade20230117` */
 
@@ -477,7 +477,7 @@ CREATE TABLE `m_grade20230117` (
   `kode_grade` varchar(30) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_gradelama` */
 
@@ -487,7 +487,7 @@ CREATE TABLE `m_gradelama` (
   `id` int(11) NOT NULL,
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_jenis_alamat` */
 
@@ -498,7 +498,7 @@ CREATE TABLE `m_jenis_alamat` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenis_asuransi` */
 
@@ -520,7 +520,7 @@ CREATE TABLE `m_jenis_award` (
   `kode_award` varchar(4) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13;
 
 /*Table structure for table `m_jenis_diklat` */
 
@@ -531,7 +531,7 @@ CREATE TABLE `m_jenis_diklat` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6446 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6446;
 
 /*Table structure for table `m_jenis_dplk` */
 
@@ -542,7 +542,7 @@ CREATE TABLE `m_jenis_dplk` (
   `kode` varchar(10) DEFAULT '',
   `jenis_dplk` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_jenis_hukuman` */
 
@@ -553,7 +553,7 @@ CREATE TABLE `m_jenis_hukuman` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenis_identitas` */
 
@@ -564,7 +564,7 @@ CREATE TABLE `m_jenis_identitas` (
   `kode_identitas` varchar(2) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12;
 
 /*Table structure for table `m_jenis_jabatan` */
 
@@ -575,7 +575,7 @@ CREATE TABLE `m_jenis_jabatan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9;
 
 /*Table structure for table `m_jenis_jabatan20230303` */
 
@@ -586,7 +586,7 @@ CREATE TABLE `m_jenis_jabatan20230303` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_jenis_jabatanlama` */
 
@@ -597,7 +597,7 @@ CREATE TABLE `m_jenis_jabatanlama` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_jenis_karya_tulis` */
 
@@ -608,7 +608,7 @@ CREATE TABLE `m_jenis_karya_tulis` (
   `kode_jenis` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenis_kelamin` */
 
@@ -619,7 +619,7 @@ CREATE TABLE `m_jenis_kelamin` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=3 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_jenis_keluarga` */
 
@@ -630,7 +630,7 @@ CREATE TABLE `m_jenis_keluarga` (
   `id_jenis_keluarga` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8;
 
 /*Table structure for table `m_jenis_lembaga` */
 
@@ -641,7 +641,7 @@ CREATE TABLE `m_jenis_lembaga` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenis_medsos` */
 
@@ -652,7 +652,7 @@ CREATE TABLE `m_jenis_medsos` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=28 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_jenis_organisasi` */
 
@@ -663,7 +663,7 @@ CREATE TABLE `m_jenis_organisasi` (
   `kode_organisasi` varchar(3) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenis_pelaksanaan` */
 
@@ -674,7 +674,7 @@ CREATE TABLE `m_jenis_pelaksanaan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7;
 
 /*Table structure for table `m_jenis_pendidikan` */
 
@@ -685,7 +685,7 @@ CREATE TABLE `m_jenis_pendidikan` (
   `kode` varchar(3) NOT NULL DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=30 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_jenis_sertifikat` */
 
@@ -696,7 +696,7 @@ CREATE TABLE `m_jenis_sertifikat` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_jenjang_jabatan` */
 
@@ -707,7 +707,7 @@ CREATE TABLE `m_jenjang_jabatan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=159;
 
 /*Table structure for table `m_jenjang_jabatan20230303` */
 
@@ -719,7 +719,7 @@ CREATE TABLE `m_jenjang_jabatan20230303` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_jenjang_jabatan20230807` */
 
@@ -730,7 +730,7 @@ CREATE TABLE `m_jenjang_jabatan20230807` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_jenjang_jabatanlama` */
 
@@ -741,7 +741,7 @@ CREATE TABLE `m_jenjang_jabatanlama` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_judul_lms` */
 
@@ -752,7 +752,7 @@ CREATE TABLE `m_judul_lms` (
   `kode` varchar(30) DEFAULT '',
   `label` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5602 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5602;
 
 /*Table structure for table `m_kabupaten` */
 
@@ -764,7 +764,7 @@ CREATE TABLE `m_kabupaten` (
   `id_provinsi` varchar(3) DEFAULT '',
   `nama_kabupaten` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=515;
 
 /*Table structure for table `m_kabupaten20221004` */
 
@@ -776,7 +776,7 @@ CREATE TABLE `m_kabupaten20221004` (
   `id_provinsi` varchar(3) DEFAULT '',
   `nama_kabupaten` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_keterangan_mutasi` */
 
@@ -798,7 +798,7 @@ CREATE TABLE `m_keterangan_pendidikan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=5 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_keyb` */
 
@@ -809,7 +809,7 @@ CREATE TABLE `m_keyb` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=310;
 
 /*Table structure for table `m_kode_diklat` */
 
@@ -820,7 +820,7 @@ CREATE TABLE `m_kode_diklat` (
   `kode` varchar(60) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5602 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5602;
 
 /*Table structure for table `m_kompetensi` */
 
@@ -832,7 +832,7 @@ CREATE TABLE `m_kompetensi` (
   `kompetensi` varchar(200) DEFAULT '',
   `inisial_kompetensi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=113;
 
 /*Table structure for table `m_level_profesiensi` */
 
@@ -843,7 +843,7 @@ CREATE TABLE `m_level_profesiensi` (
   `kode_level` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=7 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_level_sertifikasi` */
 
@@ -854,7 +854,7 @@ CREATE TABLE `m_level_sertifikasi` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10;
 
 /*Table structure for table `m_negara` */
 
@@ -865,7 +865,7 @@ CREATE TABLE `m_negara` (
   `kode_negara` varchar(2) DEFAULT '',
   `nama_negara` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=242 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_nilai_talenta` */
 
@@ -876,7 +876,7 @@ CREATE TABLE `m_nilai_talenta` (
   `kode` varchar(3) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10;
 
 /*Table structure for table `m_nki` */
 
@@ -889,7 +889,7 @@ CREATE TABLE `m_nki` (
   `score_akhir` double NOT NULL DEFAULT '0',
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5;
 
 /*Table structure for table `m_nsk` */
 
@@ -902,7 +902,7 @@ CREATE TABLE `m_nsk` (
   `score_akhir` double NOT NULL DEFAULT '0',
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6;
 
 /*Table structure for table `m_pekerjaan` */
 
@@ -913,7 +913,7 @@ CREATE TABLE `m_pekerjaan` (
   `label` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `label` (`label`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5;
 
 /*Table structure for table `m_penyelenggaraan` */
 
@@ -924,7 +924,7 @@ CREATE TABLE `m_penyelenggaraan` (
   `kode` varchar(3) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9;
 
 /*Table structure for table `m_personal_area` */
 
@@ -936,7 +936,7 @@ CREATE TABLE `m_personal_area` (
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kode` (`kode`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16;
 
 /*Table structure for table `m_personal_area20201010` */
 
@@ -947,7 +947,7 @@ CREATE TABLE `m_personal_area20201010` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_personal_sub_area` */
 
@@ -960,7 +960,7 @@ CREATE TABLE `m_personal_sub_area` (
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kode` (`kode`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=143;
 
 /*Table structure for table `m_personal_sub_area20201010` */
 
@@ -972,7 +972,7 @@ CREATE TABLE `m_personal_sub_area20201010` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_pln_group` */
 
@@ -983,7 +983,7 @@ CREATE TABLE `m_pln_group` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14;
 
 /*Table structure for table `m_pohon_bisnis` */
 
@@ -994,7 +994,7 @@ CREATE TABLE `m_pohon_bisnis` (
   `kode` varchar(2) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_pohon_profesi` */
 
@@ -1006,7 +1006,7 @@ CREATE TABLE `m_pohon_profesi` (
   `kode_pohon_bisnis` varchar(2) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18;
 
 /*Table structure for table `m_pohon_profesinew` */
 
@@ -1085,7 +1085,7 @@ CREATE TABLE `m_profesi` (
   `kode_dahan_profesi` varchar(30) DEFAULT '',
   `dahan_profesi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=84;
 
 /*Table structure for table `m_profesi20221010` */
 
@@ -1099,7 +1099,7 @@ CREATE TABLE `m_profesi20221010` (
   `kode_dahan_profesi` varchar(200) DEFAULT '',
   `profesi` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_profesilama` */
 
@@ -1113,7 +1113,7 @@ CREATE TABLE `m_profesilama` (
   `dahan_profesi` varchar(200) DEFAULT '',
   `profesi` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_provinsi` */
 
@@ -1124,7 +1124,7 @@ CREATE TABLE `m_provinsi` (
   `id_provinsi` varchar(3) DEFAULT '',
   `nama_provinsi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=35;
 
 /*Table structure for table `m_provinsi20221004` */
 
@@ -1135,7 +1135,7 @@ CREATE TABLE `m_provinsi20221004` (
   `id_provinsi` varchar(3) DEFAULT '',
   `nama_provinsi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_reason` */
 
@@ -1146,7 +1146,7 @@ CREATE TABLE `m_reason` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44;
 
 /*Table structure for table `m_reason20221004` */
 
@@ -1157,7 +1157,7 @@ CREATE TABLE `m_reason20221004` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `m_reason_hukuman` */
 
@@ -1168,7 +1168,7 @@ CREATE TABLE `m_reason_hukuman` (
   `kode_reason` varchar(2) DEFAULT '',
   `label` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6;
 
 /*Table structure for table `m_result_hukuman` */
 
@@ -1179,7 +1179,7 @@ CREATE TABLE `m_result_hukuman` (
   `kode_result` varchar(2) DEFAULT '',
   `label` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19;
 
 /*Table structure for table `m_satuan` */
 
@@ -1190,7 +1190,7 @@ CREATE TABLE `m_satuan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7;
 
 /*Table structure for table `m_satuan_lama_pendidikan` */
 
@@ -1201,7 +1201,7 @@ CREATE TABLE `m_satuan_lama_pendidikan` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7;
 
 /*Table structure for table `m_satuan_lama_pendidikan20221004` */
 
@@ -1211,7 +1211,7 @@ CREATE TABLE `m_satuan_lama_pendidikan20221004` (
   `id` int(11) NOT NULL,
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_sifat_diklat` */
 
@@ -1222,7 +1222,7 @@ CREATE TABLE `m_sifat_diklat` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_stage_hukuman` */
 
@@ -1233,7 +1233,7 @@ CREATE TABLE `m_stage_hukuman` (
   `kode_stage` varchar(2) DEFAULT '',
   `label` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8;
 
 /*Table structure for table `m_status_hukuman` */
 
@@ -1244,7 +1244,7 @@ CREATE TABLE `m_status_hukuman` (
   `kode_status` varchar(2) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9;
 
 /*Table structure for table `m_status_integrasi` */
 
@@ -1255,7 +1255,7 @@ CREATE TABLE `m_status_integrasi` (
   `kode_integrasi` varchar(1) DEFAULT '',
   `label` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `m_status_kewarganegaraan` */
 
@@ -1266,7 +1266,7 @@ CREATE TABLE `m_status_kewarganegaraan` (
   `kode` varchar(10) NOT NULL DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=3 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_status_nikah` */
 
@@ -1277,7 +1277,7 @@ CREATE TABLE `m_status_nikah` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_stream` */
 
@@ -1288,7 +1288,7 @@ CREATE TABLE `m_stream` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22;
 
 /*Table structure for table `m_subtype` */
 
@@ -1299,7 +1299,7 @@ CREATE TABLE `m_subtype` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10;
 
 /*Table structure for table `m_suku` */
 
@@ -1309,7 +1309,7 @@ CREATE TABLE `m_suku` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=19 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_tingkat_acara` */
 
@@ -1320,7 +1320,7 @@ CREATE TABLE `m_tingkat_acara` (
   `kode` varchar(3) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_tingkat_keahlian` */
 
@@ -1332,7 +1332,7 @@ CREATE TABLE `m_tingkat_keahlian` (
   `label` varchar(200) DEFAULT '',
   `bobot` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_tingkat_pengalaman` */
 
@@ -1343,7 +1343,7 @@ CREATE TABLE `m_tingkat_pengalaman` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_tipe` */
 
@@ -1354,7 +1354,7 @@ CREATE TABLE `m_tipe` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `m_title` */
 
@@ -1365,7 +1365,7 @@ CREATE TABLE `m_title` (
   `kode` varchar(2) DEFAULT '',
   `label` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=3 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `m_udiklat` */
 
@@ -1376,7 +1376,7 @@ CREATE TABLE `m_udiklat` (
   `kode` varchar(10) DEFAULT '',
   `label` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11;
 
 /*Table structure for table `master_grup` */
 
@@ -1386,7 +1386,7 @@ CREATE TABLE `master_grup` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `grup` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=16;
 
 /*Table structure for table `masteruser` */
 
@@ -1404,7 +1404,7 @@ CREATE TABLE `masteruser` (
   `foto` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) AUTO_INCREMENT=235 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 /*Table structure for table `masteruser20220723` */
 
@@ -1422,7 +1422,7 @@ CREATE TABLE `masteruser20220723` (
   `foto` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 /*Table structure for table `nodes` */
 
@@ -1440,7 +1440,7 @@ CREATE TABLE `nodes` (
   `state` varchar(30) DEFAULT '',
   `urut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=252 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=252;
 
 /*Table structure for table `nodes20220723` */
 
@@ -1458,7 +1458,7 @@ CREATE TABLE `nodes20220723` (
   `state` varchar(30) DEFAULT '',
   `urut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `nodes20221130` */
 
@@ -1476,7 +1476,7 @@ CREATE TABLE `nodes20221130` (
   `state` varchar(30) DEFAULT '',
   `urut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM;
 
 /*Table structure for table `nodes20230804` */
 
@@ -1494,7 +1494,7 @@ CREATE TABLE `nodes20230804` (
   `state` varchar(30) DEFAULT '',
   `urut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=204 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=204;
 
 /*Table structure for table `nodes20240305` */
 
@@ -1512,7 +1512,7 @@ CREATE TABLE `nodes20240305` (
   `state` varchar(30) DEFAULT '',
   `urut` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=206 DEFAULT CHARSET=latin1;
+) AUTO_INCREMENT=206;
 
 /*Table structure for table `r_alamat` */
 -- membuang struktur untuk table hrisori.rwyt_grade
@@ -1552,7 +1552,7 @@ CREATE TABLE `r_alamat` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=129;
 
 /*Table structure for table `r_atasan` */
 
@@ -1572,7 +1572,7 @@ CREATE TABLE `r_atasan` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=413 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=413;
 
 /*Table structure for table `r_award` */
 
@@ -1593,7 +1593,7 @@ CREATE TABLE `r_award` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=22 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_cluster` */
 
@@ -1607,7 +1607,7 @@ CREATE TABLE `r_cluster` (
   `assesment` varchar(250) DEFAULT '',
   `cluster` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_diklat` */
 
@@ -1650,7 +1650,7 @@ CREATE TABLE `r_diklat` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2253 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=2253 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_diklat20230308` */
 
@@ -1693,7 +1693,7 @@ CREATE TABLE `r_diklat20230308` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_diklat_backup` */
 
@@ -1736,7 +1736,7 @@ CREATE TABLE `r_diklat_backup` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_diklat_penjenjangan` */
 
@@ -1765,7 +1765,7 @@ CREATE TABLE `r_diklat_penjenjangan` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=15 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_foto` */
 
@@ -1777,7 +1777,7 @@ CREATE TABLE `r_foto` (
   `lokasi_foto` varchar(255) DEFAULT '',
   `nama_file` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41;
 
 /*Table structure for table `r_grade` */
 
@@ -1796,7 +1796,7 @@ CREATE TABLE `r_grade` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=333 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=333;
 
 /*Table structure for table `r_grade20221017` */
 
@@ -1812,7 +1812,7 @@ CREATE TABLE `r_grade20221017` (
   `kode_reason` varchar(10) DEFAULT '',
   `kode_subtype` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_hukuman` */
 
@@ -1841,7 +1841,7 @@ CREATE TABLE `r_hukuman` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_identitas` */
 
@@ -1858,7 +1858,7 @@ CREATE TABLE `r_identitas` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=253 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=253;
 
 /*Table structure for table `r_jabatan` */
 
@@ -1911,7 +1911,7 @@ CREATE TABLE `r_jabatan` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=638 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=638;
 
 /*Table structure for table `r_jabatan20230303` */
 
@@ -1964,7 +1964,7 @@ CREATE TABLE `r_jabatan20230303` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_jabatanlama20220818` */
 
@@ -1992,7 +1992,7 @@ CREATE TABLE `r_jabatanlama20220818` (
   `nip_atasan` varchar(30) DEFAULT '',
   `jabatan_atasan` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_karya_tulis` */
 
@@ -2011,7 +2011,7 @@ CREATE TABLE `r_karya_tulis` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7;
 
 /*Table structure for table `r_keahlian` */
 
@@ -2028,7 +2028,7 @@ CREATE TABLE `r_keahlian` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3;
 
 /*Table structure for table `r_keluarga` */
 
@@ -2068,7 +2068,7 @@ CREATE TABLE `r_keluarga` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=225;
 
 /*Table structure for table `r_keyb` */
 
@@ -2089,7 +2089,7 @@ CREATE TABLE `r_keyb` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_kompetensi` */
 
@@ -2106,7 +2106,7 @@ CREATE TABLE `r_kompetensi` (
   `deskripsi` varchar(200) DEFAULT '',
   `presentase` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_lembaga` */
 
@@ -2125,7 +2125,7 @@ CREATE TABLE `r_lembaga` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13;
 
 /*Table structure for table `r_medsos` */
 
@@ -2142,7 +2142,7 @@ CREATE TABLE `r_medsos` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=423 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=423 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_medsos20240219` */
 
@@ -2159,7 +2159,7 @@ CREATE TABLE `r_medsos20240219` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=221 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=221 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_medsosafteredit` */
 
@@ -2176,7 +2176,7 @@ CREATE TABLE `r_medsosafteredit` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=277 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_pemberhentian` */
 
@@ -2236,7 +2236,7 @@ CREATE TABLE `r_pembicara` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=8 ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_pendidikan` */
 
@@ -2262,7 +2262,7 @@ CREATE TABLE `r_pendidikan` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=183;
 
 /*Table structure for table `r_pendidikan20221004` */
 
@@ -2284,7 +2284,7 @@ CREATE TABLE `r_pendidikan20221004` (
   `satuan_lama_pendidikan` varchar(60) DEFAULT '',
   `nilai` varchar(5) DEFAULT '',
   `kode_transaksi` varchar(120) DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_pendidikan20231003` */
 
@@ -2310,7 +2310,7 @@ CREATE TABLE `r_pendidikan20231003` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=169;
 
 /*Table structure for table `r_pengajar` */
 
@@ -2335,7 +2335,7 @@ CREATE TABLE `r_pengajar` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_pengangkatan` */
 
@@ -2430,7 +2430,7 @@ CREATE TABLE `r_penugasan` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4;
 
 /*Table structure for table `r_position_management` */
 
@@ -2477,7 +2477,7 @@ CREATE TABLE `r_rekomendasi` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB ROW_FORMAT=COMPACT;
 
 /*Table structure for table `r_sertifikat` */
 
@@ -2510,7 +2510,7 @@ CREATE TABLE `r_sertifikat` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=138;
 
 /*Table structure for table `r_sertifikat20230810` */
 
@@ -2543,7 +2543,7 @@ CREATE TABLE `r_sertifikat20230810` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32;
 
 /*Table structure for table `r_sertifikat_backup` */
 
@@ -2575,7 +2575,7 @@ CREATE TABLE `r_sertifikat_backup` (
   `status_edit` varchar(1) NOT NULL DEFAULT '0',
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_struktur` */
 
@@ -2588,7 +2588,7 @@ CREATE TABLE `r_struktur` (
   `keterangan` varchar(255) DEFAULT '',
   `no_dokumen` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11;
 
 /*Table structure for table `r_talenta` */
 
@@ -2608,7 +2608,7 @@ CREATE TABLE `r_talenta` (
   `tgl_edit` varchar(30) DEFAULT '',
   `user_edit` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1201 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1201;
 
 /*Table structure for table `r_talentalama` */
 
@@ -2622,7 +2622,7 @@ CREATE TABLE `r_talentalama` (
   `nilai_talenta` varchar(3) DEFAULT '',
   `nki` double NOT NULL DEFAULT '0',
   `nsk` double NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB;
 
 /*Table structure for table `r_urjab` */
 
@@ -2635,7 +2635,7 @@ CREATE TABLE `r_urjab` (
   `no_dokumen` varchar(160) DEFAULT '',
   `keterangan` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=11 ROW_FORMAT=COMPACT;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -15,7 +15,7 @@ if ($userhris){
     }
 
     $queryjns = "SELECT * FROM project_sap where status='tYES'".$perintah." ORDER BY id ASC";
-    $sqljns = mysqli_query ($koneksi_teams,$queryjns);
+    $sqljns = mysqli_query ($koneksi,$queryjns);
     $items = array();
     while ($hasiljns = mysqli_fetch_array ($sqljns)) {
     	$kd_project = stripslashes ($hasiljns['kd_project']);

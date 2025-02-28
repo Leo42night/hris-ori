@@ -14,6 +14,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Membuang struktur basisdata untuk hrisori
+DROP DATABASE IF EXISTS `hrisori`;
+CREATE DATABASE IF NOT EXISTS `hrisori` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `hrisori`;
+
 -- membuang struktur untuk table hrisori.absensi
 CREATE TABLE IF NOT EXISTS `absensi` (
   `id` int NOT NULL AUTO_INCREMENT COMMENT 'id ini diberi komentar',
@@ -484,11 +490,13 @@ CREATE TABLE IF NOT EXISTS `beban_pph21` (
   `blth_gaji` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.beban_pph21: 2 rows
-/*!40000 ALTER TABLE `beban_pph21` DISABLE KEYS */;
-/*!40000 ALTER TABLE `beban_pph21` ENABLE KEYS */;
+-- Membuang data untuk tabel hrisori.beban_pph21: ~3 rows (lebih kurang)
+INSERT INTO `beban_pph21` (`id`, `kpp`, `npwp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `blthnip`, `blth_awal`, `blth_akhir`, `masa_kerja`, `gaji`, `tunjangan_pph`, `tunjangan_variable`, `honorarium`, `benefit`, `natuna`, `beban_pph21`, `bonus_thr`, `brutob`, `biaya_jabatanb`, `iuran_pensiunb`, `brutot`, `biaya_jabatant`, `iuran_pensiunt`, `biaya_pengurangt`, `nettot`, `brutot_total`, `biaya_jabatant_total`, `iuran_pensiunt_total`, `biaya_pengurangt_total`, `nettot_total`, `nettot_sebelumnya`, `nettot_akhir`, `ptkp`, `pkp`, `ppht`, `ppht_sebelumnya`, `ppht_terutang`, `pphb1_terutang`, `pphb2_terutang`, `pph_sistem`, `pph_koreksi`, `pphb_terutang`, `tgl_proses`, `petugas`, `blth_gaji`) VALUES
+	(1, 'KPP001', '123456789012345', '00000001', '9720004ZTY', 'Tetap', '2024', '2025-02', '2024-02-NIP001', '2024-01', '2024-12', 5, 10000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', ''),
+	(2, 'KPP002', '987654321098765', '00000002', '93151332ZY', 'Kontrak', '2024', '2025-02', '2024-02-NIP002', '2024-01', '2024-12', 3, 8000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', ''),
+	(3, 'KPP003', '112233445566778', '00000003', '6793163Z', 'Tetap', '2024', '2025-02', '2024-02-NIP003', '2024-01', '2024-12', 7, 12000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', '');
 
 -- membuang struktur untuk table hrisori.biaya_restitusi
 CREATE TABLE IF NOT EXISTS `biaya_restitusi` (
@@ -656,7 +664,7 @@ CREATE TABLE IF NOT EXISTS `biaya_sppd1` (
   UNIQUE KEY `idsppd` (`idsppd`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Membuang data untuk tabel hrisori.biaya_sppd1: ~11 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.biaya_sppd1: ~10 rows (lebih kurang)
 INSERT INTO `biaya_sppd1` (`id`, `idsppd`, `transportasi`, `transporta`, `transportb`, `transportc`, `transportd`, `total_transport`, `transportasi_lokal`, `airport_tax`, `hari_konsumsi1`, `persen_konsumsi1`, `nilai_konsumsi1`, `total_konsumsi1`, `hari_laundry1`, `persen_laundry1`, `nilai_laundry1`, `total_laundry1`, `hari_penginapan1`, `persen_penginapan1`, `nilai_penginapan1`, `total_penginapan1`, `hari_konsumsi2`, `persen_konsumsi2`, `nilai_konsumsi2`, `total_konsumsi2`, `hari_laundry2`, `persen_laundry2`, `nilai_laundry2`, `total_laundry2`, `hari_penginapan2`, `persen_penginapan2`, `nilai_penginapan2`, `total_penginapan2`, `hari_pegawai`, `persen_pegawai`, `nilai_pegawai`, `total_pegawai`, `keluarga`, `hari_keluarga`, `persen_keluarga`, `nilai_keluarga`, `total_keluarga`, `pengantar`, `hari_pengantar`, `persen_pengantar`, `nilai_pengantar`, `total_pengantar`, `hari_suamiistri`, `persen_suamiistri`, `nilai_suamiistri`, `total_suamiistri`, `anak`, `hari_anak`, `persen_anak`, `nilai_anak`, `total_anak`, `berat_pengepakan`, `nilai_pengepakan`, `total_pengepakan`, `kurs_ln`, `transporta_ln`, `transportb_ln`, `transportc_ln`, `transportd_ln`, `transportasi_lokal_ln`, `airport_tax_ln`, `hari_lumpsum`, `nilai_lumpsum`, `hari_pegawai_ln`, `persen_pegawai_ln`, `nilai_pegawai_ln`, `hari_keluarga_ln`, `persen_keluarga_ln`, `nilai_keluarga_ln`, `hari_pengantar_ln`, `persen_pengantar_ln`, `nilai_pengantar_ln`, `baju_hangat_ln`, `total`) VALUES
 	(1, '2025000001', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(2, '2025000002', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -966,7 +974,7 @@ CREATE TABLE IF NOT EXISTS `data_pegawai` (
 -- Membuang data untuk tabel hrisori.data_pegawai: ~10 rows (lebih kurang)
 INSERT INTO `data_pegawai` (`id`, `nip`, `jabatan`, `grade`, `start_date`, `end_date`, `tgl_masuk`, `tgl_capeg`, `tgl_tetap`, `title`, `nama`, `gelar_depan`, `gelar_belakang`, `know_as`, `tempat_lahir`, `tgl_lahir`, `kode_negara`, `jenis_kelamin`, `id_agama`, `status_nikah`, `tgl_nikah`, `status_warganegara`, `gol_darah`, `suku`, `telepon_utama`, `telepon_cadangan1`, `telepon_cadangan2`, `telepon_cadangan3`, `telepon_darurat`, `jenis_dplk`, `id_dplk`, `bank_dplk`, `no_bpjs_kes`, `no_bpjs_tk`, `bank_payroll`, `an_payroll`, `no_rek_payroll`, `status_integrasi`, `status_edit`, `tgl_edit`, `user_edit`, `aktif`, `tgl_berhenti`, `atasan_langsung`, `atasan_atasan_langsung`, `level_sppd`, `jenis_mutasi`, `jenis`, `no_sk`, `alamat`, `alamat_domisili`, `divisi`, `bidang`, `sub_bidang`, `region`, `unit`, `penempatan`, `skala_grade`, `pendidikan`, `jurusan`, `nik`, `no_kk`, `status`, `telepon`, `tgl_pegawai`, `tgl_awal_pkwt`, `tgl_akhir_pkwt`, `tgl_awal_pkwtt`, `tgl_awal_tugaskarya`, `tgl_akhir_tugaskarya`, `email`, `email2`, `agama`, `npwp`, `kpp`, `nama_bank`, `no_rekening`, `nama_rekening`, `nama_bank2`, `no_rekening2`, `nama_rekening2`, `ibu_kandung`, `baju`, `celana`, `sepatu`, `tgl_bpjs_kes`, `va_bpjs_kes`, `tgl_bpjs_tk`, `va_bpjs_tk`, `no_inhealth`, `tgl_inhealth`, `nama_bankdplk`, `no_rekeningdplk`, `no_cifdplk`, `keterangan`, `password`, `akses`, `kode_device`, `userid`, `welcome`, `foto`, `approval_sdm`, `approval_pembayaran`, `approval_konsumsi`, `kasir`, `kd_project_sap`) VALUES
 	(1, '6793163Z', '', '', '1967-12-24', '9999-12-31', '1993-02-06', '1993-02-06', '1994-07-03', 'T1', 'I KETUT WIRIANA', 'GD8', '', 'Ir. I KETUT WIRIANA', 'MATARAM', '1967-12-24', 'ID', 'JK1', 'HND', 'SN2', '1998-12-31', 'SK1', '', 'BALI', '62811111724', '', '', '', '', 'JDPLK1', '', '', '0001770994506', '16003726268', 'BNI', 'I KETUT WIRIANA', '0001729328', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
-	(2, '93151332ZY', '', '', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
+	(2, '93151332ZY', '', '', '1993-07-07', '2024-05-31', '2015-07-01', '2015-07-01', '2015-07-01', 'T2', 'NI MADE MERTA KARTIKA SARI', '', 'GB5', 'NI MADE MERTA KARTIKA SARI', 'DENPASAR', '1993-07-07', 'ID', 'JK2', 'HND', 'SN2', '2018-07-20', 'SK1', '', 'BALI', '087761821842', '', '', '', '', 'JDPLK3', '800373401', 'BNI', '0002106594088', '16003457211', 'BNI', 'NI MADE MERTA KARTIKA SARI', '1424569762', '1', '0', '', '', '0', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
 	(3, '9720004ZTY', '', '', '1997-09-10', '9999-12-31', '2020-11-01', '2020-11-01', '2020-11-01', 'T1', 'ABDUL MALIK', '', 'GB5', 'ABDUL MALIK GB5', 'MAROS', '1997-09-10', 'ID', 'JK1', 'ISL', 'SN1', '', 'SK1', '', 'BUGIS', '082395235023', '', '', '', '', 'JDPLK3', '804545490', 'BNI', '0002041428284', '20088670904', 'BNI', 'ABD. MALIK', '1133366615', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
 	(4, '6691029E', '', '', '1966-10-10', '9999-12-31', '1991-04-01', '1994-05-01', '1997-07-01', 'T1', 'ABDUL HARIS DAUD', '', 'GB103', 'ABDUL HARIS DAUD S.T.', 'GORONTALO', '1966-10-10', 'ID', 'JK1', 'ISL', 'SN2', '1991-10-05', 'SK1', '', 'GORONTALO', '085256335785', '', '', '', '', 'JDPLK1', '', '', '0002137969574', '16003782493', 'BRI', 'ABDUL HARIS DAUD', '517901003407508', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
 	(5, '8017001TRK', '', '', '1980-01-28', '9999-12-31', '2017-03-01', '2017-03-01', '2017-03-01', 'T1', 'ADE JANUAR SUCIADI', '', 'GB103', 'ADE JANUAR SUCIADI S.T.', 'SUKABUMI', '1980-01-28', 'ID', 'JK1', 'ISL', 'SN2', '2016-09-02', 'SK1', '', 'SUNDA', '082112019399', '', '', '', '', 'JDPLK3', '802681038', 'BNI', '0001129338652', '02K00161376', 'BNI', 'ADE JANUAR SUCIADI', '0381218457', '1', '0', '', '', '1', '', '', '', '', 'BARU', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, 'android', '', '', '1', '', '0', '0', '0', '0', ''),
@@ -1157,8 +1165,8 @@ CREATE TABLE IF NOT EXISTS `gaji` (
 -- Membuang data untuk tabel hrisori.gaji: 5 rows
 /*!40000 ALTER TABLE `gaji` DISABLE KEYS */;
 INSERT INTO `gaji` (`id`, `blth`, `nip`, `nipblth`, `npwp`, `kpp`, `gaji_dasar`, `honorarium`, `honorer`, `tarif_grade`, `tunjangan_posisi`, `p21b`, `tunjangan_kemahalan`, `tunjangan_perumahan`, `tunjangan_transportasi`, `bantuan_pulsa`, `tunjangan_kompetensi`, `dplk_persero`, `dplk_simponi_pr`, `lembur`, `nama_tunjangan1`, `tunjangan1`, `nama_tunjangan2`, `tunjangan2`, `nama_tunjangan3`, `tunjangan3`, `nama_tunjangan4`, `tunjangan4`, `bpjs_tk_pp`, `bpjs_tk_kp`, `bpjs_tk_kkp`, `bpjs_tk_htp`, `bpjs_tk_jhtk`, `bpjs_tk_pk`, `bpjs_kes_pp`, `bpjs_kes_pk`, `total_pendapatan`, `bpjs_pr`, `benefit`, `pendapatan_benefit`, `pot_koperasi`, `pot_bazis`, `dplk_simponi`, `pot_dplk_pribadi`, `cop_kendaraan`, `iuran_peserta`, `brpr`, `sewa_mess`, `qurban`, `arisan`, `nama_potongan1`, `potongan1`, `nama_potongan2`, `potongan2`, `nama_potongan3`, `potongan3`, `nama_potongan4`, `potongan4`, `total_potongan`, `pph21`, `upah_bersih`, `format`) VALUES
-	(1, '2020-01', '9219004ZTY', '2020-01.9219004ZTY', '640797049017000', 'BALIKPAPAN', 0, 0, 0, 5517000, 800000, 0, 1596000, 0, 0, 0, 0, 0, 220680, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 55170, 16551, 49101, 204129, 110340, 55170, 220680, 55170, 7913000, 545631, 766311, 8679311, 0, 0, 331020, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 551700, 159679, 7361300, ''),
-	(2, '2020-01', '9219005ZTY', '2020-01.9219005ZTY', '916433436130000', 'BALIKPAPAN', 0, 0, 0, 5517000, 764000, 0, 1110000, 0, 0, 0, 0, 0, 220680, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 55170, 16551, 49101, 204129, 110340, 55170, 220680, 55170, 7391000, 545631, 766311, 8157311, 0, 0, 331020, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 551700, 134883, 6839300, ''),
+	(1, '2025-02', '6793163Z', '2020-01.9219004ZTY', '640797049017000', 'BALIKPAPAN', 0, 0, 0, 5517000, 800000, 0, 1596000, 0, 0, 0, 0, 0, 220680, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 55170, 16551, 49101, 204129, 110340, 55170, 220680, 55170, 7913000, 545631, 766311, 8679311, 0, 0, 331020, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 551700, 159679, 7361300, ''),
+	(2, '2025-02', '93151332ZY', '2020-01.9219005ZTY', '916433436130000', 'BALIKPAPAN', 0, 0, 0, 5517000, 764000, 0, 1110000, 0, 0, 0, 0, 0, 220680, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 55170, 16551, 49101, 204129, 110340, 55170, 220680, 55170, 7391000, 545631, 766311, 8157311, 0, 0, 331020, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 551700, 134883, 6839300, ''),
 	(3, '2020-01', '9319001ZTY', '2020-01.9319001ZTY', '842970865005000', 'BALIKPAPAN', 0, 0, 0, 4533000, 424000, 0, 1408000, 0, 0, 0, 0, 0, 181320, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 45330, 13599, 40344, 167721, 90660, 45330, 181320, 45330, 6365000, 448314, 629634, 6994634, 0, 0, 271980, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 453300, 84579, 5911700, ''),
 	(4, '2020-01', '9319006ZTY', '2020-01.9319006ZTY', '757679154303000', 'BALIKPAPAN', 0, 0, 0, 5517000, 800000, 0, 1596000, 0, 0, 0, 0, 0, 220680, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 55170, 16551, 49101, 204129, 110340, 55170, 220680, 55170, 7913000, 545631, 766311, 8679311, 0, 0, 331020, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 551700, 159679, 7361300, ''),
 	(5, '2020-01', '9519002ZTY', '2020-01.9519002ZTY', '816977474522000', 'TARAKAN', 0, 0, 0, 4533000, 424000, 0, 1064000, 0, 0, 0, 0, 0, 181320, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 45330, 13599, 40344, 167721, 90660, 45330, 181320, 45330, 6021000, 448314, 629634, 6650634, 0, 0, 271980, 0, 0, 0, 0, 0, 0, 0, NULL, 0, NULL, 0, NULL, 0, NULL, 0, 453300, 68238, 5567700, '');
@@ -2342,7 +2350,7 @@ INSERT INTO `master_mapping` (`id`, `kolom`, `kode_akun`, `nama_akun`, `item_no`
 	(7, 'honorer', '5109111000', 'HONOR_BPP', ''),
 	(8, 'tunjangan_posisi', '6201200000', 'Pay For Position (P2) - Usaha', ''),
 	(9, 'p21b', '6201200000', 'Pay For Position (P2) - Usaha', ''),
-	(10, 'tunjangan_kemahalan', '6201200000', 'Pay For Position (P2) - Usaha', '');
+	(10, 'tunjangan_kemahalan', '6201200000', 'Pay For Position (P2) - Usaha', 'adad');
 /*!40000 ALTER TABLE `master_mapping` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.master_pendidikan
@@ -4443,14 +4451,14 @@ CREATE TABLE IF NOT EXISTS `pendapatan_mutasi` (
 -- Membuang data untuk tabel hrisori.pendapatan_mutasi: 8 rows
 /*!40000 ALTER TABLE `pendapatan_mutasi` DISABLE KEYS */;
 INSERT INTO `pendapatan_mutasi` (`id`, `nip`, `tahun`, `niptahun`, `blth_awal`, `blth_akhir`, `netto`, `pph21`) VALUES
-	(1, '6793082D', '2019', '2019.6793082D', '2019-01', '2019-07', 414813860, 72472835),
-	(2, '6610430HPI', '2019', '2019.6610430HPI', '2019-01', '2019-06', 153257712, 8538550),
-	(3, '7602004ICP', '2020', '2020.7602004ICP', '2020-01', '2020-07', 490119020, 60189778),
-	(4, '6691029E', '2020', '2020.6691029E', '2020-01', '2020-06', 202875170, 27825650),
-	(5, '8106323Z', '2020', '2020.8106323Z', '2020-01', '2020-06', 175090783, 19713618),
-	(6, '8611098Z', '2020', '2020.8611098Z', '2020-01', '2020-08', 170459533, 15485597),
-	(7, '9418045ZY', '2020', '2020.9418045ZY', '2020-01', '2020-11', 129192071, 7051609),
-	(8, '8207216Z', '2020', '2020.8207216Z', '2020-01', '2020-07', 158927566, 15016220);
+	(1, '6793163Z', '2025', '2019.6793082D', '2019-01', '2019-07', 414813860, 72472835),
+	(2, '9720004ZTY', '2025', '2019.6610430HPI', '2019-01', '2019-06', 153257712, 8538550),
+	(3, '93151332ZY', '2025', '2020.7602004ICP', '2020-01', '2020-07', 490119020, 60189778),
+	(4, '6691029E', '2025', '2020.6691029E', '2020-01', '2020-06', 202875170, 27825650),
+	(5, '8017001TRK', '2020', '2020.8106323Z', '2020-01', '2020-06', 175090783, 19713618),
+	(6, '7410021TRK', '2020', '2020.8611098Z', '2020-01', '2020-08', 170459533, 15485597),
+	(7, '9420009ZTY', '2020', '2020.9418045ZY', '2020-01', '2020-11', 129192071, 7051609),
+	(8, '92171742ZY', '2020', '2020.8207216Z', '2020-01', '2020-07', 158927566, 15016220);
 /*!40000 ALTER TABLE `pendapatan_mutasi` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.pengikut_sppd
@@ -4462,7 +4470,7 @@ CREATE TABLE IF NOT EXISTS `pengikut_sppd` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.pengikut_sppd: 11 rows
+-- Membuang data untuk tabel hrisori.pengikut_sppd: 9 rows
 /*!40000 ALTER TABLE `pengikut_sppd` DISABLE KEYS */;
 INSERT INTO `pengikut_sppd` (`id`, `idsppd`, `nama`, `hubungan`) VALUES
 	(2, '2020000002', 'Putri Ayu Kresnawaty', 'istri'),
@@ -4645,9 +4653,9 @@ CREATE TABLE IF NOT EXISTS `pph` (
 -- Membuang data untuk tabel hrisori.pph: 9 rows
 /*!40000 ALTER TABLE `pph` DISABLE KEYS */;
 INSERT INTO `pph` (`id`, `kpp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `blthnip`, `blth_awal`, `blth_akhir`, `masa_kerja`, `gaji`, `tunjangan_pph`, `tunjangan_variable`, `honorarium`, `benefit`, `natuna`, `beban_pph21`, `bonus_thr`, `brutob`, `biaya_jabatanb`, `iuran_pensiunb`, `brutot`, `biaya_jabatant`, `iuran_pensiunt`, `biaya_pengurangt`, `nettot`, `nettot_sebelumnya`, `nettot_akhir`, `ptkp`, `pkp`, `ppht`, `ppht_sebelumnya`, `ppht_terutang`, `pph_sistem`, `pph_koreksi`, `pphb_terutang`, `tgl_proses`, `petugas`) VALUES
-	(1, 'BALIKPAPAN', '00000130', 'KOMDIT03', 'K0', '2019', '2019-12', '2019-12.KOMDIT03.BALIKPAPAN', '2019-01', '2019-12', 12, 21000000, 0, 48000000, 85000000, 0, 0, 0, 10500000, 0, 0, 0, 164500000, 6000000, 0, 6000000, 158500000, 0, 158500000, 58500000, 100000000, 10000000, 7438968, 2561032, 2561032, 0, 2561032, '2020-04-24', 'priska'),
-	(2, 'BALIKPAPAN', '00000129', 'KOMDIT02', 'K0', '2019', '2019-12', '2019-12.KOMDIT02.BALIKPAPAN', '2019-01', '2019-12', 12, 22000000, 0, 0, 80000000, 0, 0, 0, 11000000, 0, 0, 0, 113000000, 5650000, 0, 5650000, 107350000, 0, 107350000, 58500000, 48850000, 2442500, 2283586, 158914, 158914, 0, 158914, '2020-04-24', 'priska'),
-	(3, 'BALIKPAPAN', '00000126', 'KOM02', 'K0', '2019', '2019-12', '2019-12.KOM02.BALIKPAPAN', '2019-01', '2019-12', 12, 0, 0, 86040000, 341750000, 0, 0, 0, 172090000, 0, 0, 0, 599880000, 6000000, 0, 6000000, 593880000, 0, 593880000, 67500000, 526380000, 102914000, 57363000, 45551000, 45551000, 0, 45551000, '2020-04-24', 'priska'),
+	(1, 'BALIKPAPAN', '00000130', '6793163Z', 'K0', '2019', '2025-02', '2019-12.KOMDIT03.BALIKPAPAN', '2019-01', '2019-12', 12, 21000000, 0, 48000000, 85000000, 0, 0, 0, 10500000, 0, 0, 0, 164500000, 6000000, 0, 6000000, 158500000, 0, 158500000, 58500000, 100000000, 10000000, 7438968, 2561032, 2561032, 0, 2561032, '2020-04-24', 'priska'),
+	(2, 'BALIKPAPAN', '00000129', '93151332ZY', 'K0', '2019', '2025-02', '2019-12.KOMDIT02.BALIKPAPAN', '2019-01', '2019-12', 12, 22000000, 0, 0, 80000000, 0, 0, 0, 11000000, 0, 0, 0, 113000000, 5650000, 0, 5650000, 107350000, 0, 107350000, 58500000, 48850000, 2442500, 2283586, 158914, 158914, 0, 158914, '2020-04-24', 'priska'),
+	(3, 'BALIKPAPAN', '00000126', '9720004ZTY', 'K0', '2019', '2025-02', '2019-12.KOM02.BALIKPAPAN', '2019-01', '2019-12', 12, 0, 0, 86040000, 341750000, 0, 0, 0, 172090000, 0, 0, 0, 599880000, 6000000, 0, 6000000, 593880000, 0, 593880000, 67500000, 526380000, 102914000, 57363000, 45551000, 45551000, 0, 45551000, '2020-04-24', 'priska'),
 	(4, 'BALIKPAPAN', '00000127', 'KOM03', 'K0', '2019', '2019-12', '2019-12.KOM03.BALIKPAPAN', '2019-01', '2019-12', 12, 0, 0, 1000000, 102000000, 0, 0, 0, 8000000, 0, 0, 0, 111000000, 5550000, 0, 5550000, 105450000, 0, 105450000, 58500000, 46950000, 2347500, 2711802, 0, 0, 0, 0, '2020-04-24', 'priska'),
 	(5, 'BALIKPAPAN', '00000128', 'KOMDIT01', 'TK0', '2019', '2019-12', '2019-12.KOMDIT01.BALIKPAPAN', '2019-01', '2019-12', 12, 22000000, 0, 0, 80000000, 0, 0, 0, 8000000, 0, 0, 0, 110000000, 5500000, 0, 5500000, 104500000, 0, 104500000, 67500000, 37000000, 1850000, 2494886, 0, 0, 0, 0, '2020-04-24', 'priska'),
 	(6, 'BALIKPAPAN', '00000125', 'KOM01', 'K1', '2019', '2019-12', '2019-12.KOM01.BALIKPAPAN', '2019-01', '2019-10', 10, 0, 0, 78000000, 315000000, 0, 0, 0, 223200000, 0, 0, 0, 616200000, 6000000, 0, 6000000, 610200000, 0, 610200000, 63000000, 547200000, 109160000, 55995000, 53165000, 53165000, 0, 53165000, '2020-04-24', 'priska'),
@@ -4655,6 +4663,65 @@ INSERT INTO `pph` (`id`, `kpp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `bl
 	(8, 'BALIKPAPAN', '00000123', 'HONOR09', 'TK0', '2019', '2019-12', '2019-12.HONOR09.BALIKPAPAN', '2019-12', '2019-12', 1, 6500000, 0, 1500000, 0, 707850, 0, 0, 0, 0, 0, 0, 8707850, 435393, 195000, 630393, 8077457, 0, 8077457, 54000000, 0, 0, 185711, 0, 0, 0, 0, '2020-04-24', 'priska'),
 	(9, 'BALIKPAPAN', '00000122', 'HONOR08', 'K0', '2019', '2019-12', '2019-12.HONOR08.BALIKPAPAN', '2019-10', '2019-12', 3, 16000000, 0, 7500000, 8000000, 0, 0, 0, 0, 0, 0, 0, 31500000, 1575000, 0, 1575000, 29925000, 0, 29925000, 58500000, 0, 0, 2042352, 0, 0, 0, 0, '2020-04-24', 'priska');
 /*!40000 ALTER TABLE `pph` ENABLE KEYS */;
+
+-- membuang struktur untuk table hrisori.pph21masa
+CREATE TABLE IF NOT EXISTS `pph21masa` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kpp` varchar(120) DEFAULT '',
+  `npwp` varchar(15) DEFAULT '',
+  `no_urut` varchar(8) DEFAULT '',
+  `nip` varchar(60) DEFAULT '',
+  `status` varchar(30) DEFAULT '',
+  `tahun` varchar(4) DEFAULT '',
+  `blth` varchar(7) DEFAULT '',
+  `blthnip` varchar(120) DEFAULT '',
+  `blth_awal` varchar(7) DEFAULT '',
+  `blth_akhir` varchar(7) DEFAULT '',
+  `masa_kerja` double NOT NULL DEFAULT '0',
+  `gaji` double NOT NULL DEFAULT '0',
+  `tunjangan_pph` double NOT NULL DEFAULT '0',
+  `tunjangan_variable` double NOT NULL DEFAULT '0',
+  `honorarium` double NOT NULL DEFAULT '0',
+  `benefit` double NOT NULL DEFAULT '0',
+  `natuna` double NOT NULL DEFAULT '0',
+  `beban_pph21` double NOT NULL DEFAULT '0',
+  `bonus_thr` double NOT NULL DEFAULT '0',
+  `brutob` double NOT NULL DEFAULT '0',
+  `biaya_jabatanb` double NOT NULL DEFAULT '0',
+  `iuran_pensiunb` double NOT NULL DEFAULT '0',
+  `brutot` double NOT NULL DEFAULT '0',
+  `biaya_jabatant` double NOT NULL DEFAULT '0',
+  `iuran_pensiunt` double NOT NULL DEFAULT '0',
+  `biaya_pengurangt` double NOT NULL DEFAULT '0',
+  `nettot` double NOT NULL DEFAULT '0',
+  `brutot_total` double NOT NULL DEFAULT '0',
+  `biaya_jabatant_total` double NOT NULL DEFAULT '0',
+  `iuran_pensiunt_total` double NOT NULL DEFAULT '0',
+  `biaya_pengurangt_total` double NOT NULL DEFAULT '0',
+  `nettot_total` double NOT NULL DEFAULT '0',
+  `nettot_sebelumnya` double NOT NULL DEFAULT '0',
+  `nettot_akhir` double NOT NULL DEFAULT '0',
+  `ptkp` double NOT NULL DEFAULT '0',
+  `pkp` double NOT NULL DEFAULT '0',
+  `ppht` double NOT NULL DEFAULT '0',
+  `ppht_sebelumnya` double NOT NULL DEFAULT '0',
+  `ppht_terutang` double NOT NULL DEFAULT '0',
+  `pphb1_terutang` double NOT NULL DEFAULT '0',
+  `pphb2_terutang` double NOT NULL DEFAULT '0',
+  `pph_sistem` double NOT NULL DEFAULT '0',
+  `pph_koreksi` double NOT NULL DEFAULT '0',
+  `pphb_terutang` double NOT NULL DEFAULT '0',
+  `tgl_proses` varchar(10) DEFAULT '',
+  `petugas` varchar(120) DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `blthnip` (`blthnip`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Membuang data untuk tabel hrisori.pph21masa: ~3 rows (lebih kurang)
+INSERT INTO `pph21masa` (`id`, `kpp`, `npwp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `blthnip`, `blth_awal`, `blth_akhir`, `masa_kerja`, `gaji`, `tunjangan_pph`, `tunjangan_variable`, `honorarium`, `benefit`, `natuna`, `beban_pph21`, `bonus_thr`, `brutob`, `biaya_jabatanb`, `iuran_pensiunb`, `brutot`, `biaya_jabatant`, `iuran_pensiunt`, `biaya_pengurangt`, `nettot`, `brutot_total`, `biaya_jabatant_total`, `iuran_pensiunt_total`, `biaya_pengurangt_total`, `nettot_total`, `nettot_sebelumnya`, `nettot_akhir`, `ptkp`, `pkp`, `ppht`, `ppht_sebelumnya`, `ppht_terutang`, `pphb1_terutang`, `pphb2_terutang`, `pph_sistem`, `pph_koreksi`, `pphb_terutang`, `tgl_proses`, `petugas`) VALUES
+	(1, 'KPP001', '123456789012345', '00000001', '6793163Z', 'Tetap', '2024', '2025-02', '2024-02-NIP001', '', '', 5, 10000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
+	(2, 'KPP002', '987654321098765', '00000002', '93151332ZY', 'Kontrak', '2024', '2025-02', '2024-02-NIP002', '', '', 3, 8000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', ''),
+	(3, 'KPP003', '112233445566778', '00000003', '9720004ZTY', 'Tetap', '2024', '2025-02', '2024-02-NIP003', '', '', 7, 12000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
 
 -- membuang struktur untuk table hrisori.pphlock
 CREATE TABLE IF NOT EXISTS `pphlock` (
@@ -4752,9 +4819,9 @@ CREATE TABLE IF NOT EXISTS `pphmanual` (
 -- Membuang data untuk tabel hrisori.pphmanual: 9 rows
 /*!40000 ALTER TABLE `pphmanual` DISABLE KEYS */;
 INSERT INTO `pphmanual` (`id`, `kpp`, `no_urut`, `nip`, `status`, `tahun`, `blth`, `blthnip`, `blth_awal`, `blth_akhir`, `masa_kerja`, `gaji`, `tunjangan_pph`, `tunjangan_variable`, `honorarium`, `benefit`, `natuna`, `bonus_thr`, `brutob`, `biaya_jabatanb`, `iuran_pensiunb`, `brutot`, `biaya_jabatant`, `iuran_pensiunt`, `biaya_pengurangt`, `nettot`, `nettot_sebelumnya`, `nettot_akhir`, `ptkp`, `pkp`, `ppht`, `ppht_sebelumnya`, `ppht_terutang`, `pph_sistem`, `pph_koreksi`, `pphb_terutang`, `tgl_proses`, `petugas`) VALUES
-	(1, 'BALIKPAPAN', '00000181', '65180000', 'K2', '2022', '2022-12', '2022-12.65180000', '2022-07', '2022-07', 1, 0, 0, 0, 0, 0, 0, 3426470, 0, 0, 0, 3426470, 171324, 0, 171324, 3255146, 0, 3255146, 67500000, 0, 0, 0, 0, 0, 0, 0, '2023-01-04', 'sani'),
-	(2, 'TARAKAN', '00000004', '8319006PCN', 'K0', '2022', '2022-12', '2022-12.8319006PCN', '2022-01', '2022-12', 12, 54696953, 0, 22393595, 0, 4454387, 0, 66044684, 0, 0, 0, 147589619, 6000000, 2400000, 8400000, 139189619, 0, 139189619, 58500000, 80689000, 6103350, 0, 6103350, 6103350, 0, 6103350, '2023-01-04', 'sani'),
-	(3, 'TARAKAN', '00000003', '7119005PCN', 'K0', '2022', '2022-12', '2022-12.7119005PCN', '2022-01', '2022-12', 12, 54696953, 0, 22393595, 0, 4454387, 0, 68057876, 0, 0, 0, 149602811, 6000000, 2400000, 8400000, 141202811, 0, 141202811, 58500000, 82702000, 6405300, 0, 6405300, 6405300, 0, 6405300, '2023-01-04', 'sani'),
+	(1, 'BALIKPAPAN', '00000181', '6793163Z', 'K2', '2022', '2025-02', '2022-12.65180000', '2022-07', '2022-07', 1, 0, 0, 0, 0, 0, 0, 3426470, 0, 0, 0, 3426470, 171324, 0, 171324, 3255146, 0, 3255146, 67500000, 0, 0, 0, 0, 0, 0, 0, '2023-01-04', 'sani'),
+	(2, 'TARAKAN', '00000004', '93151332ZY', 'K0', '2022', '2025-02', '2022-12.8319006PCN', '2022-01', '2022-12', 12, 54696953, 0, 22393595, 0, 4454387, 0, 66044684, 0, 0, 0, 147589619, 6000000, 2400000, 8400000, 139189619, 0, 139189619, 58500000, 80689000, 6103350, 0, 6103350, 6103350, 0, 6103350, '2023-01-04', 'sani'),
+	(3, 'TARAKAN', '00000003', '9720004ZTY', 'K0', '2022', '2025-02', '2022-12.7119005PCN', '2022-01', '2022-12', 12, 54696953, 0, 22393595, 0, 4454387, 0, 68057876, 0, 0, 0, 149602811, 6000000, 2400000, 8400000, 141202811, 0, 141202811, 58500000, 82702000, 6405300, 0, 6405300, 6405300, 0, 6405300, '2023-01-04', 'sani'),
 	(4, 'TARAKAN', '00000002', '7210013TRK', 'K1', '2022', '2022-12', '2022-12.7210013TRK', '2022-01', '2022-12', 12, 82155708, 0, 56258964, 0, 7378346, 0, 114654888, 0, 0, 0, 260447906, 6000000, 2400000, 8400000, 252047906, 0, 252047906, 63000000, 189047000, 22357050, 0, 22357050, 22357050, 0, 22357050, '2023-01-04', 'sani'),
 	(5, 'TARAKAN', '00000001', '6610023TRK', 'K2', '2022', '2022-12', '2022-12.6610023TRK', '2022-01', '2022-10', 10, 73013859, 0, 21702047, 0, 5355500, 0, 112543624, 0, 0, 0, 212615030, 5000000, 2400000, 7400000, 205215030, 0, 205215030, 67500000, 137715000, 14657250, 0, 14657250, 14657250, 0, 14657250, '2023-01-04', 'sani'),
 	(6, 'BALIKPAPAN', '00000180', '9720012ZTY', 'TK0', '2022', '2022-12', '2022-12.9720012ZTY', '2022-01', '2022-12', 12, 57252000, 0, 30599000, 0, 4716492, 0, 72437728, 0, 0, 0, 165005220, 6000000, 2400000, 8400000, 156605220, 0, 156605220, 54000000, 102605000, 9390750, 0, 9390750, 9390750, 0, 9390750, '2023-01-04', 'sani'),
@@ -6380,7 +6447,8 @@ CREATE TABLE IF NOT EXISTS `sppd1` (
   UNIQUE KEY `idsppd` (`idsppd`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Membuang data untuk tabel hrisori.sppd1: ~6 rows (lebih kurang)
+-- Membuang data untuk tabel hrisori.sppd1: 11 rows
+/*!40000 ALTER TABLE `sppd1` DISABLE KEYS */;
 INSERT INTO `sppd1` (`id`, `idsppd`, `tanggal`, `tingkat_sppd`, `jenis_sppd`, `level_sppd`, `sub_jenis_sppd`, `kd_project_sap`, `nama_project_sap`, `no_sppd`, `nip`, `nama`, `grade`, `jabatan`, `maksud`, `agenda`, `kedudukan`, `tujuan`, `jarak`, `transportasi`, `tgl_awal`, `tgl_akhir`, `hari`, `kota1a`, `kota2a`, `transporta`, `kota1b`, `kota2b`, `transportb`, `kota1c`, `kota2c`, `transportc`, `kota1d`, `kota2d`, `transportd`, `jenis_tujuan`, `tgl_proses`, `petugas`, `approve1`, `approval1`, `tgl_approve1`, `alasan_reject1`, `approve2`, `approval2`, `tgl_approve2`, `alasan_reject2`, `validasi_biaya`, `tgl_validasi`, `approvesdm`, `approvalsdm`, `tgl_approvesdm`, `alasan_rejectsdm`, `approvebayar`, `approvalbayar`, `tgl_approvebayar`, `alasan_rejectbayar`, `bayar`, `tgl_bayar`, `editing`, `validasi_restitusi`, `tgl_validasi_restitusi`, `bayar_restitusi`, `tgl_bayar_restitusi`) VALUES
 	(6639, 'S001', '2025-01-01', '1', '1', 'B', 'Sub-A', 'P001', 'Project A', 'SPPD001', 'NIP001', 'Nama A', 'Grade A', 'Jabatan A', 'Maksud A', 'Agenda A', 'Kedudukan A', 'Tujuan A', 10, 'Transportasi A', '2025-01-01', '2025-01-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis A', '2025-01-01', 'Petugas A', '0', '9720004ZTY', '2025-01-02', 'Alasan Reject1 A', '0', '7410021TRK', '2025-01-03', 'Alasan Reject2 A', '0', '2025-01-04', '0', '9420009ZTY', '2025-01-05', 'Alasan Rejectsdm A', '0', '92171742ZY', '2025-01-06', 'Alasan Rejectbayar A', '0', '2025-01-07', '0', '0', '2025-01-08', '0', '2025-01-09'),
 	(6640, 'S002', '2025-02-01', '2', '2', 'C', 'Sub-B', 'P002', 'Project B', 'SPPD002', 'NIP002', 'Nama B', 'Grade B', 'Jabatan B', 'Maksud B', 'Agenda B', 'Kedudukan B', 'Tujuan B', 20, 'Transportasi B', '2025-02-01', '2025-02-05', 5, 'Kota1a', 'Kota2a', 'Transporta', 'Kota1b', 'Kota2b', 'Transportb', 'Kota1c', 'Kota2c', 'Transportc', 'Kota1d', 'Kota2d', 'Transportd', 'Jenis B', '2025-02-01', 'Petugas B', '1', 'Approval1 B', '2025-02-02', 'Alasan Reject1 B', '0', 'Approval2 B', '2025-02-03', 'Alasan Reject2 B', '1', '2025-02-04', '1', 'Approvalsdm B', '2025-02-05', 'Alasan Rejectsdm B', '0', 'Approvalbayar B', '2025-02-06', 'Alasan Rejectbayar B', '0', '2025-02-07', '1', '0', '2025-02-08', '1', '2025-02-09'),
@@ -6393,6 +6461,7 @@ INSERT INTO `sppd1` (`id`, `idsppd`, `tanggal`, `tingkat_sppd`, `jenis_sppd`, `l
 	(6649, '2025000008', '2025-02-13', '', '', '', '', '', '', '0008.SPPD/MUM.00.07/PLN-TRK/2025', '6793163Z', 'I KETUT WIRIANA', '', '', '', '', '', '', 1, '', '', '', 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
 	(6650, '2025000009', '2025-02-13', '', '', '', '', '', '', '0009.SPPD/MUM.00.07/PLN-TRK/2025', '92171742ZY', 'AGIL FRASSETYO', '', '', '', '', '', '', 22, '', '', '', 2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', ''),
 	(6652, '2025000010', '2025-02-14', '', '', '', '', '', '', '0010.SPPD/MUM.00.07/PLN-TRK/2025', '9420009ZTY', 'AFIF ASYKAR AMIR', '', '', '', '', '', '', 4, '', '', '', 4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '', '', '', '0', '', '', '', '0', '', '0', '0', '', '0', '');
+/*!40000 ALTER TABLE `sppd1` ENABLE KEYS */;
 
 -- membuang struktur untuk table hrisori.sub_jenis_sppd
 CREATE TABLE IF NOT EXISTS `sub_jenis_sppd` (

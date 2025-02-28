@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Jakarta");
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 // include 'koneksi_teams.php'; ??? database : team
 
-$rs30 = mysqli_query($koneksi_teams,"select * from baseurl_api where jenis_api='sap' order by id desc limit 1");
+$rs30 = mysqli_query($koneksi,"select * from baseurl_api where jenis_api='sap' order by id desc limit 1");
 $hasil30 = mysqli_fetch_array($rs30);
 if($hasil30){
     $baseurl = $hasil30['baseurl'];

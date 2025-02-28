@@ -36,6 +36,7 @@ if ($userhris){
     $result["total"] = $row[0];    
     
     $rs = mysqli_query($koneksi,"select a.*,b.nama,b.jabatan,b.npwp from pphmanual a inner join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah." order by a.no_urut asc limit $offset,$rows");
+    // echo "select a.*,b.nama,b.jabatan,b.npwp from pphmanual a inner join data_pegawai b on a.nip=b.nip where a.blth='$blth2'".$perintah." order by a.no_urut asc limit $offset,$rows";
     $items = array();
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = stripslashesx ($hasil['id']);
