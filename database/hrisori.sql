@@ -16,6 +16,7 @@
 
 
 -- Membuang struktur basisdata untuk hrisori
+DROP DATABASE IF EXISTS `hrisori`;
 CREATE DATABASE IF NOT EXISTS `hrisori` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `hrisori`;
 
@@ -49,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `absensi` (
   `kota` varchar(100) DEFAULT NULL,
   `durasi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='nama tabel absensi ini diberi komentar';
+) COMMENT='nama tabel absensi ini diberi komentar';
 
 -- Membuang data untuk tabel hrisori.absensi: 10 rows
 /*!40000 ALTER TABLE `absensi` DISABLE KEYS */;
@@ -74,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `aksesuser` (
   `proses` varchar(1) NOT NULL DEFAULT '0',
   `lihat` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.aksesuser: 252 rows
 /*!40000 ALTER TABLE `aksesuser` DISABLE KEYS */;
@@ -356,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `aktivitas_harian` (
   `keterangan` varchar(255) DEFAULT '',
   `eviden` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.aktivitas_harian: 0 rows
 /*!40000 ALTER TABLE `aktivitas_harian` DISABLE KEYS */;
@@ -367,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `atasan_langsung` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nip` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.atasan_langsung: 0 rows
 /*!40000 ALTER TABLE `atasan_langsung` DISABLE KEYS */;
@@ -530,7 +531,7 @@ CREATE TABLE IF NOT EXISTS `biaya_restitusidummy` (
   `keterangan` text,
   `lampiran` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.biaya_restitusidummy: 0 rows
 /*!40000 ALTER TABLE `biaya_restitusidummy` DISABLE KEYS */;
@@ -567,7 +568,7 @@ CREATE TABLE IF NOT EXISTS `biaya_sppd` (
   `total` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.biaya_sppd: 3 rows
 /*!40000 ALTER TABLE `biaya_sppd` DISABLE KEYS */;
@@ -699,7 +700,7 @@ CREATE TABLE IF NOT EXISTS `bonus` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.bonus: 9 rows
 /*!40000 ALTER TABLE `bonus` DISABLE KEYS */;
@@ -740,7 +741,7 @@ CREATE TABLE IF NOT EXISTS `cuti` (
   `tgl_update` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.cuti: 9 rows
 /*!40000 ALTER TABLE `cuti` DISABLE KEYS */;
@@ -793,7 +794,7 @@ CREATE TABLE IF NOT EXISTS `cuti_tahunan` (
   `keterangan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.cuti_tahunan: 8 rows
 /*!40000 ALTER TABLE `cuti_tahunan` DISABLE KEYS */;
@@ -816,7 +817,7 @@ CREATE TABLE IF NOT EXISTS `data_aktivitas` (
   `user` varchar(200) DEFAULT '',
   `aktivitas` mediumtext,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.data_aktivitas: 10 rows
 /*!40000 ALTER TABLE `data_aktivitas` DISABLE KEYS */;
@@ -842,7 +843,7 @@ CREATE TABLE IF NOT EXISTS `data_keluarga` (
   `tgl_lahir` varchar(10) DEFAULT '',
   `hubungan_keluarga` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.data_keluarga: 9 rows
 /*!40000 ALTER TABLE `data_keluarga` DISABLE KEYS */;
@@ -1481,7 +1482,7 @@ CREATE TABLE IF NOT EXISTS `gaji` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.gaji: 5 rows
 /*!40000 ALTER TABLE `gaji` DISABLE KEYS */;
@@ -1521,7 +1522,7 @@ CREATE TABLE IF NOT EXISTS `gajipph` (
   `format` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.gajipph: 6 rows
 /*!40000 ALTER TABLE `gajipph` DISABLE KEYS */;
@@ -1545,7 +1546,7 @@ CREATE TABLE IF NOT EXISTS `gaji_tunjangan` (
   `iks` double NOT NULL DEFAULT '0',
   `bonus` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.gaji_tunjangan: 0 rows
 /*!40000 ALTER TABLE `gaji_tunjangan` DISABLE KEYS */;
@@ -1629,7 +1630,7 @@ CREATE TABLE IF NOT EXISTS `ijin` (
   `tgl_update` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.ijin: 6 rows
 /*!40000 ALTER TABLE `ijin` DISABLE KEYS */;
@@ -1651,7 +1652,7 @@ CREATE TABLE IF NOT EXISTS `iklan` (
   `link_aplikasi` varchar(200) DEFAULT '',
   `aktif` varchar(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.iklan: 6 rows
 /*!40000 ALTER TABLE `iklan` DISABLE KEYS */;
@@ -1712,7 +1713,7 @@ CREATE TABLE IF NOT EXISTS `iks` (
   `petugas` varchar(250) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.iks: 10 rows
 /*!40000 ALTER TABLE `iks` DISABLE KEYS */;
@@ -1749,7 +1750,7 @@ CREATE TABLE IF NOT EXISTS `jenis_acara` (
   `id` int NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.jenis_acara: 5 rows
 /*!40000 ALTER TABLE `jenis_acara` DISABLE KEYS */;
@@ -1766,7 +1767,7 @@ CREATE TABLE IF NOT EXISTS `jenis_makanan` (
   `id` int NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.jenis_makanan: 2 rows
 /*!40000 ALTER TABLE `jenis_makanan` DISABLE KEYS */;
@@ -1782,7 +1783,7 @@ CREATE TABLE IF NOT EXISTS `jenis_pegawai` (
   `kd_kelompok` varchar(1) NOT NULL DEFAULT '1',
   `nama_kelompok` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.jenis_pegawai: 10 rows
 /*!40000 ALTER TABLE `jenis_pegawai` DISABLE KEYS */;
@@ -1805,7 +1806,7 @@ CREATE TABLE IF NOT EXISTS `jenis_sppd` (
   `kd_sppd` varchar(1) DEFAULT '',
   `nama_sppd` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.jenis_sppd: 5 rows
 /*!40000 ALTER TABLE `jenis_sppd` DISABLE KEYS */;
@@ -1838,7 +1839,7 @@ CREATE TABLE IF NOT EXISTS `jenis_tujuan` (
   `kd_tujuan` varchar(1) DEFAULT '',
   `nama_tujuan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.jenis_tujuan: 3 rows
 /*!40000 ALTER TABLE `jenis_tujuan` DISABLE KEYS */;
@@ -1890,7 +1891,7 @@ CREATE TABLE IF NOT EXISTS `kategori_pegawai` (
   `status` varchar(1) NOT NULL DEFAULT '2',
   `kode_jabatan` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.kategori_pegawai: 0 rows
 /*!40000 ALTER TABLE `kategori_pegawai` DISABLE KEYS */;
@@ -1945,7 +1946,7 @@ CREATE TABLE IF NOT EXISTS `kondisi_kesehatan` (
   `suhu2` varchar(30) DEFAULT '',
   `kondisi2` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.kondisi_kesehatan: 7 rows
 /*!40000 ALTER TABLE `kondisi_kesehatan` DISABLE KEYS */;
@@ -1993,7 +1994,7 @@ CREATE TABLE IF NOT EXISTS `konsumsi` (
   `approval3` varchar(120) DEFAULT '',
   `alasan_reject3` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.konsumsi: 8 rows
 /*!40000 ALTER TABLE `konsumsi` DISABLE KEYS */;
@@ -2026,7 +2027,7 @@ CREATE TABLE IF NOT EXISTS `kunci_data` (
   `blth` varchar(7) NOT NULL DEFAULT '',
   `kunci` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.kunci_data: 11 rows
 /*!40000 ALTER TABLE `kunci_data` DISABLE KEYS */;
@@ -2050,7 +2051,7 @@ CREATE TABLE IF NOT EXISTS `libur_nasional` (
   `tanggal` varchar(10) DEFAULT '',
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.libur_nasional: 8 rows
 /*!40000 ALTER TABLE `libur_nasional` DISABLE KEYS */;
@@ -2074,7 +2075,7 @@ CREATE TABLE IF NOT EXISTS `log_aktivitas` (
   `aktivitas` text,
   `kode` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.log_aktivitas: 9 rows
 /*!40000 ALTER TABLE `log_aktivitas` DISABLE KEYS */;
@@ -2134,7 +2135,7 @@ CREATE TABLE IF NOT EXISTS `mapping_pajak` (
   `sppd_mutasi` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.mapping_pajak: 10 rows
 /*!40000 ALTER TABLE `mapping_pajak` DISABLE KEYS */;
@@ -2283,7 +2284,7 @@ CREATE TABLE IF NOT EXISTS `master_bantuan_mutasi` (
   `level6` double NOT NULL DEFAULT '0',
   `level7` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_bantuan_mutasi: 10 rows
 /*!40000 ALTER TABLE `master_bantuan_mutasi` DISABLE KEYS */;
@@ -2312,7 +2313,7 @@ CREATE TABLE IF NOT EXISTS `master_biaya_sppd` (
   `penginapan` double NOT NULL DEFAULT '0',
   `lumpsum_penginapan` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_biaya_sppd: 10 rows
 /*!40000 ALTER TABLE `master_biaya_sppd` DISABLE KEYS */;
@@ -2348,7 +2349,7 @@ CREATE TABLE IF NOT EXISTS `master_divisi` (
   `pejabat` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `divisi` (`divisi`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_divisi: 7 rows
 /*!40000 ALTER TABLE `master_divisi` DISABLE KEYS */;
@@ -2426,7 +2427,7 @@ CREATE TABLE IF NOT EXISTS `master_gaji` (
   `aktif` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_gaji: 10 rows
 /*!40000 ALTER TABLE `master_gaji` DISABLE KEYS */;
@@ -2448,7 +2449,7 @@ CREATE TABLE IF NOT EXISTS `master_grade` (
   `id` int NOT NULL AUTO_INCREMENT,
   `grade` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_grade: 27 rows
 /*!40000 ALTER TABLE `master_grade` DISABLE KEYS */;
@@ -2487,7 +2488,7 @@ CREATE TABLE IF NOT EXISTS `master_grup` (
   `id` int NOT NULL AUTO_INCREMENT,
   `grup` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_grup: 10 rows
 /*!40000 ALTER TABLE `master_grup` DISABLE KEYS */;
@@ -2510,7 +2511,7 @@ CREATE TABLE IF NOT EXISTS `master_iki` (
   `iki` varchar(10) DEFAULT '',
   `nilai` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_iki: 4 rows
 /*!40000 ALTER TABLE `master_iki` DISABLE KEYS */;
@@ -2527,7 +2528,7 @@ CREATE TABLE IF NOT EXISTS `master_isk` (
   `isk` varchar(10) DEFAULT '',
   `nilai` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_isk: 4 rows
 /*!40000 ALTER TABLE `master_isk` DISABLE KEYS */;
@@ -2543,7 +2544,7 @@ CREATE TABLE IF NOT EXISTS `master_jenis` (
   `id` int NOT NULL AUTO_INCREMENT,
   `jenis` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_jenis: 11 rows
 /*!40000 ALTER TABLE `master_jenis` DISABLE KEYS */;
@@ -2566,7 +2567,7 @@ CREATE TABLE IF NOT EXISTS `master_kondisi` (
   `id` int NOT NULL AUTO_INCREMENT,
   `kondisi` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_kondisi: 14 rows
 /*!40000 ALTER TABLE `master_kondisi` DISABLE KEYS */;
@@ -2592,7 +2593,7 @@ CREATE TABLE IF NOT EXISTS `master_kota` (
   `id` int NOT NULL AUTO_INCREMENT,
   `kota` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_kota: 30 rows
 /*!40000 ALTER TABLE `master_kota` DISABLE KEYS */;
@@ -2635,7 +2636,7 @@ CREATE TABLE IF NOT EXISTS `master_level` (
   `level` varchar(1) DEFAULT '',
   `uraian` varchar(250) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_level: 7 rows
 /*!40000 ALTER TABLE `master_level` DISABLE KEYS */;
@@ -2657,7 +2658,7 @@ CREATE TABLE IF NOT EXISTS `master_mapping` (
   `nama_akun` varchar(160) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '',
   `item_no` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_mapping: 10 rows
 /*!40000 ALTER TABLE `master_mapping` DISABLE KEYS */;
@@ -2680,7 +2681,7 @@ CREATE TABLE IF NOT EXISTS `master_pendidikan` (
   `pendidikan` varchar(60) DEFAULT '',
   `nama_pendidikan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_pendidikan: 0 rows
 /*!40000 ALTER TABLE `master_pendidikan` DISABLE KEYS */;
@@ -2695,7 +2696,7 @@ CREATE TABLE IF NOT EXISTS `master_penempatan` (
   `lon` varchar(60) DEFAULT '',
   `waktu` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_penempatan: 10 rows
 /*!40000 ALTER TABLE `master_penempatan` DISABLE KEYS */;
@@ -2718,7 +2719,7 @@ CREATE TABLE IF NOT EXISTS `master_ptkp` (
   `status` varchar(4) NOT NULL DEFAULT '',
   `ptkp` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_ptkp: 8 rows
 /*!40000 ALTER TABLE `master_ptkp` DISABLE KEYS */;
@@ -2738,7 +2739,7 @@ CREATE TABLE IF NOT EXISTS `master_region` (
   `id` int NOT NULL AUTO_INCREMENT,
   `region` varchar(160) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_region: 10 rows
 /*!40000 ALTER TABLE `master_region` DISABLE KEYS */;
@@ -2761,7 +2762,7 @@ CREATE TABLE IF NOT EXISTS `master_restitusi` (
   `nama_restitusi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nama_restitusi` (`nama_restitusi`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_restitusi: 5 rows
 /*!40000 ALTER TABLE `master_restitusi` DISABLE KEYS */;
@@ -2779,7 +2780,7 @@ CREATE TABLE IF NOT EXISTS `master_sertifikat` (
   `kd_sertifikat` varchar(3) DEFAULT '',
   `nama_sertifikat` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.master_sertifikat: 0 rows
 /*!40000 ALTER TABLE `master_sertifikat` DISABLE KEYS */;
@@ -2812,7 +2813,7 @@ CREATE TABLE IF NOT EXISTS `master_unit` (
   `kode_pos` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `kd_unit` (`kd_unit`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ROW_FORMAT=DYNAMIC;
 
 -- Membuang data untuk tabel hrisori.master_unit: 0 rows
 /*!40000 ALTER TABLE `master_unit` DISABLE KEYS */;
@@ -2945,7 +2946,7 @@ CREATE TABLE IF NOT EXISTS `mutasi_pegawai` (
   `petugas` varchar(120) DEFAULT '',
   `approve` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.mutasi_pegawai: 0 rows
 /*!40000 ALTER TABLE `mutasi_pegawai` DISABLE KEYS */;
@@ -4598,7 +4599,7 @@ CREATE TABLE IF NOT EXISTS `nodes` (
   `state` varchar(30) DEFAULT '',
   `urut` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.nodes: 84 rows
 /*!40000 ALTER TABLE `nodes` DISABLE KEYS */;
@@ -4699,7 +4700,7 @@ CREATE TABLE IF NOT EXISTS `nonaktif` (
   `tgl_update` varchar(60) DEFAULT '',
   `petugas` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.nonaktif: 10 rows
 /*!40000 ALTER TABLE `nonaktif` DISABLE KEYS */;
@@ -4733,7 +4734,7 @@ CREATE TABLE IF NOT EXISTS `pejabat_laporan` (
   `jabatan` varchar(200) DEFAULT '',
   `aktif` varchar(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pejabat_laporan: 1 rows
 /*!40000 ALTER TABLE `pejabat_laporan` DISABLE KEYS */;
@@ -4747,7 +4748,7 @@ CREATE TABLE IF NOT EXISTS `pejabat_sdm` (
   `nama` varchar(120) DEFAULT '',
   `jabatan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pejabat_sdm: 2 rows
 /*!40000 ALTER TABLE `pejabat_sdm` DISABLE KEYS */;
@@ -4767,7 +4768,7 @@ CREATE TABLE IF NOT EXISTS `pendapatan_mutasi` (
   `netto` double NOT NULL DEFAULT '0',
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pendapatan_mutasi: 8 rows
 /*!40000 ALTER TABLE `pendapatan_mutasi` DISABLE KEYS */;
@@ -4789,7 +4790,7 @@ CREATE TABLE IF NOT EXISTS `pengikut_sppd` (
   `nama` varchar(120) DEFAULT '',
   `hubungan` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pengikut_sppd: 9 rows
 /*!40000 ALTER TABLE `pengikut_sppd` DISABLE KEYS */;
@@ -4837,7 +4838,7 @@ CREATE TABLE IF NOT EXISTS `penilaian_iks` (
   `jtmk` double NOT NULL DEFAULT '0',
   `jkp` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.penilaian_iks: 0 rows
 /*!40000 ALTER TABLE `penilaian_iks` DISABLE KEYS */;
@@ -4849,7 +4850,7 @@ CREATE TABLE IF NOT EXISTS `perhitungan_pajak_khusus` (
   `nip` varchar(30) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nip` (`nip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.perhitungan_pajak_khusus: 8 rows
 /*!40000 ALTER TABLE `perhitungan_pajak_khusus` DISABLE KEYS */;
@@ -4969,7 +4970,7 @@ CREATE TABLE IF NOT EXISTS `pph` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pph: 9 rows
 /*!40000 ALTER TABLE `pph` DISABLE KEYS */;
@@ -5087,7 +5088,7 @@ CREATE TABLE IF NOT EXISTS `pphlock` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pphlock: 0 rows
 /*!40000 ALTER TABLE `pphlock` DISABLE KEYS */;
@@ -5135,7 +5136,7 @@ CREATE TABLE IF NOT EXISTS `pphmanual` (
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pphmanual: 9 rows
 /*!40000 ALTER TABLE `pphmanual` DISABLE KEYS */;
@@ -5187,7 +5188,7 @@ CREATE TABLE IF NOT EXISTS `pph_bulan` (
   `ppht_terutang` double NOT NULL DEFAULT '0',
   `pphb_terutang` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.pph_bulan: 8 rows
 /*!40000 ALTER TABLE `pph_bulan` DISABLE KEYS */;
@@ -5219,7 +5220,7 @@ CREATE TABLE IF NOT EXISTS `promosi_pegawai` (
   `tgl_proses` varchar(10) DEFAULT '',
   `petugas` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.promosi_pegawai: 0 rows
 /*!40000 ALTER TABLE `promosi_pegawai` DISABLE KEYS */;
@@ -5235,7 +5236,7 @@ CREATE TABLE IF NOT EXISTS `restore` (
   `tgl_update` varchar(60) DEFAULT '',
   `petugas` varchar(60) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.restore: 10 rows
 /*!40000 ALTER TABLE `restore` DISABLE KEYS */;
@@ -5259,7 +5260,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_golongan` (
   `tanggal` varchar(10) DEFAULT '',
   `golongan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_golongan: 10 rows
 /*!40000 ALTER TABLE `riwayat_golongan` DISABLE KEYS */;
@@ -5283,7 +5284,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_grade` (
   `tanggal` varchar(10) DEFAULT '',
   `grade` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_grade: 10 rows
 /*!40000 ALTER TABLE `riwayat_grade` DISABLE KEYS */;
@@ -5308,7 +5309,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_hukuman` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_hukuman: 3 rows
 /*!40000 ALTER TABLE `riwayat_hukuman` DISABLE KEYS */;
@@ -5327,7 +5328,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_jabatan` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_jabatan: 10 rows
 /*!40000 ALTER TABLE `riwayat_jabatan` DISABLE KEYS */;
@@ -5354,7 +5355,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_kondite` (
   `talenta` varchar(120) DEFAULT '',
   `peringkat` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_kondite: 10 rows
 /*!40000 ALTER TABLE `riwayat_kondite` DISABLE KEYS */;
@@ -5381,7 +5382,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_kursus_eksternal` (
   `lembaga_pendidikan` varchar(200) DEFAULT '',
   `lokasi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_kursus_eksternal: 10 rows
 /*!40000 ALTER TABLE `riwayat_kursus_eksternal` DISABLE KEYS */;
@@ -5408,7 +5409,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_kursus_internal` (
   `lembaga_pendidikan` varchar(200) DEFAULT '',
   `lokasi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_kursus_internal: 8 rows
 /*!40000 ALTER TABLE `riwayat_kursus_internal` DISABLE KEYS */;
@@ -5432,7 +5433,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_pekerjaan_sebelum` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_pekerjaan_sebelum: 10 rows
 /*!40000 ALTER TABLE `riwayat_pekerjaan_sebelum` DISABLE KEYS */;
@@ -5459,7 +5460,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_pendidikan` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_pendidikan: 8 rows
 /*!40000 ALTER TABLE `riwayat_pendidikan` DISABLE KEYS */;
@@ -5481,7 +5482,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_penghargaan` (
   `nama_penghargaan` varchar(200) DEFAULT '',
   `tanggal` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_penghargaan: 10 rows
 /*!40000 ALTER TABLE `riwayat_penghargaan` DISABLE KEYS */;
@@ -5508,7 +5509,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_penugasan` (
   `dari` varchar(64) DEFAULT '',
   `sampai` varchar(64) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_penugasan: 0 rows
 /*!40000 ALTER TABLE `riwayat_penugasan` DISABLE KEYS */;
@@ -5524,7 +5525,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_penugasan_khusus` (
   `sejak` varchar(10) DEFAULT '',
   `sampai` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_penugasan_khusus: 10 rows
 /*!40000 ALTER TABLE `riwayat_penugasan_khusus` DISABLE KEYS */;
@@ -5550,7 +5551,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_profesi` (
   `sampai` varchar(64) DEFAULT '',
   `sebutan_profesi` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_profesi: 0 rows
 /*!40000 ALTER TABLE `riwayat_profesi` DISABLE KEYS */;
@@ -5565,7 +5566,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_sertifikasi` (
   `sampai` varchar(10) DEFAULT '',
   `lembaga` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_sertifikasi: 9 rows
 /*!40000 ALTER TABLE `riwayat_sertifikasi` DISABLE KEYS */;
@@ -5590,7 +5591,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_tenaga_harian` (
   `sampai` varchar(10) DEFAULT '',
   `golongan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_tenaga_harian: 3 rows
 /*!40000 ALTER TABLE `riwayat_tenaga_harian` DISABLE KEYS */;
@@ -5609,7 +5610,7 @@ CREATE TABLE IF NOT EXISTS `riwayat_tugas_karya` (
   `sampai` varchar(10) DEFAULT '',
   `jabatan` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.riwayat_tugas_karya: 9 rows
 /*!40000 ALTER TABLE `riwayat_tugas_karya` DISABLE KEYS */;
@@ -6599,7 +6600,7 @@ CREATE TABLE IF NOT EXISTS `setting_pph` (
   `email` varchar(200) DEFAULT '',
   `path_ttd` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.setting_pph: 2 rows
 /*!40000 ALTER TABLE `setting_pph` DISABLE KEYS */;
@@ -6689,7 +6690,7 @@ CREATE TABLE IF NOT EXISTS `sppd` (
   `tgl_bayar` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.sppd: 3 rows
 /*!40000 ALTER TABLE `sppd` DISABLE KEYS */;
@@ -6766,7 +6767,7 @@ CREATE TABLE IF NOT EXISTS `sppd1` (
   `tgl_bayar_restitusi` varchar(10) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idsppd` (`idsppd`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.sppd1: 11 rows
 /*!40000 ALTER TABLE `sppd1` DISABLE KEYS */;
@@ -6790,7 +6791,7 @@ CREATE TABLE IF NOT EXISTS `sub_jenis_sppd` (
   `kd_sub_sppd` varchar(60) DEFAULT '',
   `nama_sub_sppd` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.sub_jenis_sppd: 2 rows
 /*!40000 ALTER TABLE `sub_jenis_sppd` DISABLE KEYS */;
@@ -6822,7 +6823,7 @@ CREATE TABLE IF NOT EXISTS `suplisi` (
   `keterangan` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `blthnip` (`blthnip`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.suplisi: 9 rows
 /*!40000 ALTER TABLE `suplisi` DISABLE KEYS */;
@@ -6898,7 +6899,7 @@ CREATE TABLE IF NOT EXISTS `template_varcost` (
   `status` varchar(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nama_file` (`nama_file`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.template_varcost: 0 rows
 /*!40000 ALTER TABLE `template_varcost` DISABLE KEYS */;
@@ -6929,7 +6930,7 @@ CREATE TABLE IF NOT EXISTS `thr` (
   `petugas` varchar(200) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `niptahun` (`niptahun`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.thr: 7 rows
 /*!40000 ALTER TABLE `thr` DISABLE KEYS */;
@@ -6949,7 +6950,7 @@ CREATE TABLE IF NOT EXISTS `tingkat_sppd` (
   `kd_tingkat` varchar(1) DEFAULT '',
   `nama_tingkat` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.tingkat_sppd: 2 rows
 /*!40000 ALTER TABLE `tingkat_sppd` DISABLE KEYS */;
@@ -6977,7 +6978,7 @@ CREATE TABLE IF NOT EXISTS `tunjanganpph` (
   `pph21` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nipblth` (`nipblth`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.tunjanganpph: 10 rows
 /*!40000 ALTER TABLE `tunjanganpph` DISABLE KEYS */;
@@ -7002,7 +7003,7 @@ CREATE TABLE IF NOT EXISTS `uang_sppd` (
   `nip` varchar(60) DEFAULT '',
   `jumlah` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.uang_sppd: 0 rows
 /*!40000 ALTER TABLE `uang_sppd` DISABLE KEYS */;
@@ -7016,7 +7017,7 @@ CREATE TABLE IF NOT EXISTS `ubah_nip` (
   `user` varchar(200) DEFAULT '',
   `waktu` varchar(120) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+);
 
 -- Membuang data untuk tabel hrisori.ubah_nip: 4 rows
 /*!40000 ALTER TABLE `ubah_nip` DISABLE KEYS */;

@@ -42,7 +42,7 @@ if ($userhris){
     
     $items = array();
     $rs = mysqli_query($koneksi,"select * from sppd1 where approvesdm='2' and bayar='0'".$perintah." order by id desc limit $offset,$rows");
-    
+    // echo "select * from sppd1 where approvesdm='2' and bayar='0'".$perintah." order by id desc limit $offset,$rows";
     while ($hasil = mysqli_fetch_array($rs)) {
         // var_dump($hasil);
     	$id = $hasil['id'];
