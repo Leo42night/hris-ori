@@ -3,9 +3,13 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 $akses_proses = $_REQUEST['proses'];
 $akses_view = $_REQUEST['view'];
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
+
+
 if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     echo "<br/>&nbsp;&nbsp;Maaf, Anda tidak memiliki akses di halaman ini. Silahkan hubungi <strong>administrator</strong>.<br/>";    
 } else {
+    // include "koneksi.php";
     $foldernya = "api/pajak/";
     ?>
     <script type="text/javascript">                     
@@ -22,6 +26,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 				nipbebanpphcari: $('#nipbebanpphcari').textbox('getValue')
 			});
 		}
+        // buatkan echo untuk test 
+        
         
         function onSelectregionbebanpphcari(){
             var nilai1 = $('#kd_regionbebanpphcari').combobox('getValue');
@@ -207,7 +213,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     		toolbar="#toolbarbebanpph" pagination="true" nowrap="false" method="post"   
     		rownumbers="false" fitColumns="false" singleSelect="true"
             >
-    	<thead frozen="true">
+        
+    	<thead frozen="true"> 
     		<tr>
     			<th field="nipbebanpph" width="140" sortable="true" align="center" halign="center">No Induk</th>
     			<th field="namabebanpph" width="140" sortable="true" align="left" halign="center">Nama Pegawai</th>

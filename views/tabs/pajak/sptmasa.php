@@ -9,7 +9,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     $foldernya = "api/pajak/";
     $blth = date("Y-m",strtotime('+1 hour'));
     ?>
-    <script type="text/javascript">                     
+    <script type="text/javascript">                      
 		function doSearchsptmasa(){
             var blth = $('#blthsptmasacari').datebox('getValue');
             var data = blth.split("-");
