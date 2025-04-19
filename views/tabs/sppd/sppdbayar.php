@@ -197,9 +197,9 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function aksisppdbayar(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseFloat(row.bayarsppdbayar)===0){
-                    if(parseFloat(row.totalsppdbayar)>0){
-                        if(parseFloat(row.validasi_biayasppdbayar)===0){
+                if(parseFloat(row.bayarsppdbayar)===0){ // bayar
+                    if(parseFloat(row.totalsppdbayar)>0){ // total
+                        if(parseFloat(row.validasi_biayasppdbayar)===0){ // validasi_biaya
                             var a = '<a href="javascript:void(0)" title="Validasi Biaya" onclick="validasi(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-check" style="font-size:8px !important;"></i></button></a>';
                             var b = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
                         } else {
@@ -220,32 +220,6 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             }
             //var c = row.bayarsppdbayar+" "+row.totalsppdbayar;
             return a+b;
-		}
-
-		function biayasppdbayar(value,row,index){
-            var akses_proses = "<?=$akses_proses;?>";
-            if(parseInt(akses_proses)===1){
-                if(parseInt(row.bayarsppdbayar)===0 && parseInt(row.approvebayarsppdbayar)===2){
-                    var a = '<a href="javascript:void(0)" title="Proses Pembayaran" onclick="editsppdbayar(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
-                    var b = '<a title="Reset Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:10px;"></i></button></a>';
-                } else {
-                    var a = '<a title="Proses Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
-                    var b = '<a href="javascript:void(0)" title="Reset Pembayaran" onclick="destroysppdbayar(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:8px !important;"></i></button></a>';
-                }
-                if(parseFloat(row.totalsppdbayar)>0){
-                    var c = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiayasppd(\''+index+'\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a href="javascript:void(0)" title="Cetak Form sppdbayar" onclick="cetaksppdbayar(\''+index+'\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
-                } else {
-                    var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
-                    var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
-                }
-            } else {
-                var a = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
-                var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
-                var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
-                var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
-            }
-            return a+b+"<br/>"+c+d;
 		}
 
         function timelinesppdbayar(value,row,index){
@@ -514,6 +488,33 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             }
         });
     });
+
+    function biayasppdbayar(value,row,index){
+            var akses_proses = "<?=$akses_proses;?>";
+            if(parseInt(akses_proses)===1){
+                if(parseInt(row.bayarsppdbayar)===0 && parseInt(row.approvebayarsppdbayar)===2){
+                    var a = '<a href="javascript:void(0)" title="Proses Pembayaran" onclick="editsppdbayar(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
+                    var b = '<a title="Reset Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:10px;"></i></button></a>';
+                } else {
+                    var a = '<a title="Proses Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
+                    var b = '<a href="javascript:void(0)" title="Reset Pembayaran" onclick="destroysppdbayar(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:8px !important;"></i></button></a>';
+                }
+                if(parseFloat(row.totalsppdbayar)>0){
+                    var c = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiayasppd(\''+index+'\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
+                    var d = '<a href="javascript:void(0)" title="Cetak Form sppdbayar" onclick="cetaksppdbayar(\''+index+'\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+                } else {
+                    var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
+                    var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+                }
+            } else {
+                var a = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-pencil-alt" style="font-size:10px;"></i></button></a>';
+                var b = '<a><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:10px;"></i></button></a>';
+                var c = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
+                var d = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
+            }
+            return a+b+"<br/>"+c+d;
+		}
+        
     </script>
     <table id="dgsppdbayar" title="" class="easyui-datagrid" style="width:100%;height:100%;padding-right:20px;"	
             url="<?=$foldernya;?>get_master_sppdbayar.php" pageSize="20"        

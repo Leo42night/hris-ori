@@ -3,15 +3,27 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/utilities/phpqrcode/qrlib.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/phpqrcode/qrlib.php";
 if ($userhris){
     function TanggalIndo($date){
-        $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
+        $BulanIndo = array(
+            "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+            "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember"
+        );
+    
+        // Cek panjang string dulu
+        if (strlen($date) < 10) return $date;
+    
         $tahun = substr($date, 0, 4);
         $bulan = substr($date, 5, 2);
         $tgl   = substr($date, 8, 2);
-        $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;	
-        return($result);
+    
+        // Validasi indeks array
+        $indexBulan = (int)$bulan - 1;
+        if ($indexBulan < 0 || $indexBulan > 11) return $date;
+    
+        $result = $tgl . " " . $BulanIndo[$indexBulan] . " " . $tahun;
+        return $result;
     }
     function TanggalIndo4($date){
         $BulanIndo = array("Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nop", "Des");
@@ -63,7 +75,7 @@ if ($userhris){
 
     require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
     require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/phpqrcode/qrlib.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fpdf.php";
     $idsppd = $_REQUEST['idsppd'];
 
     $hari_ini = date("Y-m-d");
@@ -334,9 +346,9 @@ if ($userhris){
     $UkuranFrame=4;
     QRcode::png($kode_barcode, $tempdir.$namafile, $level, $UkuranPixel, $UkuranFrame); 
     $QR = imagecreatefrompng($tempdir.$namafile);
-    $logopath="../images/plnndwarna.png";
+    $logopath= $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/assets/img/plnlogo-16x16.png";
     $logo = @imagecreatefromstring(file_get_contents($logopath));    
-    imagecolortransparent($logo , imagecolorallocatealpha($logo , 0, 0, 0, 127));
+    imagecolortransparent($logo , imagecolorallocatealpha($logo, 0, 0, 0, 127));
     imagealphablending($logo , false);
     imagesavealpha($logo , true);
     $QR_width = imagesx($QR);
@@ -359,7 +371,7 @@ if ($userhris){
     $UkuranFrame=4;
     QRcode::png($kode_barcode, $tempdir.$namafile, $level, $UkuranPixel, $UkuranFrame); 
     $QR = imagecreatefrompng($tempdir.$namafile);
-    $logopath="../images/plnndwarna.png";
+    $logopath=$_SERVER['DOCUMENT_ROOT'] . "/hris-ori/assets/img/plnlogo-16x16.png";
     $logo = @imagecreatefromstring(file_get_contents($logopath));    
     imagecolortransparent($logo , imagecolorallocatealpha($logo , 0, 0, 0, 127));
     imagealphablending($logo , false);
@@ -384,7 +396,7 @@ if ($userhris){
     $UkuranFrame=4;
     QRcode::png($kode_barcode, $tempdir.$namafile, $level, $UkuranPixel, $UkuranFrame); 
     $QR = imagecreatefrompng($tempdir.$namafile);
-    $logopath="../images/plnndwarna.png";
+    $logopath=$_SERVER['DOCUMENT_ROOT'] . "/hris-ori/assets/img/plnlogo-16x16.png";
     $logo = @imagecreatefromstring(file_get_contents($logopath));    
     imagecolortransparent($logo , imagecolorallocatealpha($logo , 0, 0, 0, 127));
     imagealphablending($logo , false);
@@ -405,7 +417,7 @@ if ($userhris){
     $pdf->AddPage();
 
     $pdf->SetFont('Arial','',8);
-    $pdf->Image('../images/plnndwarna.png',10,10,35,0);
+    $pdf->Image($_SERVER['DOCUMENT_ROOT'] . "/hris-ori/assets/img/plnlogo-16x16.png",10,10,35,0);
 
     $pdf->SetFont('Arial','B',10);
     $y= $pdf->GetY()+10;
@@ -1253,7 +1265,7 @@ if ($userhris){
     $pdf->AddPage();
 
     $pdf->SetFont('Arial','',8);
-    $pdf->Image('../images/plnndwarna.png',10,10,35,0);
+    $pdf->Image($_SERVER['DOCUMENT_ROOT'] . "/hris-ori/assets/img/plnlogo-16x16.png",10,10,35,0);
 
     $pdf->SetFont('Arial','B',10);
     $y= $pdf->GetY()+10;

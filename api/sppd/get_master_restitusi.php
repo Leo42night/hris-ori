@@ -135,7 +135,7 @@ if ($userhris){
         $datanya["tgl_akhir2restitusi"] = $tgl_akhir2;
         $datanya["harirestitusi"] = $hari;
         $datanya["jenis_tujuanrestitusi"] = $jenis_tujuan;
-        $datanya["restitusirestitusi"] = floatval($hasil['bayar_restitusi']);
+        $datanya["restitusirestitusi"] = floatval($tgl_bayar_restitusirestitusi['bayar_restitusi']);
         // $datanya["restitusirestitusi"] = $restitusi;
         $datanya["restitusi2restitusi"] = number_format(floatval($hasil['bayar_restitusi']),0,',','.');
         // $datanya["restitusi2restitusi"] = number_format($restitusi,0,',','.');

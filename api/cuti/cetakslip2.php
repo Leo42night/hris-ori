@@ -3,7 +3,7 @@ session_start();
 $userhris = $_SESSION["userakseshris"];
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fpdf.php";
 if ($userhris){
     function TanggalIndo($date){
         $BulanIndo = array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "Nopember", "Desember");
@@ -125,7 +125,7 @@ if ($userhris){
         $pdf->AddPage();
 
         $pdf->SetFont('Arial','',8);
-        $pdf->Image('../images/plnndwarna.png',10,10,25,0);
+        $pdf->Image(__DIR__ . "/../../assets/plnndwarna.png",10,10,25,0);
         
         $y= $pdf->GetY();
         $pdf->SetXY(10,$y);

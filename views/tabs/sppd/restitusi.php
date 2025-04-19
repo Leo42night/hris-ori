@@ -196,8 +196,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function aksirestitusinya(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseInt(row.bayar_restitusirestitusi)===0){
-                    if(parseInt(row.validasi_restitusirestitusi)===0){
+                if(parseInt(row.bayar_restitusirestitusi)===0){ // bayar_restitusi
+                    if(parseInt(row.validasi_restitusirestitusi)===0){ // validasi_restitusi
                         var a = '<a href="javascript:void(0)" title="Validasi Restitusi" onclick="validasirestitusi(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-check" style="font-size:8px !important;"></i></button></a>';
                         var b = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:8px !important;"></i></button></a>';
                     } else {
@@ -219,13 +219,13 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function aksirestitusi(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseFloat(row.restitusirestitusi)===0){
+                if(parseFloat(row.restitusirestitusi)===0){ // bayar_restitusi
                     var a = '<a href="javascript:void(0)" title="Restitusi" onclick="prosesrestitusi(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-share" style="font-size:8px !important;"></i></button></a>';
                     var b = '<a href="javascript:void(0)" title="Form Restitusi" onclick="cetakrestitusi(\''+index+'\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
-                    if(parseInt(row.bayar_restitusirestitusi)===0){
+                    if(parseInt(row.bayar_restitusirestitusi)===0){ // bayar_restitusi
                         var c = '<a href="javascript:void(0)" title="Decline Data" onclick="declinerestitusi(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:54px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;">DECLINE</button></a>';
                     } else {
-                        if(row.tgl_bayar_restitusirestitusi===""){
+                        if(row.tgl_bayar_restitusirestitusi===""){ // tgl_bayar_restitusi
                             var c = '<a href="javascript:void(0)" title="Klaim Data" onclick="klaimrestitusi(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:54px;height:25px;font-size:10px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;">KLAIM</button></a>';
                         } else {
                             var c = '';

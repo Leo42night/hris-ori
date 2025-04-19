@@ -102,7 +102,7 @@ $alignment_center2 = \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER;
 $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
 $drawing->setName('PLN ND');
 $drawing->setDescription('PLN Nusa Daya');
-$drawing->setPath('../images/plnndwarna.png');
+$drawing->setPath(__DIR__ . "/../../assets/plnndwarna.png");
 $drawing->setCoordinates('A1');
 $drawing->setHeight(36);
 $drawing->setOffsetX(10);

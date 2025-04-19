@@ -12,15 +12,17 @@ if ($userhris){
     $idsppd = $_REQUEST['idsppd'];
     // $idsppd = "2024000719";
 
+    // Ambil Biaya SPPD
     $rs32 = mysqli_query($koneksi,"select * from biaya_sppd1 where idsppd='$idsppd'");
     $hasil32 = mysqli_fetch_array($rs32);
+    // Boolean Status Jika Ada
     if($hasil32){
         $jumlah_biaya = 1;
     } else {
         $jumlah_biaya = 0;
     }
 
-
+    // Ambil Semua SPPD
     $rs2 = mysqli_query($koneksi,"select * from sppd1 where idsppd='$idsppd'");
     $hasil2 = mysqli_fetch_array($rs2);
     $nip = stripslashes ($hasil2['nip']);
@@ -48,6 +50,7 @@ if ($userhris){
     $kota2d = stripslashes ($hasil2['kota2d']);
     $transportd = stripslashes ($hasil2['transportd']);
 
+    // Lengkapi data SPPD to data_pegawai
     $rs3 = mysqli_query($koneksi,"select status from data_pegawai where nip='$nip'");
     $hasil3 = mysqli_fetch_array($rs3);
     if($hasil3){
@@ -56,6 +59,7 @@ if ($userhris){
         $status = "";
     }
 
+    // Lengkapi dengan Pengikut SPPD
     $suami_istri = 0;
     $anak = 0;
     $keluarga = 0;
@@ -67,13 +71,13 @@ if ($userhris){
     } else {
         $hubungan = "";
     }
-    if($jenis_sppd=="2"){
+    if($jenis_sppd=="2"){ // Pengobatan
         if($hubungan=="keluarga"){
             $keluarga = $keluarga+1;
         } else if($hubungan=="pengantar"){
             $pengantar = $pengantar+1;
         }
-    } else if($jenis_sppd=="3"){
+    } else if($jenis_sppd=="3"){ // Pindah
         if($status!="TK0"){
         if($hubungan=="suami" || $hubungan=="istri"){
             $suami_istri = $suami_istri+1;
@@ -84,13 +88,14 @@ if ($userhris){
         $suami_istri = 0;
         $anak = 0;
         }
-    } else {
+    } else { // Lainnya (1.Biasa, 4.Lokal, 5.Porseni)
         $keluarga = 0;
         $pengantar = 0;
         $suami_istri = 0;
         $anak = 0;
     }
 
+    // Hubungkan dengan Master Biaya
     $transportasi_lokal = 0;
     $airport_tax = 0;
     $hari_konsumsi1 = 0;
@@ -156,7 +161,8 @@ if ($userhris){
     $hasil4 = mysqli_fetch_array($rs4);
     $cuci_pakaian = $cuci_pakaian+floatval($hasil4['cuci_pakaian']);
     $transportasi_lokal = $transportasi_lokal+floatval($hasil4['transportasi_lokal']);
-    if($jenis_sppd=="1"){
+    // biasa {konsumsi, cuci pakaian, penginapan}
+    if($jenis_sppd=="1") {
         $hari_konsumsi1 = $hari1;
         $persen_konsumsi1 = 100;
         $nilai_konsumsi1 = $nilai_konsumsi1+floatval($hasil4['konsumsi']);
@@ -167,7 +173,8 @@ if ($userhris){
         $persen_penginapan1 = 100;                
         $nilai_penginapan1 = $nilai_penginapan1+floatval($hasil4['penginapan']);
         $nilai_variable = 0;
-    } else if($jenis_sppd=="2"){
+    // pengobatan {konsumsi: [pegawai, keluarga, pengantar]}
+    } else if($jenis_sppd=="2") {
         $hari_pegawai = $hari1;
         $persen_pegawai = 100;
         $nilai_pegawai = $nilai_pegawai+floatval($hasil4['konsumsi']);
@@ -178,7 +185,8 @@ if ($userhris){
         $persen_pengantar = 100;
         $nilai_pengantar = $nilai_pengantar+floatval($hasil4['konsumsi']);
         $nilai_variable = 0;
-    } else if($jenis_sppd=="3"){
+    // pindah {}
+    } else if($jenis_sppd=="3") {
         $hari_konsumsi1 = $hari1;
         $persen_konsumsi1 = 100;
         $nilai_konsumsi1 = $nilai_konsumsi1+floatval($hasil4['konsumsi']);
@@ -198,6 +206,7 @@ if ($userhris){
     }
 
     if($hari>0){
+        // Ambil Skema Biaya Transportasi utk input ke sppd.biaya_transportasi
         $rs1 = mysqli_query($koneksi,"select biaya from master_biaya_transportasi where kota_asal='$kedudukan' and kota_tujuan='$tujuan' and jenis_transportasi='$transportasi'");
         $hasil1 = mysqli_fetch_array($rs1);
         if($hasil1){
@@ -322,7 +331,7 @@ if ($userhris){
         // $sql .= "'0','0','0','0','0','0','0','0',";
         // $sql .= "'0','0','0','0','0','0',";
         $sql .= "'0','0','0','0','0','$total')";
-        // $sql .= " where idsppd='$idsppd'";
+        // $sql .= " where idsppd='$idsppd'";   
     }
     $result = @mysqli_query($koneksi,$sql);
     if ($result){

@@ -19,24 +19,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 20;
 
     $tahun_ini = date("Y");
-    $status2 = isset($_POST['statussppdbayarcari']) ? $_POST['statussppdbayarcari'] : "0";
+    $status2 = isset($_POST['statussppdbayarcari']) ? $_POST['statussppdbayarcari'] : "0"; // default semua (belum & sudah)
     $nip2 = isset($_POST['nipsppdbayarcari']) ? $_POST['nipsppdbayarcari'] : "";
     
     $offset = ($page-1)*$rows;
     $result = array();
-    $perintah = "";    
+    $perintah = "";
+    
+    // semua = 9
     if($status2!="9"){
         $perintah .= " and bayar='$status2'";
     }
     if($nip2!=""){
         $perintah .= " and (nip='$nip2' or nama like '%$nip2%')";
-    }
-
-    if($status2=="1"){
-        $urutan = " order by idsppd desc";
-    } else {
-        // $urutan = " order by tgl_approvebayar asc";
-        $urutan = " order by idsppd desc";
     }
     
     $offset = ($page-1)*$rows;
@@ -46,7 +41,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     $result["total"] = $row[0];    
     
     $items = array();
-    $rs = mysqli_query($koneksi,"select * from sppd1 where approvebayar='2'".$perintah." $urutan limit $offset,$rows");
+    $rs = mysqli_query($koneksi,"select * from sppd1 where approvebayar='2'".$perintah." order by idsppd desc limit $offset,$rows");
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = $hasil['id'];
     	$idsppd = $hasil['idsppd'];
@@ -212,6 +207,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 
         $rs8 = mysqli_query($koneksi,"select * from biaya_sppd1 where idsppd='$idsppd'");
         $hasil8 = mysqli_fetch_array($rs8);
+        // var_dump($hasil8);
         if($hasil8){
             $transportasi9 = floatval($hasil8['transportasi']);
             $transportasi_lokal9 = floatval($hasil8['transportasi_lokal']);

@@ -281,6 +281,7 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
                 //     var rincianBiaya = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
                 // }
                 var rincianBiaya = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiaya(\'' + index + '\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
+                console.log(row.namasppd, " = ", row.totalsppd)
                 if (parseFloat(row.totalsppd) > 0) {
                     var cetakForm = '<a href="javascript:void(0)" title="Cetak Form SPPD" onclick="cetaksppd(\'' + index + '\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
                 } else {
@@ -1783,7 +1784,7 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
             if (row) {
                 $('#dlgbiaya').dialog('open').dialog('setTitle', 'Rincian Biaya SPPD');
                 $('#fmbiaya').form('clear');
-                $('#fmbiaya').form('load', row);
+                $('#fmbiaya').form('load', row); // transportasibiaya, transportasi_lokalbiaya
                 $("#lbltransportasi").html(row.kedudukansppd + ' - ' + row.tujuansppd + ' (<span style="font-weight:bold;">' + row.transportasisppd + '</span>)');
                 $("#lblhari_konsumsi1").html(row.hari_konsumsi1biaya + " hari");
                 $("#lblnilai_konsumsi1").html(" X Rp. " + row.nilai_konsumsi1biaya);
@@ -1999,6 +2000,7 @@ if (!$userhris || ($akses_proses != "1" && $akses_view != "1")) {
             }
         }
         function cetaksppd(index) {
+            console.log('cetakSppd di klik');
             var row = $('#dgsppd').datagrid('getRow', index);
             if (row) {
                 window.open('<?= $foldernya; ?>formsppd.php?idsppd=' + row.idsppdsppd, '_blank');

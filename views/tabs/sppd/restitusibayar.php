@@ -225,6 +225,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
                 // if(parseInt(row.bayar_restitusirestitusibayar)===0 && parseInt(row.approvebayarrestitusibayar)===2){
+                // belum/Sudah bayar restitusi (ambil nilai 'restitusi')
                 if(parseInt(row.bayar_restitusirestitusibayar)===0){
                     var a = '<a href="javascript:void(0)" title="Proses Pembayaran" onclick="editrestitusibayar(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
                     var b = '<a title="Reset Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:10px;"></i></button></a>';
@@ -232,6 +233,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
                     var a = '<a title="Proses Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
                     var b = '<a href="javascript:void(0)" title="Reset Pembayaran" onclick="destroyrestitusibayar(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:8px !important;"></i></button></a>';
                 }
+                // 
                 if(parseFloat(row.restitusirestitusibayar)>0){
                     var c = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiayarestitusi(\''+index+'\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
                     var d = '<a href="javascript:void(0)" title="Cetak Form Restitusi" onclick="cetakrestitusibayar(\''+index+'\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';

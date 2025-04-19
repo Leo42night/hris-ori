@@ -42,7 +42,7 @@ function TanggalIndo2($date){
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fpdf.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fpdi2/src/autoload.php";
 
 $nip2 = $_GET['nip'];

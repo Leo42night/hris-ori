@@ -77,7 +77,7 @@ if ($userhris){
     require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fungsi.php";
     require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/phpqrcode/qrlib.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/force_justify.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/tools/fpdf.php";
     $idsppd = $_REQUEST['idsppd'];
 
     $hari_ini = date("Y-m-d");
@@ -259,7 +259,7 @@ if ($userhris){
         $nama_pejabat = stripslashesx ($hasil4['nama']);
         $jabatan_pejabat = stripslashesx ($hasil4['jabatan']);
     } else {
-        $nip2 = "";
+        $nip_pejabat = "";
         $nama_pejabat = "";
         $jabatan_pejabat = "";
     }
@@ -335,7 +335,7 @@ if ($userhris){
     $UkuranFrame=4;
     QRcode::png($kode_barcode, $tempdir.$namafile, $level, $UkuranPixel, $UkuranFrame); 
     $QR = imagecreatefrompng($tempdir.$namafile);
-    $logopath="../images/plnndwarna.png";
+    $logopath=__DIR__ . "/../../assets/plnndwarna.png";
     $logo = @imagecreatefromstring(file_get_contents($logopath));    
     imagecolortransparent($logo , imagecolorallocatealpha($logo , 0, 0, 0, 127));
     imagealphablending($logo , false);
@@ -360,7 +360,7 @@ if ($userhris){
     $UkuranFrame=4;
     QRcode::png($kode_barcode, $tempdir.$namafile, $level, $UkuranPixel, $UkuranFrame); 
     $QR = imagecreatefrompng($tempdir.$namafile);
-    $logopath="../images/plnndwarna.png";
+    $logopath=__DIR__ . "/../../assets/plnndwarna.png";
     $logo = @imagecreatefromstring(file_get_contents($logopath));    
     imagecolortransparent($logo , imagecolorallocatealpha($logo , 0, 0, 0, 127));
     imagealphablending($logo , false);
@@ -380,7 +380,7 @@ if ($userhris){
     $pdf->AddPage();
 
     $pdf->SetFont('Arial','',8);
-    $pdf->Image('../images/plnndwarna.png',10,10,30,0);
+    $pdf->Image(__DIR__ . "/../../assets/plnndwarna.png",10,10,30,0);
 
     $pdf->SetFont('Arial','B',12);
     $y= $pdf->GetY()+10;

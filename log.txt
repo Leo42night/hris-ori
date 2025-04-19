@@ -1,1 +1,4 @@
 Catatan Perkembangan Aplikasi web "hris-ori"
+
+# Update Database
+sppd1.no_sppd change position

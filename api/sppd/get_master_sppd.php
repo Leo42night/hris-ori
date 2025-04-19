@@ -246,7 +246,7 @@ if ($userhris){
         } else {
             $timeline .= '<span style="color:red;">Belum Terbayar</span>';
         }        
-
+        // Dipakai di Rincian Biaya: transportasibiaya, transportasi_lokalbiaya
         $rs8 = mysqli_query($koneksi,"select * from biaya_sppd1 where idsppd='$idsppd'");
         $hasil8 = mysqli_fetch_array($rs8);
         if($hasil8){

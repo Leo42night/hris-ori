@@ -40,12 +40,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/hris-ori/database/koneksi.php";
     
     $offset = ($page-1)*$rows;
     $result = array();
-    $rs = mysqli_query($koneksi,"select count(*) from v_sppd where validasi_restitusi='1' and restitusi>0".$perintah);
+    $rs = mysqli_query($koneksi,"select count(*) from sppd1 where validasi_restitusi='1' and restitusi>0".$perintah);
     $row = mysqli_fetch_row($rs);
     $result["total"] = $row[0];    
     
     $items = array();
-    $rs = mysqli_query($koneksi,"select * from v_sppd where validasi_restitusi='1' and restitusi>0".$perintah." $urutan limit $offset,$rows");
+    $rs = mysqli_query($koneksi,"select * from sppd1 where validasi_restitusi='1' and restitusi>0".$perintah." $urutan limit $offset,$rows");
     while ($hasil = mysqli_fetch_array($rs)) {
     	$id = $hasil['id'];
     	$idsppd = $hasil['idsppd'];

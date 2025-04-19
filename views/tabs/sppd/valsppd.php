@@ -197,9 +197,9 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function aksivalsppd(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseFloat(row.bayarvalsppd)===0){
-                    if(parseFloat(row.totalvalsppd)>0){
-                        if(parseFloat(row.validasi_biayavalsppd)===0){
+                if(parseFloat(row.bayarvalsppd)===0){ // sppd1.bayar
+                    if(parseFloat(row.totalvalsppd)>0){ // biaya_sppd1.total
+                        if(parseFloat(row.validasi_biayavalsppd)===0){ // sppd1.validasi_biaya
                             var a = '<a href="javascript:void(0)" title="Validasi Biaya" onclick="validasi(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-check" style="font-size:8px !important;"></i></button></a>';
                             var b = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
                         } else {
@@ -284,6 +284,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             a += '<br/><span style="color:blue;font-size:11px;">'+row.no_sppdvalsppd+'</span>';
             a += '<br/>'
             a += row.maksudvalsppd;
+            console.log(a);
             return a;
         }  
 
@@ -1675,10 +1676,11 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             });            
     	}
 
+        // Perhitungan Biaya 1: Konfirmasi Hitung
     	function hitungbiaya(index){
             var row = $('#dgvalsppd').datagrid('getRow', index);
     		if (row){
-    			$.messager.confirm('Konfirmasi','Proses perhitungan biaya sppd, Lanjutkan?',function(r){
+    			$.messager.confirm('Konfirmasi','Proses perhitungan biaya sppd, Lanjutkan?',function(r){ // add calculation with default based on level
     				if (r){
                         $.messager.progress({height:75, text:'Proses hitung biaya...'});
     					$.post('<?=$foldernya;?>hitung_biaya.php',{idsppd:row.idsppdvalsppd},function(result){
@@ -1696,12 +1698,13 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     				}
     			});
     		}
-    	}        
+    	}  
+              
     	function resetbiaya(index){
             var row = $('#dgvalsppd').datagrid('getRow', index);
     		if (row){
     			$.messager.confirm('Konfirmasi','Reset perhitungan biaya valsppd, Lanjutkan?',function(r){
-    				if (r){
+    				if (r){ // make all value to 0
     					$.post('<?=$foldernya;?>reset_biaya.php',{idsppd:row.idsppdvalsppd},function(result){
     						if (result.success){
     							$('#dgvalsppd').datagrid('reload');
@@ -1803,6 +1806,7 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
             
     	}
 
+        // Aksi 1: Validasi
     	function validasi(index){
             var row = $('#dgvalsppd').datagrid('getRow', index);
     		if (row){
@@ -1821,7 +1825,8 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
     				}
     			});
     		}
-    	}        
+    	}
+
     	function resetvalidasi(index){
             var row = $('#dgvalsppd').datagrid('getRow', index);
     		if (row){

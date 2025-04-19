@@ -196,9 +196,9 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function aksisiapbayar(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseFloat(row.bayarsiapbayar)===0){
-                    if(parseFloat(row.totalsiapbayar)>0){
-                        if(parseFloat(row.validasi_biayasiapbayar)===0){
+                if(parseFloat(row.bayarsiapbayar)===0){ // sspd1.bayar
+                    if(parseFloat(row.totalsiapbayar)>0){ // biaya_sppd1.total
+                        if(parseFloat(row.validasi_biayasiapbayar)===0){ // sppd1.validasi_biaya
                             var a = '<a href="javascript:void(0)" title="Validasi Biaya" onclick="validasi(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-check" style="font-size:8px !important;"></i></button></a>';
                             var b = '<a><button class="easyui-linkbutton c2" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-times" style="font-size:8px !important;"></i></button></a>';
                         } else {
@@ -224,14 +224,14 @@ if (!$userhris || ($akses_proses!="1" && $akses_view!="1")){
 		function biayasiapbayar(value,row,index){
             var akses_proses = "<?=$akses_proses;?>";
             if(parseInt(akses_proses)===1){
-                if(parseInt(row.bayarsiapbayar)===0 && parseInt(row.approvebayarsiapbayar)===2){
+                if(parseInt(row.bayarsiapbayar)===0 && parseInt(row.approvebayarsiapbayar)===2){ // sspd1.bayar & biaya_sppd1.approvebayar
                     var a = '<a href="javascript:void(0)" title="Proses Pembayaran" onclick="editsiapbayar(\''+index+'\')"><button class="easyui-linkbutton c1" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:8px !important;"></i></button></a>';
                     var b = '<a title="Reset Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:10px;"></i></button></a>';
                 } else {
                     var a = '<a title="Proses Pembayaran"><button class="easyui-linkbutton c2" style="width:30px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-cog" style="font-size:10px;"></i></button></a>';
                     var b = '<a href="javascript:void(0)" title="Reset Pembayaran" onclick="destroysiapbayar(\''+index+'\')"><button class="easyui-linkbutton c5" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-history" style="font-size:8px !important;"></i></button></a>';
                 }
-                if(parseFloat(row.totalsiapbayar)>0){
+                if(parseFloat(row.totalsiapbayar)>0){ // biaya_sppd1.total
                     var c = '<a href="javascript:void(0)" title="Rincian Biaya" onclick="rincianbiayasppd(\''+index+'\')"><button class="easyui-linkbutton c6" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-credit-card" style="font-size:8px !important;"></i></button></a>';
                     var d = '<a href="javascript:void(0)" title="Cetak Form siapbayar" onclick="cetaksiapbayar(\''+index+'\')"><button class="easyui-linkbutton c7" style="width:28px;height:25px;font-size:11px;border:none;cursor:pointer;border-radius:3px;margin-top:3px;margin-bottom:3px;margin-right:3px;"><i class="fa fa-print" style="font-size:8px !important;"></i></button></a>';
                 } else {
